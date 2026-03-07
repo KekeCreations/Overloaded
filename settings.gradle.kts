@@ -12,4 +12,5 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }
 
-rootProject.name = "ExamplePlugin"
+//MUST HAVE PLUGIN IN THE NAME
+rootProject.name = "OverloadedPlugin"
