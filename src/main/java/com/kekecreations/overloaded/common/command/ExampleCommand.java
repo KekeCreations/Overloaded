@@ -1,4 +1,4 @@
-package com.kekecreations.overloaded;
+package com.kekecreations.overloaded.common.command;
 
 import com.hypixel.hytale.protocol.GameMode;
 import com.hypixel.hytale.server.core.Message;
