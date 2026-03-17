@@ -4,6 +4,7 @@ import com.hypixel.hytale.logger.HytaleLogger;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import com.kekecreations.overloaded.core.registry.CommandRegistry;
+import com.kekecreations.overloaded.core.registry.EventRegistry;
 
 public class Overloaded extends JavaPlugin {
     private static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
@@ -16,5 +17,6 @@ public class Overloaded extends JavaPlugin {
     @Override
     protected void setup() {
         CommandRegistry.registerCommmands(this);
+        EventRegistry.registerEvents(this);
     }
 }
