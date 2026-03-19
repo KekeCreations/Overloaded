@@ -29,13 +29,40 @@ Group #MAIN {
   Group #BUTTONS {
     LayoutMode: Top;
     Background: (Color: #1e3d53);
-    Anchor: (Top: 40);
+    Anchor: (Width: 150, Height: 330, Left: 325, Top: 40);
     Padding: (Full: 0);
-    $C.@TextButton #PLAYNORMAL {
+    $C.@TextButton #PLAYCLASSIC {
       Background: (Color: #ffffff);
-      Anchor: (Width: 110, Height: 50, Left: 345, Right: 0);
+      Anchor: (Width: 110, Height: 50, Left: 0, Right: 0);
       Padding: (Full: 0);
-      Text: "PLAY NORMAL";
+      Text: "PLAY CLASSIC";
+    }
+    $C.@TextButton #PLAYQUICK {
+      Background: (Color: #ffffff);
+      Anchor: (Width: 110, Height: 50, Left: 0, Right: 0, Top: 15);
+      Padding: (Full: 0);
+      Text: "PLAY QUICK";
+    }
+    $C.@TextButton #PLAYSANDBOXENDLESS {
+      Background: (Color: #ffffff);
+      Anchor: (Width: 110, Height: 50, Left: 0, Right: 0, Top: 15);
+      Padding: (Full: 0);
+      Text: "PLAY ENDLESS";
+    }
+    $C.@TextButton #HOWTOPLAY {
+      Anchor: (Height: 30, Top: 40);
+      Padding: (Full: 0);
+      Text: "HOW TO PLAY";
+    }
+    $C.@TextButton #MODESEXPLAINED {
+      Anchor: (Height: 30, Top: 5);
+      Padding: (Full: 0);
+      Text: "MODES EXPLAINED";
+    }
+    $C.@CancelTextButton #QUIT {
+      Anchor: (Height: 50, Top: 20);
+      Padding: (Full: 0);
+      Text: "QUIT";
     }
   }
 }
