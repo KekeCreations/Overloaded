@@ -14,6 +14,7 @@ import com.hypixel.hytale.server.core.ui.builder.UICommandBuilder;
 import com.hypixel.hytale.server.core.ui.builder.UIEventBuilder;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import com.kekecreations.overloaded.common.component.RoundComponent;
 
 import javax.annotation.Nonnull;
 import java.util.Objects;
@@ -56,6 +57,11 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
 
         Player player = Objects.requireNonNull(store.getComponent(ref, Player.getComponentType()));
         if (PLAY_NORMAL_BUTTON_ID.equals(data.buttonClicked)) {
+            if (store.getComponent(ref, RoundComponent.getComponentType()) == null) {
+                store.addComponent(ref, RoundComponent.getComponentType());
+            }
+            RoundComponent roundData = Objects.requireNonNull(store.getComponent(ref, RoundComponent.getComponentType()));
+            roundData.setRoundType("classic");
             playerRef.getPacketHandler().writeNoCache(new SetServerCamera(ClientCameraView.Custom, true, cameraSettings));
         }
         else if (PLAY_QUICK_BUTTON_ID.equals(data.buttonClicked)) {
