@@ -62,6 +62,10 @@ public class RoundComponent implements Component<EntityStore> {
         this.roundType = newRoundType;
     }
 
+    public void setRoundTimer(int newRoundTimer) {
+        this.roundTimer = newRoundTimer;
+    }
+
     private static ComponentType<EntityStore, RoundComponent> type;
 
     public static ComponentType<EntityStore, RoundComponent> getComponentType(){

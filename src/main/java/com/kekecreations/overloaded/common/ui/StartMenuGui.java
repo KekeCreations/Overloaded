@@ -6,6 +6,7 @@ import com.hypixel.hytale.protocol.*;
 import com.hypixel.hytale.protocol.packets.camera.SetServerCamera;
 import com.hypixel.hytale.protocol.packets.interface_.CustomPageLifetime;
 import com.hypixel.hytale.protocol.packets.interface_.CustomUIEventBindingType;
+import com.hypixel.hytale.protocol.packets.interface_.Page;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.entity.entities.player.pages.InteractiveCustomUIPage;
@@ -57,11 +58,16 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
 
         Player player = Objects.requireNonNull(store.getComponent(ref, Player.getComponentType()));
         if (PLAY_NORMAL_BUTTON_ID.equals(data.buttonClicked)) {
+            player.getPageManager().setPage(ref, store, Page.None);
+            RoundComponent roundData = Objects.requireNonNull(store.getComponent(ref, RoundComponent.getComponentType()));
             if (store.getComponent(ref, RoundComponent.getComponentType()) == null) {
                 store.addComponent(ref, RoundComponent.getComponentType());
             }
-            RoundComponent roundData = Objects.requireNonNull(store.getComponent(ref, RoundComponent.getComponentType()));
+            if (player.getHudManager().getCustomHud() == null) {
+                player.getHudManager().setCustomHud(playerRef, new RoundStatsHud(playerRef, roundData));
+            }
             roundData.setRoundType("classic");
+            roundData.setRoundTimer(300);
             playerRef.getPacketHandler().writeNoCache(new SetServerCamera(ClientCameraView.Custom, true, cameraSettings));
         }
         else if (PLAY_QUICK_BUTTON_ID.equals(data.buttonClicked)) {

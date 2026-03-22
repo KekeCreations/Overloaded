@@ -1,0 +1,13 @@
+Group {
+  LayoutMode: Center;
+  Group #HudPanel {
+    Anchor: (Width: 800, Height: 50);
+    LayoutMode: Top;
+    Label #ROUNDTIMER {
+      Text: "TIMER";
+      Style: (FontSize: 28, Alignment: Center);
+      Anchor: (Top: 12);
+      Padding: (Full: 8);
+    }
+  }
+}
