@@ -19,6 +19,7 @@ public class RoundStatsHud extends CustomUIHud {
     @Override
     protected void build(@NonNull UICommandBuilder uiCommandBuilder) {
         uiCommandBuilder.append("Hud/round_stats.ui");
+        uiCommandBuilder.set("#ROUNDCOUNT.TextSpans", Message.raw("Round " + roundData.getRoundCount()));
         uiCommandBuilder.set("#ROUNDTIMER.TextSpans", Message.raw(String.valueOf(roundData.getRoundTimer())));
     }
 }
