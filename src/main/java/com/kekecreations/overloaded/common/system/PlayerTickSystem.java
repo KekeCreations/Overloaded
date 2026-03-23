@@ -3,11 +3,13 @@ package com.kekecreations.overloaded.common.system;
 import com.hypixel.hytale.component.*;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.DelayedEntitySystem;
+import com.hypixel.hytale.protocol.packets.interface_.CustomPageLifetime;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.kekecreations.overloaded.common.component.RoundComponent;
+import com.kekecreations.overloaded.common.ui.ItemShopGui;
 import com.kekecreations.overloaded.common.ui.RoundStatsHud;
 
 import javax.annotation.Nonnull;
@@ -46,6 +48,7 @@ public class PlayerTickSystem extends DelayedEntitySystem<EntityStore> {
                             roundData.setRoundCount(2);
                             roundData.setRoundTimer(100);
                             roundData.freezeRoundTimer(true);
+                            player.getPageManager().openCustomPage(ref, store, new ItemShopGui(player.getPlayerRef(), CustomPageLifetime.CantClose));
                             //OPEN ITEM UI (UNFREEZE TIMER HERE)
                         }
                     }
