@@ -41,6 +41,8 @@ public class PlayerTickSystem extends DelayedEntitySystem<EntityStore> {
             player.sendMessage(Message.raw("PLAYER GOT C"));
             player.getHudManager().setCustomHud(player.getPlayerRef(), new RoundStatsHud(player.getPlayerRef(), roundData));
             roundData.setRoundTimer(roundData.getRoundTimer() - 1);
+        } else {
+            //store.ensureComponent(ref, RoundComponent.getComponentType());
         }
 
         player.sendMessage(Message.raw("PLAYER"));
