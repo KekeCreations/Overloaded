@@ -69,6 +69,7 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
             roundData.setRoundType("classic");
             roundData.setRoundTimer(100);
             roundData.setRoundCount(1);
+            roundData.freezeRoundTimer(false);
             playerRef.getPacketHandler().writeNoCache(new SetServerCamera(ClientCameraView.Custom, true, cameraSettings));
         }
         else if (PLAY_QUICK_BUTTON_ID.equals(data.buttonClicked)) {

@@ -37,15 +37,20 @@ public class PlayerTickSystem extends DelayedEntitySystem<EntityStore> {
 
         if (store.getComponent(ref, roundStats) != null) {
             RoundComponent roundData = store.getComponent(ref, roundStats);
-            player.sendMessage(Message.raw(roundData.getRoundType()));
-            player.sendMessage(Message.raw("PLAYER GOT C"));
             player.getHudManager().setCustomHud(player.getPlayerRef(), new RoundStatsHud(player.getPlayerRef(), roundData));
-            roundData.setRoundTimer(roundData.getRoundTimer() - 1);
-        } else {
-            //store.ensureComponent(ref, RoundComponent.getComponentType());
+            if (!roundData.isTimerFrozen()) {
+                roundData.setRoundTimer(roundData.getRoundTimer() - 1);
+                if (Objects.equals(roundData.getRoundType(), "classic")) {
+                    if (roundData.getRoundTimer() <= 0) {
+                        if (roundData.getRoundCount() == 1) {
+                            roundData.setRoundCount(2);
+                            roundData.setRoundTimer(100);
+                            roundData.freezeRoundTimer(true);
+                            //OPEN ITEM UI (UNFREEZE TIMER HERE)
+                        }
+                    }
+                }
+            }
         }
-
-        player.sendMessage(Message.raw("PLAYER"));
-
     }
 }

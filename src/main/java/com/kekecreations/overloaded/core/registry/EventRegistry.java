@@ -17,7 +17,8 @@ public class EventRegistry {
             Player player = event.getPlayer();
             Ref<EntityStore> playerRef = event.getPlayerRef();
             player.getPageManager().openCustomPage(playerRef, playerRef.getStore(), new StartMenuGui(player.getPlayerRef(), CustomPageLifetime.CantClose));
-            playerRef.getStore().ensureComponent(playerRef, RoundComponent.getComponentType());
+            RoundComponent roundComponent = playerRef.getStore().ensureAndGetComponent(playerRef, RoundComponent.getComponentType());
+            roundComponent.freezeRoundTimer(true);
         });
 
     }
