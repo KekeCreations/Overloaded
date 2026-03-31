@@ -29,20 +29,24 @@ public class RoundComponent implements Component<EntityStore> {
 
     private String roundType = "null";
 
+    private boolean freezeTimer = false;
+
     public RoundComponent() {}
 
-    public RoundComponent(int roundTimer, int roundCount, String roundType) {
+    public RoundComponent(int roundTimer, int roundCount, String roundType, boolean freezeTimer) {
         this.roundTimer = roundTimer;
         this.roundCount = roundCount;
         this.roundType = roundType;
+        this.freezeTimer = freezeTimer;
     }
 
     @Override
     public Component<EntityStore> clone() {
-        RoundComponent copy = new RoundComponent(roundTimer, roundCount, roundType);
+        RoundComponent copy = new RoundComponent(roundTimer, roundCount, roundType, freezeTimer);
         copy.roundTimer = this.roundTimer;
         copy.roundCount = this.roundCount;
         copy.roundType = this.roundType;
+        copy.freezeTimer = this.freezeTimer;
         return copy;
     }
 
@@ -58,6 +62,10 @@ public class RoundComponent implements Component<EntityStore> {
         return this.roundType;
     }
 
+    public boolean isTimerFrozen() {
+        return this.freezeTimer;
+    }
+
     public void setRoundType(String newRoundType) {
         this.roundType = newRoundType;
     }
@@ -68,6 +76,10 @@ public class RoundComponent implements Component<EntityStore> {
 
     public void setRoundCount(int newRoundCount) {
         this.roundCount = newRoundCount;
+    }
+
+    public void freezeRoundTimer(boolean freezeTimer) {
+        this.freezeTimer = freezeTimer;
     }
 
     public void incrementRoundCount(int incrementAmount) {
