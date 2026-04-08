@@ -3,24 +3,23 @@ package com.kekecreations.overloaded.common.system;
 import com.hypixel.hytale.component.*;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.DelayedEntitySystem;
-import com.hypixel.hytale.protocol.packets.interface_.CustomPageLifetime;
+import com.hypixel.hytale.server.core.Message;
+import com.hypixel.hytale.server.core.command.system.CommandManager;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.kekecreations.overloaded.common.component.RoundComponent;
-import com.kekecreations.overloaded.common.ui.ItemShopGui;
-import com.kekecreations.overloaded.common.ui.RoundStatsHud;
 
 import javax.annotation.Nonnull;
 import java.util.Objects;
 
-public class PlayerUiTickSystem extends DelayedEntitySystem<EntityStore> {
+public class RoundTickSystem extends DelayedEntitySystem<EntityStore> {
 
     private final ComponentType<EntityStore, RoundComponent> roundStats;
 
 
-    public PlayerUiTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
-        super(0.8f);
+    public RoundTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
+        super(1.0f);
         this.roundStats = roundStats;
     }
 
@@ -40,11 +39,15 @@ public class PlayerUiTickSystem extends DelayedEntitySystem<EntityStore> {
         if (store.getComponent(ref, roundStats) != null) {
             RoundComponent roundData = store.getComponent(ref, roundStats);
 
-            player.getHudManager().setCustomHud(playerRef, new RoundStatsHud(playerRef, roundData));
-            if (roundData.getRoundType() == "item_shop") {
-                player.getPageManager().openCustomPage(ref, store, new ItemShopGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundData));
-                roundData.setRoundType("null");
+            if (!roundData.isTimerFrozen()) {
+                roundData.setRoundTimer(roundData.getRoundTimer() - 1);
+                if (Objects.equals(roundData.getRoundType(), "classic")) {
+                    if (roundData.getRoundTimer() <= 0) {
+                        CommandManager.get().handleCommand(playerRef, "end_round");
+                    }
+                }
             }
         }
     }
 }
+

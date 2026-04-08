@@ -5,6 +5,7 @@ import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.math.vector.Vector3d;
 import com.hypixel.hytale.math.vector.Vector3f;
 import com.hypixel.hytale.protocol.GameMode;
+import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.command.system.CommandContext;
 import com.hypixel.hytale.server.core.command.system.arguments.system.RequiredArg;
 import com.hypixel.hytale.server.core.command.system.arguments.types.ArgTypes;
@@ -25,6 +26,8 @@ public class SpawnEntityForRoundCommand extends AbstractTargetPlayerCommand {
     private final RequiredArg<Double> y;
     private final RequiredArg<Double> z;
 
+
+
     public SpawnEntityForRoundCommand() {
         super("spawn_enemy", "Spawning NPC Command for Overloaded!");
         this.npcId = this.withRequiredArg("npcId", "Entity ID", ArgTypes.STRING);
@@ -37,6 +40,9 @@ public class SpawnEntityForRoundCommand extends AbstractTargetPlayerCommand {
     @Override
     protected void execute(@NotNull CommandContext commandContext, @Nullable Ref<EntityStore> ref, @NotNull Ref<EntityStore> ref1, @NotNull PlayerRef playerRef, @NotNull World world, @NotNull Store<EntityStore> store) {
         Player player = store.getComponent(ref, Player.getComponentType());
+        double negativeX = -1 * (Math.random() * 6);
+        double positiveX =  (Math.random() * 6);
+        double positiveZ =  (Math.random() * 6);
         if (player != null) {
             TransformComponent transformComponent = store.getComponent(ref, TransformComponent.getComponentType());
             if (transformComponent != null) {
