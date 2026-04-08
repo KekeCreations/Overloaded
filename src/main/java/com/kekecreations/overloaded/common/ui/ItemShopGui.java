@@ -5,23 +5,33 @@ import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.protocol.*;
 import com.hypixel.hytale.protocol.packets.interface_.CustomPageLifetime;
 import com.hypixel.hytale.protocol.packets.interface_.CustomUIEventBindingType;
+import com.hypixel.hytale.protocol.packets.interface_.Page;
 import com.hypixel.hytale.server.core.Message;
+import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.entity.entities.player.pages.InteractiveCustomUIPage;
 import com.hypixel.hytale.server.core.ui.builder.EventData;
 import com.hypixel.hytale.server.core.ui.builder.UICommandBuilder;
 import com.hypixel.hytale.server.core.ui.builder.UIEventBuilder;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import com.kekecreations.overloaded.common.component.RoundComponent;
+import org.jspecify.annotations.NonNull;
 
 import javax.annotation.Nonnull;
 
 public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
 
-    public ItemShopGui(@Nonnull PlayerRef playerRef, @Nonnull CustomPageLifetime lifetime) {
+    RoundComponent roundComponent;
+
+    public ItemShopGui(@Nonnull PlayerRef playerRef, @Nonnull CustomPageLifetime lifetime, RoundComponent roundComponent) {
         super(playerRef, lifetime, MenuWithButtonsData.CODEC);
+        this.roundComponent = roundComponent;
     }
 
     private static final String BUY1 = "BUY1";
+    private static final String BUY2 = "BUY2";
+    private static final String BUY3 = "BUY3";
+    private static final String CONTINUE = "CONTINUE";
 
     int itemChance = (int)(Math.random() * 6);
     int itemChance2 = (int)(Math.random() * 6);
@@ -32,6 +42,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
         uiCommandBuilder.append("Pages/item_shop.ui");
 
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#BUY1", EventData.of("OnButtonClicked", BUY1), false);
+        uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#CONTINUE", EventData.of("OnButtonClicked", CONTINUE), false);
 
         switch(itemChance) {
             case 0, 1, 2 -> {
@@ -76,12 +87,28 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
         super.handleDataEvent(ref, store, data);
         boolean changed = false;
 
-        if (BUY1.equals(data.buttonClicked)) {
-            playerRef.sendMessage(Message.raw(itemChance + itemChance2 + itemChance3 + "ALL 3"));
+        Player player = store.getComponent(ref, Player.getComponentType());
+
+        if (player != null) {
+            if (BUY1.equals(data.buttonClicked)) {
+
+
+            }
+            if (CONTINUE.equals(data.buttonClicked)) {
+                player.getPageManager().setPage(ref, store, Page.None);
+            }
         }
 
         if (changed) {
             this.playerRef.sendMessage(Message.raw("Changes processed."));
         }
+    }
+
+    @Override
+    public void onDismiss(@NonNull Ref<EntityStore> ref, @NonNull Store<EntityStore> store) {
+        super.onDismiss(ref, store);
+        roundComponent.setRoundCount(roundComponent.getRoundCount() + 1);
+        roundComponent.setRoundTimer(10);
+        roundComponent.freezeRoundTimer(false);
     }
 }

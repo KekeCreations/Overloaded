@@ -4,7 +4,7 @@ import com.hypixel.hytale.component.ComponentType;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.kekecreations.overloaded.common.component.RoundComponent;
-import com.kekecreations.overloaded.common.system.PlayerTickSystem;
+import com.kekecreations.overloaded.common.system.PlayerUiTickSystem;
 
 public class ComponentAndSystemRegistry {
 
@@ -33,7 +33,7 @@ public class ComponentAndSystemRegistry {
 
          */
 
-        registry.registerSystem(new PlayerTickSystem(roundComponent));
+        registry.registerSystem(new PlayerUiTickSystem(roundComponent));
        // registry.registerSystem(new OtherPlayerTickSystem(otherRoundComponent));
         //registry.registerSystem(new PlayerDeathSystem());
        // registry.registerSystem(new NPCDeathSystem());
