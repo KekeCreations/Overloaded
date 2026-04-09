@@ -1,0 +1,24 @@
+{
+  "Model": "Items/anvil_pet.blockymodel",
+  "Texture": "Items/anvil_pet.png",
+  "Scale": 1,
+  "ItemLevel": 1,
+  "MaxStack": 1,
+  "Icon": "Icons/ItemsGenerated/Anvil_Pet.png",
+  "IconProperties": {
+    "Scale": 0.5,
+    "Rotation": [
+      0,
+      32,
+      0
+    ],
+    "Translation": [
+      -1,
+      -18
+    ]
+  },
+  "TranslationProperties": {
+    "Name": "overloaded.Anvil_Pet.name",
+    "Description": "overloaded.Anvil_Pet.desc"
+  }
+}
