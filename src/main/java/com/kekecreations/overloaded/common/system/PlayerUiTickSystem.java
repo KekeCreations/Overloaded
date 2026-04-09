@@ -41,9 +41,9 @@ public class PlayerUiTickSystem extends DelayedEntitySystem<EntityStore> {
             RoundComponent roundData = store.getComponent(ref, roundStats);
 
             player.getHudManager().setCustomHud(playerRef, new RoundStatsHud(playerRef, roundData));
-            if (roundData.getRoundType() == "item_shop") {
+            if (roundData.getRoundMenu() == "item_shop") {
                 player.getPageManager().openCustomPage(ref, store, new ItemShopGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundData));
-                roundData.setRoundType("null");
+                roundData.setRoundMenu("null");
             }
         }
     }

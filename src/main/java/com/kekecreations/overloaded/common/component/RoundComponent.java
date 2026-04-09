@@ -29,20 +29,23 @@ public class RoundComponent implements Component<EntityStore> {
 
     private String roundType = "null";
 
+    private String roundMenu = "null";
+
     private boolean freezeTimer = false;
 
     public RoundComponent() {}
 
-    public RoundComponent(int roundTimer, int roundCount, String roundType, boolean freezeTimer) {
+    public RoundComponent(int roundTimer, int roundCount, String roundType, boolean freezeTimer, String roundMenu) {
         this.roundTimer = roundTimer;
         this.roundCount = roundCount;
         this.roundType = roundType;
         this.freezeTimer = freezeTimer;
+        this.roundMenu = roundMenu;
     }
 
     @Override
     public Component<EntityStore> clone() {
-        RoundComponent copy = new RoundComponent(roundTimer, roundCount, roundType, freezeTimer);
+        RoundComponent copy = new RoundComponent(roundTimer, roundCount, roundType, freezeTimer, roundMenu);
         copy.roundTimer = this.roundTimer;
         copy.roundCount = this.roundCount;
         copy.roundType = this.roundType;
@@ -66,8 +69,16 @@ public class RoundComponent implements Component<EntityStore> {
         return this.freezeTimer;
     }
 
+    public String getRoundMenu() {
+        return this.roundMenu;
+    }
+
     public void setRoundType(String newRoundType) {
         this.roundType = newRoundType;
+    }
+
+    public void setRoundMenu(String newRoundMenu) {
+        this.roundMenu = newRoundMenu;
     }
 
     public void setRoundTimer(int newRoundTimer) {

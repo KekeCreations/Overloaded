@@ -31,7 +31,7 @@ public class EndRoundCommand extends AbstractTargetPlayerCommand {
 
         if (roundComponent != null) {
             roundComponent.freezeRoundTimer(true);
-            roundComponent.setRoundType("item_shop");
+            roundComponent.setRoundMenu("item_shop");
         }
     }
 }
