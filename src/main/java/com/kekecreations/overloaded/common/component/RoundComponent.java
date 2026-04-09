@@ -20,6 +20,12 @@ public class RoundComponent implements Component<EntityStore> {
                     .append(new KeyedCodec<>("RoundType", Codec.STRING),
                             (c, f) -> c.roundType = f, c -> c.roundType)
                     .add()
+                    .append(new KeyedCodec<>("ArachnophobiaMode", Codec.BOOLEAN),
+                            (c, f) -> c.arachnophobiaMode = f, c -> c.arachnophobiaMode)
+                    .add()
+                    .append(new KeyedCodec<>("DoubleGoldMode", Codec.BOOLEAN),
+                            (c, f) -> c.doubleGoldMode = f, c -> c.doubleGoldMode)
+                    .add()
                     .build();
 
 
@@ -33,23 +39,32 @@ public class RoundComponent implements Component<EntityStore> {
 
     private boolean freezeTimer = false;
 
+    private boolean arachnophobiaMode = false;
+
+    private boolean doubleGoldMode = false;
+
     public RoundComponent() {}
 
-    public RoundComponent(int roundTimer, int roundCount, String roundType, boolean freezeTimer, String roundMenu) {
+    public RoundComponent(int roundTimer, int roundCount, String roundType, boolean freezeTimer, String roundMenu,
+                          boolean arachnophobiaMode, boolean doubleGoldMode) {
         this.roundTimer = roundTimer;
         this.roundCount = roundCount;
         this.roundType = roundType;
         this.freezeTimer = freezeTimer;
         this.roundMenu = roundMenu;
+        this.arachnophobiaMode = arachnophobiaMode;
+        this.doubleGoldMode = doubleGoldMode;
     }
 
     @Override
     public Component<EntityStore> clone() {
-        RoundComponent copy = new RoundComponent(roundTimer, roundCount, roundType, freezeTimer, roundMenu);
+        RoundComponent copy = new RoundComponent(roundTimer, roundCount, roundType, freezeTimer, roundMenu, arachnophobiaMode, doubleGoldMode);
         copy.roundTimer = this.roundTimer;
         copy.roundCount = this.roundCount;
         copy.roundType = this.roundType;
         copy.freezeTimer = this.freezeTimer;
+        copy.arachnophobiaMode = this.arachnophobiaMode;
+        copy.doubleGoldMode = this.doubleGoldMode;
         return copy;
     }
 
@@ -67,6 +82,14 @@ public class RoundComponent implements Component<EntityStore> {
 
     public boolean isTimerFrozen() {
         return this.freezeTimer;
+    }
+
+    public boolean isArachnophobiaMode() {
+        return this.arachnophobiaMode;
+    }
+
+    public boolean isDoubleGoldMode() {
+        return this.doubleGoldMode;
     }
 
     public String getRoundMenu() {
@@ -91,6 +114,14 @@ public class RoundComponent implements Component<EntityStore> {
 
     public void freezeRoundTimer(boolean freezeTimer) {
         this.freezeTimer = freezeTimer;
+    }
+
+    public void setArachnophobiaMode(boolean bool) {
+        this.arachnophobiaMode = bool;
+    }
+
+    public void setDoubleGoldMode(boolean bool) {
+        this.doubleGoldMode = bool;
     }
 
     public void incrementRoundCount(int incrementAmount) {

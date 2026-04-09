@@ -7,12 +7,12 @@ import com.kekecreations.overloaded.common.component.RoundComponent;
 import com.kekecreations.overloaded.common.system.EnemyTickSystem;
 import com.kekecreations.overloaded.common.system.PlayerUiTickSystem;
 import com.kekecreations.overloaded.common.system.RoundTickSystem;
+import com.kekecreations.overloaded.common.system.UiTickSystem;
 
 public class ComponentAndSystemRegistry {
 
     private static ComponentType<EntityStore, RoundComponent> roundComponent;
 
-    //private static ComponentType<EntityStore, OtherPlayerRoundComponent> otherRoundComponent;
 
 
     public static void registerComponents(JavaPlugin javaPlugin) {
@@ -25,22 +25,11 @@ public class ComponentAndSystemRegistry {
         //Allows to call component from component class
         RoundComponent.setComponentType(roundComponent);
 
-        /*
-        otherRoundComponent = registry.registerComponent(
-                OtherPlayerRoundComponent.class,
-                "OtherRoundData",
-                OtherPlayerRoundComponent.CODEC
-        );
-        OtherPlayerRoundComponent.setComponentType(otherRoundComponent);
-
-         */
 
         registry.registerSystem(new PlayerUiTickSystem(roundComponent));
         registry.registerSystem(new EnemyTickSystem(roundComponent));
         registry.registerSystem(new RoundTickSystem(roundComponent));
-       // registry.registerSystem(new OtherPlayerTickSystem(otherRoundComponent));
-        //registry.registerSystem(new PlayerDeathSystem());
-       // registry.registerSystem(new NPCDeathSystem());
+        registry.registerSystem(new UiTickSystem(roundComponent));
     }
 
 }
