@@ -32,17 +32,12 @@ public class PlayerDeathSystem extends DeathSystems.OnDeathSystem {
         if (player != null) {
             RoundComponent roundData = store.getComponent(ref, RoundComponent.getComponentType());
             if (roundData != null) {
-                roundData.setRoundType("null");
-                roundData.setRoundMenu("start");
-                roundData.setRoundTimer(-1);
-                roundData.setKills(0);
-                roundData.setGold(0);
-                //roundData.freezeRoundTimer(true);
-                //OPEN SCREEN TO DISPLAY GAME STATS AND THEN DELETE THEM LATER
+                roundData.freezeRoundTimer(true);
+                roundData.setRoundMenu("game_over");
             }
         }
         if (playerRef != null) {
-            //CommandManager.get().handleCommand(playerRef, "start_tp");
+            CommandManager.get().handleCommand(playerRef, "start_tp");
         }
     }
 

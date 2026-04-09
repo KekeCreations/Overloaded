@@ -8,6 +8,7 @@ import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.kekecreations.overloaded.common.component.RoundComponent;
+import com.kekecreations.overloaded.common.ui.GameOverGui;
 import com.kekecreations.overloaded.common.ui.ItemShopGui;
 import com.kekecreations.overloaded.common.ui.RoundStatsHud;
 

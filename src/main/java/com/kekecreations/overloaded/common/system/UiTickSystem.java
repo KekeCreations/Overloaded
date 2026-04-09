@@ -8,10 +8,7 @@ import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.kekecreations.overloaded.common.component.RoundComponent;
-import com.kekecreations.overloaded.common.ui.ItemShopGui;
-import com.kekecreations.overloaded.common.ui.RoundStatsHud;
-import com.kekecreations.overloaded.common.ui.SettingsGui;
-import com.kekecreations.overloaded.common.ui.StartMenuGui;
+import com.kekecreations.overloaded.common.ui.*;
 
 import javax.annotation.Nonnull;
 import java.util.Objects;
@@ -48,6 +45,10 @@ public class UiTickSystem extends DelayedEntitySystem<EntityStore> {
             }
             if (roundData.getRoundMenu() == "settings") {
                 player.getPageManager().openCustomPage(ref, store, new SettingsGui(playerRef, roundData, CustomPageLifetime.CanDismissOrCloseThroughInteraction));
+                roundData.setRoundMenu("null");
+            }
+            if (roundData.getRoundMenu() == "game_over") {
+                player.getPageManager().openCustomPage(ref, store, new GameOverGui(playerRef, roundData, CustomPageLifetime.CantClose));
                 roundData.setRoundMenu("null");
             }
         }
