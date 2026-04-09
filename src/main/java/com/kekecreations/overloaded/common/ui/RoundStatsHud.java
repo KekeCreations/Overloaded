@@ -20,6 +20,8 @@ public class RoundStatsHud extends CustomUIHud {
     protected void build(@NonNull UICommandBuilder uiCommandBuilder) {
         uiCommandBuilder.append("Hud/round_stats.ui");
 
+        uiCommandBuilder.set("#KILLS.TextSpans", Message.raw("" + roundData.getKills()));
+        uiCommandBuilder.set("#GOLD.TextSpans", Message.raw("" + roundData.getGold()));
         //Show and hide UI
         if (!roundData.isTimerFrozen()) {
             uiCommandBuilder.set("#ROUNDCOUNT.TextSpans", Message.raw("Round " + roundData.getRoundCount()));

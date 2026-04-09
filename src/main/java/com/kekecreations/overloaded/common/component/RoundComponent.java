@@ -43,10 +43,14 @@ public class RoundComponent implements Component<EntityStore> {
 
     private boolean doubleGoldMode = false;
 
+    private int kills = 0;
+
+    private int gold = 0;
+
     public RoundComponent() {}
 
     public RoundComponent(int roundTimer, int roundCount, String roundType, boolean freezeTimer, String roundMenu,
-                          boolean arachnophobiaMode, boolean doubleGoldMode) {
+                          boolean arachnophobiaMode, boolean doubleGoldMode, int kills, int gold) {
         this.roundTimer = roundTimer;
         this.roundCount = roundCount;
         this.roundType = roundType;
@@ -54,11 +58,13 @@ public class RoundComponent implements Component<EntityStore> {
         this.roundMenu = roundMenu;
         this.arachnophobiaMode = arachnophobiaMode;
         this.doubleGoldMode = doubleGoldMode;
+        this.kills = kills;
+        this.gold = gold;
     }
 
     @Override
     public Component<EntityStore> clone() {
-        RoundComponent copy = new RoundComponent(roundTimer, roundCount, roundType, freezeTimer, roundMenu, arachnophobiaMode, doubleGoldMode);
+        RoundComponent copy = new RoundComponent(roundTimer, roundCount, roundType, freezeTimer, roundMenu, arachnophobiaMode, doubleGoldMode, kills, gold);
         copy.roundTimer = this.roundTimer;
         copy.roundCount = this.roundCount;
         copy.roundType = this.roundType;
@@ -96,6 +102,14 @@ public class RoundComponent implements Component<EntityStore> {
         return this.roundMenu;
     }
 
+    public int getKills() {
+        return this.kills;
+    }
+
+    public int getGold() {
+        return this.gold;
+    }
+
     public void setRoundType(String newRoundType) {
         this.roundType = newRoundType;
     }
@@ -122,6 +136,14 @@ public class RoundComponent implements Component<EntityStore> {
 
     public void setDoubleGoldMode(boolean bool) {
         this.doubleGoldMode = bool;
+    }
+
+    public void setKills(int value) {
+        this.kills = value;
+    }
+
+    public void setGold(int value) {
+        this.gold = value;
     }
 
     public void incrementRoundCount(int incrementAmount) {
