@@ -2,7 +2,7 @@ package com.kekecreations.overloaded.common.system;
 
 import com.hypixel.hytale.component.*;
 import com.hypixel.hytale.component.query.Query;
-import com.hypixel.hytale.component.system.tick.DelayedEntitySystem;
+import com.hypixel.hytale.component.system.tick.EntityTickingSystem;
 import com.hypixel.hytale.protocol.packets.interface_.CustomPageLifetime;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
@@ -14,13 +14,13 @@ import com.kekecreations.overloaded.common.ui.RoundStatsHud;
 import javax.annotation.Nonnull;
 import java.util.Objects;
 
-public class PlayerUiTickSystem extends DelayedEntitySystem<EntityStore> {
+public class PlayerUiTickSystem extends EntityTickingSystem<EntityStore> {
 
     private final ComponentType<EntityStore, RoundComponent> roundStats;
 
 
     public PlayerUiTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
-        super(0.8f);
+        super();
         this.roundStats = roundStats;
     }
 

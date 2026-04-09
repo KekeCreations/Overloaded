@@ -3,7 +3,6 @@ package com.kekecreations.overloaded.common.system;
 import com.hypixel.hytale.component.*;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.DelayedEntitySystem;
-import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.command.system.CommandManager;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
@@ -41,10 +40,8 @@ public class RoundTickSystem extends DelayedEntitySystem<EntityStore> {
 
             if (!roundData.isTimerFrozen()) {
                 roundData.setRoundTimer(roundData.getRoundTimer() - 1);
-                if (Objects.equals(roundData.getRoundType(), "classic")) {
-                    if (roundData.getRoundTimer() <= 0) {
-                        CommandManager.get().handleCommand(playerRef, "end_round");
-                    }
+                if (roundData.getRoundTimer() <= 0 && !roundData.isTimerFrozen()) {
+                    CommandManager.get().handleCommand(playerRef, "end_round");
                 }
             }
         }

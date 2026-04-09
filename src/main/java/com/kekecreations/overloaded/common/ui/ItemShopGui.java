@@ -13,6 +13,7 @@ import com.hypixel.hytale.server.core.ui.builder.EventData;
 import com.hypixel.hytale.server.core.ui.builder.UICommandBuilder;
 import com.hypixel.hytale.server.core.ui.builder.UIEventBuilder;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
+import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.kekecreations.overloaded.common.component.RoundComponent;
 import org.jspecify.annotations.NonNull;
@@ -96,6 +97,10 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
             }
             if (CONTINUE.equals(data.buttonClicked)) {
                 player.getPageManager().setPage(ref, store, Page.None);
+                if (roundComponent.getRoundType() == "classic") {
+                    World.setTimeDilation(1F, store);
+                }
+                roundComponent.setRoundMenu("null");
             }
         }
 
@@ -110,5 +115,9 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
         roundComponent.setRoundCount(roundComponent.getRoundCount() + 1);
         roundComponent.setRoundTimer(10);
         roundComponent.freezeRoundTimer(false);
+        roundComponent.setRoundMenu("null");
+        if (roundComponent.getRoundType() == "classic") {
+            World.setTimeDilation(1F, store);
+        }
     }
 }
