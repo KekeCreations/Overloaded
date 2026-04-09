@@ -131,7 +131,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
     public void onDismiss(@NonNull Ref<EntityStore> ref, @NonNull Store<EntityStore> store) {
         super.onDismiss(ref, store);
         roundComponent.setRoundCount(roundComponent.getRoundCount() + 1);
-        roundComponent.setRoundTimer(10);
+        roundComponent.setRoundTimer(60);
         roundComponent.freezeRoundTimer(false);
         roundComponent.setRoundMenu("null");
         if (roundComponent.getRoundType() == "classic") {

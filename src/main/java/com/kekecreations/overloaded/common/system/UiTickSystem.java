@@ -39,16 +39,19 @@ public class UiTickSystem extends DelayedEntitySystem<EntityStore> {
         if (store.getComponent(ref, roundStats) != null) {
             RoundComponent roundData = store.getComponent(ref, roundStats);
 
-            if (roundData.getRoundMenu() == "start") {
-                player.getPageManager().openCustomPage(ref, store, new StartMenuGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction));
-                roundData.setRoundMenu("null");
+            if (roundData.getRoundType() == "null") {
+                if (roundData.getRoundMenu() == "start") {
+                    player.getPageManager().openCustomPage(ref, store, new StartMenuGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundData));
+                    roundData.setRoundMenu("null");
+                }
+                if (roundData.getRoundMenu() == "settings") {
+                    player.getPageManager().openCustomPage(ref, store, new SettingsGui(playerRef, roundData, CustomPageLifetime.CanDismissOrCloseThroughInteraction));
+                    roundData.setRoundMenu("null");
+                }
             }
-            if (roundData.getRoundMenu() == "settings") {
-                player.getPageManager().openCustomPage(ref, store, new SettingsGui(playerRef, roundData, CustomPageLifetime.CanDismissOrCloseThroughInteraction));
-                roundData.setRoundMenu("null");
-            }
+            //works within round
             if (roundData.getRoundMenu() == "game_over") {
-                player.getPageManager().openCustomPage(ref, store, new GameOverGui(playerRef, roundData, CustomPageLifetime.CantClose));
+                player.getPageManager().openCustomPage(ref, store, new GameOverGui(playerRef, roundData, CustomPageLifetime.CanDismissOrCloseThroughInteraction));
                 roundData.setRoundMenu("null");
             }
         }

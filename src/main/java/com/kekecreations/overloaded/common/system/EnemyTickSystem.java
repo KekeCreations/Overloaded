@@ -39,7 +39,7 @@ public class EnemyTickSystem extends DelayedEntitySystem<EntityStore> {
             RoundComponent roundData = store.getComponent(ref, roundStats);
             //Purely so Intellij doesn't annoy me
             if (roundData != null ) {
-                if (roundData.getRoundTimer() > 0) {
+                if (roundData.getRoundTimer() > 0 && !roundData.isTimerFrozen()) {
                     if (Objects.equals(roundData.getRoundType(), "classic")) {
                         CommandManager.get().handleCommand(playerRef, "spawn_enemy Skeleton");
                     }
