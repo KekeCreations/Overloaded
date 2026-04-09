@@ -3,15 +3,11 @@ package com.kekecreations.overloaded.common.system;
 import com.hypixel.hytale.component.*;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.DelayedEntitySystem;
-import com.hypixel.hytale.protocol.packets.interface_.CustomPageLifetime;
-import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.command.system.CommandManager;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.kekecreations.overloaded.common.component.RoundComponent;
-import com.kekecreations.overloaded.common.ui.ItemShopGui;
-import com.kekecreations.overloaded.common.ui.RoundStatsHud;
 
 import javax.annotation.Nonnull;
 import java.util.Objects;
@@ -22,7 +18,7 @@ public class EnemyTickSystem extends DelayedEntitySystem<EntityStore> {
 
 
     public EnemyTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
-        super(1.0f);
+        super(3.0f);
         this.roundStats = roundStats;
     }
 

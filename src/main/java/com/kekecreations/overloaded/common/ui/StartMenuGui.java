@@ -1,6 +1,7 @@
 package com.kekecreations.overloaded.common.ui;
 
 import com.hypixel.hytale.component.Ref;
+import com.hypixel.hytale.component.RemoveReason;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.protocol.*;
 import com.hypixel.hytale.protocol.packets.connection.DisconnectType;
@@ -16,6 +17,7 @@ import com.hypixel.hytale.server.core.ui.builder.UICommandBuilder;
 import com.hypixel.hytale.server.core.ui.builder.UIEventBuilder;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.kekecreations.overloaded.common.component.RoundComponent;
 import org.jspecify.annotations.NonNull;
 
@@ -68,6 +70,10 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
         }
         else if (QUIT_BUTTON_ID.equals(data.buttonClicked)) {
             playerRef.getPacketHandler().writeNoCache(new ServerDisconnect(null, DisconnectType.Disconnect));
+        }
+
+        if (PLAY_NORMAL_BUTTON_ID.equals(data.buttonClicked) || SETTINGS.equals(data.buttonClicked) || PLAY_QUICK_BUTTON_ID.equals(data.buttonClicked)) {
+            store.forEachEntityParallel(NPCEntity.getComponentType(), (index, archetypeChunk, commandBuffer) -> commandBuffer.removeEntity(archetypeChunk.getReferenceTo(index), RemoveReason.REMOVE));
         }
 
         if (changed) {
