@@ -46,37 +46,55 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#CONTINUE", EventData.of("OnButtonClicked", CONTINUE), false);
 
         switch(itemChance) {
-            case 0, 1, 2 -> {
-                uiCommandBuilder.set("#RARITY1.TextSpans", Message.raw("EPIC"));
+            case 0 -> {
+                uiCommandBuilder.set("#RARITY1.TextSpans",
+                        new Message(new FormattedMessage("EPIC", null, null, null, null,
+                                "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
                 uiCommandBuilder.set("#DESC1.TextSpans", Message.raw("FLAMETHROWER"));
                 uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Flamethrower_Goblin.png");
             }
-            case  3, 4, 5 -> {
-                uiCommandBuilder.set("#RARITY1.TextSpans", Message.raw("RARE"));
+            case 1, 2, 3, 4, 5 -> {
+                uiCommandBuilder.set("#RARITY1.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
                 uiCommandBuilder.set("#DESC1.TextSpans", Message.raw("SLOWING TOTEM"));
                 uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Furniture_Temple_Emerald_Statue.png");
             }
         }
         switch(itemChance2) {
             case 0 -> {
-                uiCommandBuilder.set("#RARITY2.TextSpans", Message.raw("EPIC"));
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("EPIC", null, null, null, null,
+                                "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
                 uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("FLAMETHROWER"));
                 uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Flamethrower_Goblin.png");
             }
             case 1, 2, 3, 4, 5 -> {
-                uiCommandBuilder.set("#RARITY2.TextSpans", Message.raw("RARE"));
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
                 uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("SLOWING TOTEM"));
                 uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Furniture_Temple_Emerald_Statue.png");
             }
         }
         switch(itemChance3) {
             case 0 -> {
-                uiCommandBuilder.set("#RARITY3.TextSpans", Message.raw("EPIC"));
+                uiCommandBuilder.set("#RARITY3.TextSpans",
+                        new Message(new FormattedMessage("EPIC", null, null, null, null,
+                                "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
                 uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("FLAMETHROWER"));
                 uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Flamethrower_Goblin.png");
             }
             case 1, 2, 3, 4, 5 -> {
-                uiCommandBuilder.set("#RARITY3.TextSpans", Message.raw("RARE"));
+                uiCommandBuilder.set("#RARITY3.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
                 uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("SLOWING TOTEM"));
                 uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Furniture_Temple_Emerald_Statue.png");
             }

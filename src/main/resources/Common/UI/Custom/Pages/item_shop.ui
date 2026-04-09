@@ -9,7 +9,7 @@ Group #ITEMSHOP {
     Background: (Color: #1f3b4d);
     Label #TITLE {
       Text: "ITEM SHOP";
-      Style: (TextColor: #a9a151, FontSize: 40, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+      Style: (TextColor: #408080, FontSize: 40, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
     }
     Label #DESC {
       Text: "USE COINS TO BUY ITEMS";
@@ -18,8 +18,8 @@ Group #ITEMSHOP {
   }
   Group #BORDER {
     LayoutMode: MiddleCenter;
-    Background: (Color: #795625);
-    Anchor: (Height: 20);
+    Background: (Color: #408080);
+    Anchor: (Height: 10);
   }
   Group #BORDER2 {
     LayoutMode: Top;
@@ -52,16 +52,16 @@ Group #ITEMSHOP {
           AssetPath: "Icons/ItemsGenerated/Plant_Vine.png";
         }
       }
-      Label #RARITY1 {
-        Text: "RARITY:";
-        Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
-      }
       Label #DESC1 {
         Text: "DESC:";
         Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
       }
+      Label #RARITY1 {
+        Text: "RARITY:";
+        Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+      }
       Label #PRICE1 {
-        Text: "PRICE:";
+        Text: "GOLD:";
         Style: (TextColor: #a9a151, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
       }
       $C.@TextButton #BUY1 {
@@ -87,16 +87,16 @@ Group #ITEMSHOP {
           AssetPath: "Icons/ItemsGenerated/Plant_Vine.png";
         }
       }
-      Label #RARITY2 {
-        Text: "RARITY:";
-        Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
-      }
       Label #DESC2 {
         Text: "DESC:";
         Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
       }
+      Label #RARITY2 {
+        Text: "RARITY:";
+        Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+      }
       Label #PRICE2 {
-        Text: "PRICE:";
+        Text: "GOLD:";
         Style: (TextColor: #a9a151, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
       }
       $C.@TextButton #BUY2 {
@@ -122,16 +122,16 @@ Group #ITEMSHOP {
           AssetPath: "Icons/ItemsGenerated/Plant_Vine.png";
         }
       }
-      Label #RARITY3 {
-        Text: "RARITY:";
-        Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
-      }
       Label #DESC3 {
         Text: "DESC:";
         Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
       }
+      Label #RARITY3 {
+        Text: "RARITY:";
+        Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+      }
       Label #PRICE3 {
-        Text: "PRICE:";
+        Text: "GOLD:";
         Style: (TextColor: #a9a151, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
       }
       $C.@TextButton #BUY3 {
