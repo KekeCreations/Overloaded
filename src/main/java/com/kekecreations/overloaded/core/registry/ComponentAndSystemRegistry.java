@@ -23,7 +23,7 @@ public class ComponentAndSystemRegistry {
         RoundComponent.setComponentType(roundComponent);
 
 
-        registry.registerSystem(new PlayerUiTickSystem(roundComponent));
+        registry.registerSystem(new InstantTickSystem(roundComponent));
         registry.registerSystem(new ClassicEnemyTickSystem(roundComponent));
         registry.registerSystem(new RoundTickSystem(roundComponent));
         registry.registerSystem(new UiTickSystem(roundComponent));

@@ -4,23 +4,23 @@ import com.hypixel.hytale.component.*;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.EntityTickingSystem;
 import com.hypixel.hytale.protocol.packets.interface_.CustomPageLifetime;
+import com.hypixel.hytale.server.core.command.system.CommandManager;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.kekecreations.overloaded.common.component.RoundComponent;
-import com.kekecreations.overloaded.common.ui.GameOverGui;
 import com.kekecreations.overloaded.common.ui.ItemShopGui;
 import com.kekecreations.overloaded.common.ui.RoundStatsHud;
 
 import javax.annotation.Nonnull;
 import java.util.Objects;
 
-public class PlayerUiTickSystem extends EntityTickingSystem<EntityStore> {
+public class InstantTickSystem extends EntityTickingSystem<EntityStore> {
 
     private final ComponentType<EntityStore, RoundComponent> roundStats;
 
 
-    public PlayerUiTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
+    public InstantTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
         super();
         this.roundStats = roundStats;
     }
@@ -39,6 +39,7 @@ public class PlayerUiTickSystem extends EntityTickingSystem<EntityStore> {
 
 
         if (store.getComponent(ref, roundStats) != null) {
+            CommandManager.get().handleCommand(playerRef, "remove_items");
             RoundComponent roundData = store.getComponent(ref, roundStats);
 
             player.getHudManager().setCustomHud(playerRef, new RoundStatsHud(playerRef, roundData));
