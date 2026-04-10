@@ -39,7 +39,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
     private static final String BUY3 = "BUY3";
     private static final String CONTINUE = "CONTINUE";
 
-    int itemChance = (int)(Math.random() * 8);
+    int itemChance = (int)(Math.random() * 16);
     int itemChance2 = (int)(Math.random() * 6);
     int itemChance3 = (int)(Math.random() * 6);
 
@@ -62,7 +62,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Armor_Copper_Head.png");
                 roundComponent.setItemCost1(5);
             }
-            case 1, 2 -> {
+            case 1, 2, 3 -> {
                 uiCommandBuilder.set("#RARITY1.TextSpans",
                         new Message(new FormattedMessage("COMMON", null, null, null, null,
                                 "#FFFFF", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
@@ -71,7 +71,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Armor_Iron_Head.png");
                 roundComponent.setItemCost1(12);
             }
-            case 3, 4, 5 -> {
+            case 4, 5, 6 -> {
                 uiCommandBuilder.set("#RARITY1.TextSpans",
                         new Message(new FormattedMessage("UNCOMMON", null, null, null, null,
                                 "#41DE28", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
@@ -80,7 +80,25 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Armor_Bronze_Head.png");
                 roundComponent.setItemCost1(15);
             }
-            case 6, 7 -> {
+            case 7, 8, 9 -> {
+                uiCommandBuilder.set("#RARITY1.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC1.TextSpans", Message.raw("ANCIENT STEEL ARMOUR"));
+                uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Armor_Steel_Ancient_Head.png");
+                roundComponent.setItemCost1(20);
+            }
+            case 10, 11 -> {
+                uiCommandBuilder.set("#RARITY1.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC1.TextSpans", Message.raw("THORIUM ARMOUR"));
+                uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Armor_Thorium_Head.png");
+                roundComponent.setItemCost1(25);
+            }
+            case 12, 13 -> {
                 uiCommandBuilder.set("#RARITY1.TextSpans",
                         new Message(new FormattedMessage("RARE", null, null, null, null,
                                 "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
@@ -88,6 +106,24 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 uiCommandBuilder.set("#DESC1.TextSpans", Message.raw("COBALT ARMOUR"));
                 uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Armor_Cobalt_Head.png");
                 roundComponent.setItemCost1(30);
+            }
+            case 14 -> {
+                uiCommandBuilder.set("#RARITY1.TextSpans",
+                        new Message(new FormattedMessage("EPIC", null, null, null, null,
+                                "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC1.TextSpans", Message.raw("ONYXIUM ARMOUR"));
+                uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Armor_Onyxium_Head.png");
+                roundComponent.setItemCost1(40);
+            }
+            case 15 -> {
+                uiCommandBuilder.set("#RARITY1.TextSpans",
+                        new Message(new FormattedMessage("EPIC", null, null, null, null,
+                                "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC1.TextSpans", Message.raw("MITHRIL ARMOUR"));
+                uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Armor_Mithril_Head.png");
+                roundComponent.setItemCost1(45);
             }
         }
         switch(itemChance2) {
@@ -179,12 +215,40 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                                 armour.setItemStackForSlot((short) 3, new ItemStack("Armor_Bronze_Legs"));
                                 CommandManager.get().handleCommand(playerRef, "say Bought 1x Bronze Armour Set");
                             }
+                            case 20 -> {
+                                armour.setItemStackForSlot((short) 0, new ItemStack("Armor_Steel_Ancient_Head"));
+                                armour.setItemStackForSlot((short) 1, new ItemStack("Armor_Steel_Ancient_Chest"));
+                                armour.setItemStackForSlot((short) 2, new ItemStack("Armor_Steel_Ancient_Hands"));
+                                armour.setItemStackForSlot((short) 3, new ItemStack("Armor_Steel_Ancient_Legs"));
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Ancient Steel Armour Set");
+                            }
+                            case 25 -> {
+                                armour.setItemStackForSlot((short) 0, new ItemStack("Armor_Thorium_Head"));
+                                armour.setItemStackForSlot((short) 1, new ItemStack("Armor_Thorium_Chest"));
+                                armour.setItemStackForSlot((short) 2, new ItemStack("Armor_Thorium_Hands"));
+                                armour.setItemStackForSlot((short) 3, new ItemStack("Armor_Thorium_Legs"));
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Thorium Armour Set");
+                            }
                             case 30 -> {
                                 armour.setItemStackForSlot((short) 0, new ItemStack("Armor_Cobalt_Head"));
                                 armour.setItemStackForSlot((short) 1, new ItemStack("Armor_Cobalt_Chest"));
                                 armour.setItemStackForSlot((short) 2, new ItemStack("Armor_Cobalt_Hands"));
                                 armour.setItemStackForSlot((short) 3, new ItemStack("Armor_Cobalt_Legs"));
                                 CommandManager.get().handleCommand(playerRef, "say Bought 1x Cobalt Armour Set");
+                            }
+                            case 40 -> {
+                                armour.setItemStackForSlot((short) 0, new ItemStack("Armor_Onyxium_Head"));
+                                armour.setItemStackForSlot((short) 1, new ItemStack("Armor_Onyxium_Chest"));
+                                armour.setItemStackForSlot((short) 2, new ItemStack("Armor_Onyxium_Hands"));
+                                armour.setItemStackForSlot((short) 3, new ItemStack("Armor_Onyxium_Legs"));
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Onyxium Armour Set");
+                            }
+                            case 45 -> {
+                                armour.setItemStackForSlot((short) 0, new ItemStack("Armor_Mithril_Head"));
+                                armour.setItemStackForSlot((short) 1, new ItemStack("Armor_Mithril_Chest"));
+                                armour.setItemStackForSlot((short) 2, new ItemStack("Armor_Mithril_Hands"));
+                                armour.setItemStackForSlot((short) 3, new ItemStack("Armor_Mithril_Legs"));
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Mithril Armour Set");
                             }
                         }
                     } else {

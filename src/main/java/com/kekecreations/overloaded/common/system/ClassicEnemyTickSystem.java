@@ -41,7 +41,29 @@ public class ClassicEnemyTickSystem extends DelayedEntitySystem<EntityStore> {
             if (roundData != null && roundData.getRoundType() == "classic") {
                 if (roundData.getRoundTimer() > 0 && !roundData.isTimerFrozen()) {
                     if (Objects.equals(roundData.getRoundType(), "classic")) {
-                        CommandManager.get().handleCommand(playerRef, "spawn_enemy Skeleton");
+                        if (roundData.getRoundCount() == 1) {
+                            CommandManager.get().handleCommand(playerRef, "spawn_enemy Skeleton");
+                        }
+                        if (roundData.getRoundCount() == 2) {
+                            CommandManager.get().handleCommand(playerRef, "spawn_enemy Zombie");
+                        }
+                        if (roundData.getRoundCount() == 3) {
+                            CommandManager.get().handleCommand(playerRef, "spawn_enemy Skeleton_Fighter");
+                        }
+                        if (roundData.getRoundCount() > 3) {
+                            int enemy = (int) (Math.random() * 3);
+                            switch (enemy) {
+                                case 0 -> {
+                                    CommandManager.get().handleCommand(playerRef, "spawn_enemy Zombie");
+                                }
+                                case 1 -> {
+                                    CommandManager.get().handleCommand(playerRef, "spawn_enemy Skeleton");
+                                }
+                                case 2 -> {
+                                    CommandManager.get().handleCommand(playerRef, "spawn_enemy Skeleton_Fighter");
+                                }
+                            }
+                        }
                     }
                 }
             }
