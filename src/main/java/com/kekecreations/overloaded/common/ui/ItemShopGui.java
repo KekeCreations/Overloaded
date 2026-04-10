@@ -44,7 +44,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
     //Armour
     int itemChance = (int)(Math.random() * 16);
     //Weapons
-    int itemChance2 = (int)(Math.random() * 6);
+    int itemChance2 = (int)(Math.random() * 29);
     //Healing & Totems
     int itemChance3 = (int)(Math.random() * 6);
 
@@ -60,7 +60,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#CONTINUE", EventData.of("OnButtonClicked", CONTINUE), false);
 
         switch(itemChance) {
-            case 0 -> {
+            case 0, 9 -> {
                 uiCommandBuilder.set("#RARITY1.TextSpans",
                         new Message(new FormattedMessage("COMMON", null, null, null, null,
                                 "#FFFFF", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
@@ -71,8 +71,8 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
             }
             case 1, 2, 3 -> {
                 uiCommandBuilder.set("#RARITY1.TextSpans",
-                        new Message(new FormattedMessage("COMMON", null, null, null, null,
-                                "#FFFFF", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                        new Message(new FormattedMessage("UNCOMMON", null, null, null, null,
+                                "#41DE28", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
                                 null, false,  null)));
                 uiCommandBuilder.set("#DESC1.TextSpans", Message.raw("IRON ARMOUR"));
                 uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Armor_Iron_Head.png");
@@ -87,7 +87,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Armor_Bronze_Head.png");
                 roundComponent.setItemCost1(15);
             }
-            case 7, 8, 9 -> {
+            case 7, 8 -> {
                 uiCommandBuilder.set("#RARITY1.TextSpans",
                         new Message(new FormattedMessage("RARE", null, null, null, null,
                                 "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
@@ -141,14 +141,187 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                                 null, false,  null)));
                 uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("FLAMETHROWER"));
                 uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Flamethrower_Goblin.png");
+                roundComponent.setItemCost2(50);
             }
-            case 1, 2, 3, 4, 5 -> {
+            case 1, 2, 3, 4 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("COMMON", null, null, null, null,
+                                "#FFFFF", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("COPPER SWORD"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Sword_Copper.png");
+                roundComponent.setItemCost2(8);
+            }
+            case 5, 6, 7, 8 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("COMMON", null, null, null, null,
+                                "#FFFFF", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("COPPER LONGSWORD"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Longsword_Copper.png");
+                roundComponent.setItemCost2(7);
+            }
+            case 9, 10, 11, 12 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("COMMON", null, null, null, null,
+                                "#FFFFF", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("COPPER BATTLEAXE"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Battleaxe_Copper.png");
+                roundComponent.setItemCost2(9);
+            }
+            case 13, 14, 15, 16 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("COMMON", null, null, null, null,
+                                "#FFFFF", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("COPPER MACE"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Mace_Copper.png");
+                roundComponent.setItemCost2(10);
+            }
+            case 17, 18, 19, 20 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("COMMON", null, null, null, null,
+                                "#FFFFF", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("COPPER DAGGERS"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Daggers_Copper.png");
+                roundComponent.setItemCost2(3);
+            }
+            case 21, 22, 23 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("UNCOMMON", null, null, null, null,
+                                "#41DE28", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("IRON SWORD"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Sword_Iron.png");
+                roundComponent.setItemCost2(12);
+            }
+            case 24, 25, 26 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("UNCOMMON", null, null, null, null,
+                                "#41DE28", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("IRON LONGSWORD"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Longsword_Iron.png");
+                roundComponent.setItemCost2(11);
+            }
+            case 27, 28, 29 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("UNCOMMON", null, null, null, null,
+                                "#41DE28", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("IRON BATTLEAXE"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Battleaxe_Iron.png");
+                roundComponent.setItemCost2(13);
+            }
+            case 30, 31, 32 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("UNCOMMON", null, null, null, null,
+                                "#41DE28", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("IRON MACE"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Mace_Iron.png");
+                roundComponent.setItemCost2(14);
+            }
+            case 33, 34, 35 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("UNCOMMON", null, null, null, null,
+                                "#41DE28", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("IRON DAGGERS"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Daggers_Iron.png");
+                roundComponent.setItemCost2(4);
+            }
+            case 36, 37 -> {
                 uiCommandBuilder.set("#RARITY2.TextSpans",
                         new Message(new FormattedMessage("RARE", null, null, null, null,
                                 "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
                                 null, false,  null)));
-                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("SLOWING TOTEM"));
-                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Furniture_Temple_Emerald_Statue.png");
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("THORIUM SWORD"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Sword_Thorium.png");
+                roundComponent.setItemCost2(16);
+            }
+            case 38, 39 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("THORIUM LONGSWORD"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Longsword_Thorium.png");
+                roundComponent.setItemCost2(15);
+            }
+            case 40, 41 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("THORIUM BATTLEAXE"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Battleaxe_Thorium.png");
+                roundComponent.setItemCost2(17);
+            }
+            case 42, 43 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("THORIUM MACE"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Mace_Thorium.png");
+                roundComponent.setItemCost2(18);
+            }
+            case 44, 45 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("THORIUM DAGGERS"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Daggers_Thorium.png");
+                roundComponent.setItemCost2(5);
+            }
+            case 46 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("EPIC", null, null, null, null,
+                                "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("ONYXIUM SWORD"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Sword_Onyxium.png");
+                roundComponent.setItemCost2(21);
+            }
+            case 47 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("EPIC", null, null, null, null,
+                                "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("ONYXIUM LONGSWORD"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Longsword_Onyxium.png");
+                roundComponent.setItemCost2(20);
+            }
+            case 48 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("EPIC", null, null, null, null,
+                                "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("ONYXIUM BATTLEAXE"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Battleaxe_Onyxium.png");
+                roundComponent.setItemCost2(22);
+            }
+            case 49 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("EPIC", null, null, null, null,
+                                "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("ONYXIUM MACE"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Mace_Onyxium.png");
+                roundComponent.setItemCost2(23);
+            }
+            case 50 -> {
+                uiCommandBuilder.set("#RARITY2.TextSpans",
+                        new Message(new FormattedMessage("EPIC", null, null, null, null,
+                                "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC2.TextSpans", Message.raw("ONYXIUM DAGGERS"));
+                uiCommandBuilder.set("#IMAGE2.AssetPath", "Icons/ItemsGenerated/Weapon_Daggers_Onyxium.png");
+                roundComponent.setItemCost2(6);
             }
         }
         switch(itemChance3) {
@@ -258,6 +431,112 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                                 CommandManager.get().handleCommand(playerRef, "say Bought 1x Mithril Armour Set");
                             }
                         }
+                    } else {
+                        CommandManager.get().handleCommand(playerRef, "say NOT ENOUGH GOLD FOR PURCHASE");
+                    }
+                }
+                if (BUY2.equals(data.buttonClicked)) {
+                    if (roundComponent.getGold() >= roundComponent.getItemCost2()) {
+                        ItemStack itemStack;
+                        roundComponent.setGold(roundComponent.getGold() - roundComponent.getItemCost2());
+
+                        switch (roundComponent.getItemCost2()) {
+                            case 50 -> {
+                                itemStack = new ItemStack("Flamethrower_Goblin", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Flamethrower");
+                            }
+                            case 3 -> {
+                                itemStack = new ItemStack("Weapon_Daggers_Copper", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Copper Daggers");
+                            }
+                            case 7 -> {
+                                itemStack = new ItemStack("Weapon_Longsword_Copper", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Copper Longsword");
+                            }
+                            case 8 -> {
+                                itemStack = new ItemStack("Weapon_Sword_Copper", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Copper Sword");
+                            }
+                            case 9 -> {
+                                itemStack = new ItemStack("Weapon_Battleaxe_Copper", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Copper Battleaxe");
+                            }
+                            case 10 -> {
+                                itemStack = new ItemStack("Weapon_Mace_Copper", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Copper Mace");
+                            }
+                            case 4 -> {
+                                itemStack = new ItemStack("Weapon_Daggers_Iron", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Iron Daggers");
+                            }
+                            case 11 -> {
+                                itemStack = new ItemStack("Weapon_Longsword_Iron", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Iron Longsword");
+                            }
+                            case 12 -> {
+                                itemStack = new ItemStack("Weapon_Sword_Iron", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Iron Sword");
+                            }
+                            case 13 -> {
+                                itemStack = new ItemStack("Weapon_Battleaxe_Iron", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Iron Battleaxe");
+                            }
+                            case 14 -> {
+                                itemStack = new ItemStack("Weapon_Mace_Iron", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Iron Mace");
+                            }
+                            case 5 -> {
+                                itemStack = new ItemStack("Weapon_Daggers_Thorium", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Thorium Daggers");
+                            }
+                            case 15 -> {
+                                itemStack = new ItemStack("Weapon_Longsword_Thorium", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Thorium Longsword");
+                            }
+                            case 16 -> {
+                                itemStack = new ItemStack("Weapon_Sword_Thorium", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Thorium Sword");
+                            }
+                            case 17 -> {
+                                itemStack = new ItemStack("Weapon_Battleaxe_Thorium", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Thorium Battleaxe");
+                            }
+                            case 18 -> {
+                                itemStack = new ItemStack("Weapon_Mace_Thorium", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Thorium Mace");
+                            }
+                            case 6 -> {
+                                itemStack = new ItemStack("Weapon_Daggers_Onyxium", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Onyxium Daggers");
+                            }
+                            case 20 -> {
+                                itemStack = new ItemStack("Weapon_Longsword_Onyxium", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Onyxium Longsword");
+                            }
+                            case 21 -> {
+                                itemStack = new ItemStack("Weapon_Sword_Onyxium", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Onyxium Sword");
+                            }
+                            case 22 -> {
+                                itemStack = new ItemStack("Weapon_Battleaxe_Onyxium", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Onyxium Battleaxe");
+                            }
+                            case 23 -> {
+                                itemStack = new ItemStack("Weapon_Mace_Onyxium", 1);
+                                CommandManager.get().handleCommand(playerRef, "say Bought 1x Onyxium Mace");
+                            }
+                            default -> {
+                                itemStack = new ItemStack("Bandage_Crude", 1);
+                            }
+                        }
+
+                        ItemStackTransaction itemStackTransaction = player.giveItem(itemStack, ref, store);
+                        ItemStack remainder = itemStackTransaction.getRemainder();
+
+                        if (remainder != null && !remainder.isEmpty()) {
+                            CommandManager.get().handleCommand(playerRef, "say NO INVENTORY SPACE");
+                        }
+
                     } else {
                         CommandManager.get().handleCommand(playerRef, "say NOT ENOUGH GOLD FOR PURCHASE");
                     }
