@@ -55,9 +55,8 @@ public class GameOverGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
             store.addComponent(ref, RoundComponent.getComponentType());
         }
         if (SETTINGS.equals(data.buttonClicked)) {
-            roundData.setArachnophobiaMode(!roundData.isArachnophobiaMode());
-            roundData.setRoundMenu("settings");
             player.getPageManager().setPage(ref, store, Page.None);
+            roundData.setRoundMenu("settings");
         }
         else if (PLAY_AGAIN.equals(data.buttonClicked)) {
             player.getPageManager().setPage(ref, store, Page.None);
@@ -82,6 +81,6 @@ public class GameOverGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
     public void onDismiss(@NotNull Ref<EntityStore> ref, @NotNull Store<EntityStore> store) {
         super.onDismiss(ref, store);
         wipeRound(store);
-        roundData.setRoundMenu("start");
+        roundData.setRoundMenu("game_over");
     }
 }
