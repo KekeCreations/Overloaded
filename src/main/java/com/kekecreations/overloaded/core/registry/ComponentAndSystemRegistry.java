@@ -24,7 +24,7 @@ public class ComponentAndSystemRegistry {
 
 
         registry.registerSystem(new PlayerUiTickSystem(roundComponent));
-        registry.registerSystem(new EnemyTickSystem(roundComponent));
+        registry.registerSystem(new ClassicEnemyTickSystem(roundComponent));
         registry.registerSystem(new RoundTickSystem(roundComponent));
         registry.registerSystem(new UiTickSystem(roundComponent));
         registry.registerSystem(new NPCDeathSystem());

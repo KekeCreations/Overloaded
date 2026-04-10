@@ -12,12 +12,12 @@ import com.kekecreations.overloaded.common.component.RoundComponent;
 import javax.annotation.Nonnull;
 import java.util.Objects;
 
-public class EnemyTickSystem extends DelayedEntitySystem<EntityStore> {
+public class ClassicEnemyTickSystem extends DelayedEntitySystem<EntityStore> {
 
     private final ComponentType<EntityStore, RoundComponent> roundStats;
 
 
-    public EnemyTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
+    public ClassicEnemyTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
         super(3.0f);
         this.roundStats = roundStats;
     }
@@ -38,7 +38,7 @@ public class EnemyTickSystem extends DelayedEntitySystem<EntityStore> {
         if (store.getComponent(ref, roundStats) != null) {
             RoundComponent roundData = store.getComponent(ref, roundStats);
             //Purely so Intellij doesn't annoy me
-            if (roundData != null ) {
+            if (roundData != null && roundData.getRoundType() == "classic") {
                 if (roundData.getRoundTimer() > 0 && !roundData.isTimerFrozen()) {
                     if (Objects.equals(roundData.getRoundType(), "classic")) {
                         CommandManager.get().handleCommand(playerRef, "spawn_enemy Skeleton");

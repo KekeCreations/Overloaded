@@ -81,7 +81,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 uiCommandBuilder.set("#DESC1.TextSpans", Message.raw("BRONZE ARMOUR"));
                 uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Armor_Bronze_Head.png");
                 uiCommandBuilder.set("#PRICE1.TextSpans", Message.raw("GOLD: 15"));
-                roundComponent.setItemCost1(12);
+                roundComponent.setItemCost1(15);
             }
             case 6, 7 -> {
                 uiCommandBuilder.set("#RARITY1.TextSpans",
