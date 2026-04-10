@@ -37,10 +37,15 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
     private static final String BUY1 = "BUY1";
     private static final String BUY2 = "BUY2";
     private static final String BUY3 = "BUY3";
+    private static final String BUY4 = "BUY4";
+    private static final String BUY5 = "BUY5";
     private static final String CONTINUE = "CONTINUE";
 
+    //Armour
     int itemChance = (int)(Math.random() * 16);
+    //Weapons
     int itemChance2 = (int)(Math.random() * 6);
+    //Healing & Totems
     int itemChance3 = (int)(Math.random() * 6);
 
     @Override
@@ -50,6 +55,8 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#BUY1", EventData.of("OnButtonClicked", BUY1), false);
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#BUY2", EventData.of("OnButtonClicked", BUY2), false);
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#BUY3", EventData.of("OnButtonClicked", BUY3), false);
+        uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#BUY4", EventData.of("OnButtonClicked", BUY4), false);
+        uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#BUY5", EventData.of("OnButtonClicked", BUY5), false);
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#CONTINUE", EventData.of("OnButtonClicked", CONTINUE), false);
 
         switch(itemChance) {
