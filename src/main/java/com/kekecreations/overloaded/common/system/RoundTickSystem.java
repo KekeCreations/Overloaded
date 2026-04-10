@@ -5,6 +5,8 @@ import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.DelayedEntitySystem;
 import com.hypixel.hytale.server.core.command.system.CommandManager;
 import com.hypixel.hytale.server.core.entity.entities.Player;
+import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
+import com.hypixel.hytale.server.core.modules.entitystats.asset.DefaultEntityStatTypes;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.kekecreations.overloaded.common.component.RoundComponent;
@@ -34,6 +36,11 @@ public class RoundTickSystem extends DelayedEntitySystem<EntityStore> {
         Player player = Objects.requireNonNull(store.getComponent(ref, Player.getComponentType()));
         PlayerRef playerRef = Objects.requireNonNull(store.getComponent(ref, PlayerRef.getComponentType()));
 
+        //Regen
+        EntityStatMap entityStat = store.getComponent(ref, EntityStatMap.getComponentType());
+        if (entityStat != null) {
+            entityStat.addStatValue(DefaultEntityStatTypes.getHealth(), 2.0F);
+        }
 
         if (store.getComponent(ref, roundStats) != null) {
             RoundComponent roundData = store.getComponent(ref, roundStats);

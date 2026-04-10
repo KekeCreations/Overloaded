@@ -81,7 +81,7 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
         if (PLAY_NORMAL_BUTTON_ID.equals(data.buttonClicked)) {
             player.getPageManager().setPage(ref, store, Page.None);
             roundData.setRoundType("classic");
-            roundData.setRoundTimer(60);
+            roundData.setRoundTimer(45);
             roundData.setRoundCount(1);
             roundData.freezeRoundTimer(false);
 

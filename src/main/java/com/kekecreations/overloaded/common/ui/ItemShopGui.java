@@ -60,7 +60,6 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                                 null, false,  null)));
                 uiCommandBuilder.set("#DESC1.TextSpans", Message.raw("COPPER ARMOUR"));
                 uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Armor_Copper_Head.png");
-                uiCommandBuilder.set("#PRICE1.TextSpans", Message.raw("GOLD: 5"));
                 roundComponent.setItemCost1(5);
             }
             case 1, 2 -> {
@@ -70,7 +69,6 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                                 null, false,  null)));
                 uiCommandBuilder.set("#DESC1.TextSpans", Message.raw("IRON ARMOUR"));
                 uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Armor_Iron_Head.png");
-                uiCommandBuilder.set("#PRICE1.TextSpans", Message.raw("GOLD: 12"));
                 roundComponent.setItemCost1(12);
             }
             case 3, 4, 5 -> {
@@ -80,7 +78,6 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                                 null, false,  null)));
                 uiCommandBuilder.set("#DESC1.TextSpans", Message.raw("BRONZE ARMOUR"));
                 uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Armor_Bronze_Head.png");
-                uiCommandBuilder.set("#PRICE1.TextSpans", Message.raw("GOLD: 15"));
                 roundComponent.setItemCost1(15);
             }
             case 6, 7 -> {
@@ -90,7 +87,6 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                                 null, false,  null)));
                 uiCommandBuilder.set("#DESC1.TextSpans", Message.raw("COBALT ARMOUR"));
                 uiCommandBuilder.set("#IMAGE1.AssetPath", "Icons/ItemsGenerated/Armor_Cobalt_Head.png");
-                uiCommandBuilder.set("#PRICE1.TextSpans", Message.raw("GOLD: 30"));
                 roundComponent.setItemCost1(30);
             }
         }
@@ -120,7 +116,6 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                                 null, false,  null)));
                 uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("CRUDE BANDAGE"));
                 uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Bandage_Crude.png");
-                uiCommandBuilder.set("#PRICE3.TextSpans", Message.raw("GOLD: 5"));
                 roundComponent.setItemCost3(5);
             }
             case 4, 5 -> {
@@ -130,10 +125,12 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                                 null, false,  null)));
                 uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("SLOWING TOTEM"));
                 uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Furniture_Temple_Emerald_Statue.png");
-                uiCommandBuilder.set("#PRICE3.TextSpans", Message.raw("GOLD: 10"));
                 roundComponent.setItemCost3(10);
             }
         }
+        uiCommandBuilder.set("#PRICE1.TextSpans", Message.raw("GOLD: " + roundComponent.getItemCost1()));
+        uiCommandBuilder.set("#PRICE2.TextSpans", Message.raw("GOLD: " + roundComponent.getItemCost2()));
+        uiCommandBuilder.set("#PRICE3.TextSpans", Message.raw("GOLD: " + roundComponent.getItemCost3()));
     }
 
     @Override
@@ -237,7 +234,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
     public void onDismiss(@NonNull Ref<EntityStore> ref, @NonNull Store<EntityStore> store) {
         super.onDismiss(ref, store);
         roundComponent.setRoundCount(roundComponent.getRoundCount() + 1);
-        roundComponent.setRoundTimer(60);
+        roundComponent.setRoundTimer(45);
         roundComponent.freezeRoundTimer(false);
         roundComponent.setRoundMenu("null");
         if (roundComponent.getRoundType() == "classic") {
