@@ -8,6 +8,7 @@ import com.hypixel.hytale.server.core.command.system.CommandContext;
 import com.hypixel.hytale.server.core.command.system.basecommands.AbstractTargetPlayerCommand;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
+import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
@@ -25,10 +26,7 @@ public class EndRoundCommand extends AbstractTargetPlayerCommand {
 
     @Override
     protected void execute(@NotNull CommandContext commandContext, @Nullable Ref<EntityStore> ref, @NotNull Ref<EntityStore> ref1, @NotNull PlayerRef playerRef, @NotNull World world, @NotNull Store<EntityStore> store) {
-        Player player = store.getComponent(ref, Player.getComponentType());
         RoundComponent roundComponent = store.getComponent(ref, RoundComponent.getComponentType());
-
-
         if (roundComponent != null) {
             roundComponent.freezeRoundTimer(true);
             roundComponent.setRoundMenu("item_shop");

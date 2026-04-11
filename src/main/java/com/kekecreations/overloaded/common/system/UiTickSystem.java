@@ -6,7 +6,9 @@ import com.hypixel.hytale.component.system.tick.DelayedEntitySystem;
 import com.hypixel.hytale.protocol.packets.interface_.CustomPageLifetime;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
+import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import com.kekecreations.overloaded.common.component.GoldAndKillsComponent;
 import com.kekecreations.overloaded.common.component.RoundComponent;
 import com.kekecreations.overloaded.common.ui.*;
 
@@ -38,6 +40,7 @@ public class UiTickSystem extends DelayedEntitySystem<EntityStore> {
 
         if (store.getComponent(ref, roundStats) != null) {
             RoundComponent roundData = store.getComponent(ref, roundStats);
+            GoldAndKillsComponent goldData = store.getComponent(ref, GoldAndKillsComponent.getComponentType());
 
             if (roundData.getRoundType() == "null") {
                 if (roundData.getRoundMenu() == "start") {
@@ -49,10 +52,23 @@ public class UiTickSystem extends DelayedEntitySystem<EntityStore> {
                     roundData.setRoundMenu("null");
                 }
             }
-            //works within round
-            if (roundData.getRoundMenu() == "game_over") {
-                player.getPageManager().openCustomPage(ref, store, new GameOverGui(playerRef, roundData, CustomPageLifetime.CanDismissOrCloseThroughInteraction));
-                roundData.setRoundMenu("null");
+            if (goldData != null) {
+                //works within round
+                if (roundData.getRoundMenu() == "game_over") {
+                    player.getPageManager().openCustomPage(ref, store, new GameOverGui(playerRef, roundData, goldData, CustomPageLifetime.CanDismissOrCloseThroughInteraction));
+                    roundData.setRoundMenu("null");
+
+                    Universe.get().getPlayers().forEach(playerRef1 -> {
+                        if (playerRef1.isValid() && playerRef1.getReference() != null) {
+                            Player player1 = store.getComponent(playerRef1.getReference(), Player.getComponentType());
+                            GoldAndKillsComponent goldData1 = store.getComponent(playerRef1.getReference(), GoldAndKillsComponent.getComponentType());
+                            RoundComponent roundComponent = store.getComponent(playerRef1.getReference(), RoundComponent.getComponentType());
+                            if (roundComponent == null && goldData1 != null && player1 != null) {
+                                player1.getPageManager().openCustomPage(playerRef1.getReference(), store, new OtherGameOverGui(playerRef1, goldData1, CustomPageLifetime.CanDismissOrCloseThroughInteraction));
+                            }
+                        }
+                    });
+                }
             }
         }
     }

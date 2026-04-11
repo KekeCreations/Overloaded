@@ -43,19 +43,10 @@ public class RoundComponent implements Component<EntityStore> {
 
     private boolean doubleGoldMode = false;
 
-    private int kills = 0;
-
-    private int gold = 0;
-
-    private int itemCost1 = 0;
-    private int itemCost2 = 0;
-    private int itemCost3 = 0;
-
     public RoundComponent() {}
 
     public RoundComponent(int roundTimer, int roundCount, String roundType, boolean freezeTimer, String roundMenu,
-                          boolean arachnophobiaMode, boolean doubleGoldMode, int kills, int gold, int itemCost1, int itemCost2,
-                          int itemCost3) {
+                          boolean arachnophobiaMode, boolean doubleGoldMode) {
         this.roundTimer = roundTimer;
         this.roundCount = roundCount;
         this.roundType = roundType;
@@ -63,16 +54,11 @@ public class RoundComponent implements Component<EntityStore> {
         this.roundMenu = roundMenu;
         this.arachnophobiaMode = arachnophobiaMode;
         this.doubleGoldMode = doubleGoldMode;
-        this.kills = kills;
-        this.gold = gold;
-        this.itemCost1 = itemCost1;
-        this.itemCost2 = itemCost2;
-        this.itemCost3 = itemCost3;
     }
 
     @Override
     public Component<EntityStore> clone() {
-        RoundComponent copy = new RoundComponent(roundTimer, roundCount, roundType, freezeTimer, roundMenu, arachnophobiaMode, doubleGoldMode, kills, gold, itemCost1, itemCost2, itemCost3);
+        RoundComponent copy = new RoundComponent(roundTimer, roundCount, roundType, freezeTimer, roundMenu, arachnophobiaMode, doubleGoldMode);
         copy.roundTimer = this.roundTimer;
         copy.roundCount = this.roundCount;
         copy.roundType = this.roundType;
@@ -110,25 +96,6 @@ public class RoundComponent implements Component<EntityStore> {
         return this.roundMenu;
     }
 
-    public int getKills() {
-        return this.kills;
-    }
-
-    public int getGold() {
-        return this.gold;
-    }
-
-    public int getItemCost1() {
-        return this.itemCost1;
-    }
-
-    public int getItemCost2() {
-        return this.itemCost2;
-    }
-
-    public int getItemCost3() {
-        return this.itemCost3;
-    }
 
     public void setRoundType(String newRoundType) {
         this.roundType = newRoundType;
@@ -156,26 +123,6 @@ public class RoundComponent implements Component<EntityStore> {
 
     public void setDoubleGoldMode(boolean bool) {
         this.doubleGoldMode = bool;
-    }
-
-    public void setKills(int value) {
-        this.kills = value;
-    }
-
-    public void setGold(int value) {
-        this.gold = value;
-    }
-
-    public void setItemCost1(int value) {
-        this.itemCost1 = value;
-    }
-
-    public void setItemCost2(int value) {
-        this.itemCost2 = value;
-    }
-
-    public void setItemCost3(int value) {
-        this.itemCost3 = value;
     }
 
     public void incrementRoundCount(int incrementAmount) {

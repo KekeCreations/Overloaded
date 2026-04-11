@@ -4,6 +4,7 @@ import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.entity.entities.player.hud.CustomUIHud;
 import com.hypixel.hytale.server.core.ui.builder.UICommandBuilder;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
+import com.kekecreations.overloaded.common.component.GoldAndKillsComponent;
 import com.kekecreations.overloaded.common.component.RoundComponent;
 import org.jspecify.annotations.NonNull;
 
@@ -11,17 +12,20 @@ public class RoundStatsHud extends CustomUIHud {
 
     RoundComponent roundData;
 
-    public RoundStatsHud(@NonNull PlayerRef playerRef, RoundComponent roundData) {
+    GoldAndKillsComponent goldData;
+
+    public RoundStatsHud(@NonNull PlayerRef playerRef, RoundComponent roundData, GoldAndKillsComponent goldData) {
         super(playerRef);
         this.roundData = roundData;
+        this.goldData = goldData;
     }
 
     @Override
     protected void build(@NonNull UICommandBuilder uiCommandBuilder) {
         uiCommandBuilder.append("Hud/round_stats.ui");
 
-        uiCommandBuilder.set("#KILLS.TextSpans", Message.raw("" + roundData.getKills()));
-        uiCommandBuilder.set("#GOLD.TextSpans", Message.raw("" + roundData.getGold()));
+        uiCommandBuilder.set("#KILLS.TextSpans", Message.raw("" + goldData.getKills()));
+        uiCommandBuilder.set("#GOLD.TextSpans", Message.raw("" + goldData.getGold()));
         //Show and hide UI
         if (!roundData.isTimerFrozen()) {
             uiCommandBuilder.set("#ROUNDCOUNT.TextSpans", Message.raw("Round " + roundData.getRoundCount()));

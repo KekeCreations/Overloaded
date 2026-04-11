@@ -8,6 +8,7 @@ import com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent;
 import com.hypixel.hytale.server.core.modules.entity.damage.DeathSystems;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
+import com.kekecreations.overloaded.common.component.GoldAndKillsComponent;
 import com.kekecreations.overloaded.common.component.RoundComponent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -27,16 +28,18 @@ public class NPCDeathSystem extends DeathSystems.OnDeathSystem {
             if (damage != null) {
                 if (damage.getSource() instanceof Damage.EntitySource entitySource) {
                     if (store.getArchetype(entitySource.getRef()).contains(Player.getComponentType())) {
-                        RoundComponent roundData = store.getComponent(entitySource.getRef(), RoundComponent.getComponentType());
+                        GoldAndKillsComponent goldData = store.getComponent(entitySource.getRef(), GoldAndKillsComponent.getComponentType());
+                        RoundComponent roundComponent = store.getComponent(entitySource.getRef(), RoundComponent.getComponentType());
 
                         int goldReward = (int) (Math.random() * 5);
-                        if (roundData != null) {
-                            roundData.setKills(roundData.getKills() + 1);
-                            if (roundData.isDoubleGoldMode()) {
-                                roundData.setGold(roundData.getGold() + (goldReward * 2));
-                            } else {
-                                roundData.setGold(roundData.getGold() + goldReward);
+                        if (goldData != null) {
+                            goldData.setKills(goldData.getKills() + 1);
+                            if (roundComponent != null) {
+                                if (roundComponent.isDoubleGoldMode()) {
+                                    goldData.setGold(goldData.getGold() + (goldReward));
+                                }
                             }
+                            goldData.setGold(goldData.getGold() + goldReward);
                             npc.remove();
                         }
                     }

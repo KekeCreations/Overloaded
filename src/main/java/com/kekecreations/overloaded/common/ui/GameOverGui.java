@@ -15,6 +15,7 @@ import com.hypixel.hytale.server.core.ui.builder.UIEventBuilder;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
+import com.kekecreations.overloaded.common.component.GoldAndKillsComponent;
 import com.kekecreations.overloaded.common.component.RoundComponent;
 import org.jetbrains.annotations.NotNull;
 
@@ -27,10 +28,12 @@ public class GameOverGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
     private static final String PLAY_AGAIN = "PLAYAGAIN";
     private static final String SETTINGS = "SETTINGS";
     RoundComponent roundData;
+    GoldAndKillsComponent goldData;
 
-    public GameOverGui(@Nonnull PlayerRef playerRef, RoundComponent roundComponent, @Nonnull CustomPageLifetime lifetime) {
+    public GameOverGui(@Nonnull PlayerRef playerRef, RoundComponent roundComponent, GoldAndKillsComponent goldData, @Nonnull CustomPageLifetime lifetime) {
         super(playerRef, lifetime, MenuWithButtonsData.CODEC);
         this.roundData = roundComponent;
+        this.goldData = goldData;
     }
 
     @Override
@@ -38,8 +41,8 @@ public class GameOverGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
         uiCommandBuilder.append("Pages/game_over.ui");
 
         uiCommandBuilder.set("#ROUNDS.TextSpans", Message.raw("ROUNDS SURVIVED: " + roundData.getRoundCount()));
-        uiCommandBuilder.set("#KILLS.TextSpans", Message.raw("ENEMIES KILLED: " + roundData.getKills()));
-        uiCommandBuilder.set("#GOLD.TextSpans", Message.raw("GOLD COLLECTED: " + roundData.getGold()));
+        uiCommandBuilder.set("#KILLS.TextSpans", Message.raw("ENEMIES KILLED: " + goldData.getKills()));
+        uiCommandBuilder.set("#GOLD.TextSpans", Message.raw("GOLD COLLECTED: " + goldData.getGold()));
 
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#PLAYAGAIN", EventData.of("OnButtonClicked", PLAY_AGAIN), false);
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#SETTINGS", EventData.of("OnButtonClicked", SETTINGS), false);
@@ -71,8 +74,8 @@ public class GameOverGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
         roundData.setRoundType("null");
         roundData.setRoundTimer(-1);
         roundData.freezeRoundTimer(true);
-        roundData.setKills(0);
-        roundData.setGold(0);
+        goldData.setKills(0);
+        goldData.setGold(0);
         roundData.setRoundCount(0);
         store.forEachEntityParallel(NPCEntity.getComponentType(), (index, archetypeChunk, commandBuffer) -> commandBuffer.removeEntity(archetypeChunk.getReferenceTo(index), RemoveReason.REMOVE));
     }
