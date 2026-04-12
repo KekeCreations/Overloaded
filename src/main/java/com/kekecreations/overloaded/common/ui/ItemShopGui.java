@@ -390,7 +390,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                                 "#41DE28", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
                                 null, false,  null)));
                 uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("3X BOMBS"));
-                uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Weapon_Bomb.png");
+                uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Weapon_Bomb_Fire_Goblin.png");
                 goldComponent.setItemCost3(12);
             }
             case 18, 19 -> {

@@ -37,6 +37,7 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
         RoundComponent roundData = store.getComponent(ref, RoundComponent.getComponentType());
 
         AtomicInteger fireball = new AtomicInteger((int) (Math.random() * 4));
+        AtomicInteger spear = new AtomicInteger((int) (Math.random() * 4));
         if (roundData != null) {
             for (PlayerRef oPlayerRef : Universe.get().getPlayers()) {
                 if (oPlayerRef.getReference() != null) {
@@ -50,6 +51,10 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                     Transform lookVec = TargetUtil.getLook(oPlayerRef.getReference(), commandBuffer);
                     Vector3d lookPosition = lookVec.getPosition();
                     Vector3f lookRotation = lookVec.getRotation();
+
+                    if (spear.get() == 1) {
+                        ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition, lookRotation);
+                    }
 
                     hotbar.forEach((slot, itemStack) -> {
                         if (itemStack.isValid()) {
@@ -65,7 +70,7 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                             }
 
                             if (itemStack.equals(new ItemStack("Fireball_Pet")) && fireball.get() == 1) {
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Fireball", lookPosition, lookRotation);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Fireball_Pet_Projectile", lookPosition, lookRotation);
                                 fireball.set((int) (Math.random() * 3));
                             }
                         }
