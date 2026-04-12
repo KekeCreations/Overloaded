@@ -1,6 +1,6 @@
 {
-  "Model": "Items/anvil_pet.blockymodel",
-  "Texture": "Items/anvil_pet.png",
+  "Model": "Items/Pets/Model/anvil_pet.blockymodel",
+  "Texture": "Items/Pets/Textures/anvil_pet.png",
   "Scale": 1,
   "ItemLevel": 1,
   "MaxStack": 1,

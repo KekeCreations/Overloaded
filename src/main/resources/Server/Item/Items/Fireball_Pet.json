@@ -1,0 +1,24 @@
+{
+  "Model": "Items/Pets/Model/cube.blockymodel",
+  "Texture": "Items/Pets/Textures/fireball_pet.png",
+  "Scale": 1,
+  "ItemLevel": 10,
+  "MaxStack": 1,
+  "Icon": "Icons/ItemsGenerated/Fireball_Pet.png",
+  "IconProperties": {
+    "Scale": 1.5,
+    "Rotation": [
+      0,
+      239,
+      0
+    ],
+    "Translation": [
+      0.5,
+      -4
+    ]
+  },
+  "TranslationProperties": {
+    "Name": "overloaded.Fireball_Pet.name",
+    "Description": "overloaded.Fireball_Pet.desc"
+  }
+}
