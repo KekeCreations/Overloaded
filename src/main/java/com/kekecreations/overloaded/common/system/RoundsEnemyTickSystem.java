@@ -13,13 +13,13 @@ import com.kekecreations.overloaded.common.component.RoundComponent;
 import javax.annotation.Nonnull;
 import java.util.Objects;
 
-public class ClassicEnemyTickSystem extends DelayedEntitySystem<EntityStore> {
+public class RoundsEnemyTickSystem extends DelayedEntitySystem<EntityStore> {
 
     private final ComponentType<EntityStore, RoundComponent> roundStats;
 
 
-    public ClassicEnemyTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
-        super(4.0F);
+    public RoundsEnemyTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
+        super(3.0F);
         this.roundStats = roundStats;
     }
 
@@ -39,7 +39,7 @@ public class ClassicEnemyTickSystem extends DelayedEntitySystem<EntityStore> {
         if (store.getComponent(ref, roundStats) != null) {
             RoundComponent roundData = store.getComponent(ref, roundStats);
             //Purely so Intellij doesn't annoy me
-            if (roundData != null && roundData.getRoundType() == "classic" || roundData.getRoundType() == "quick") {
+            if (roundData != null && roundData.getRoundType() == "rounds") {
                 if (roundData.getRoundTimer() > 0 && !roundData.isTimerFrozen()) {
                     for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
                         if (roundData.getRoundCount() == 1) {

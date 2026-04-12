@@ -46,6 +46,8 @@ public class EventRegistry {
                 if (Universe.get().getPlayerCount() == 1) {
                     RoundComponent roundComponent = store.ensureAndGetComponent(playerRef, RoundComponent.getComponentType());
                     roundComponent.freezeRoundTimer(true);
+                    roundComponent.setRoundTimer(9999);
+                    roundComponent.setRoundType("null");
                     player.getPageManager().openCustomPage(playerRef, store, new StartMenuGui(ref, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundComponent));
                 } else {
                     if (store.getComponent(playerRef, RoundComponent.getComponentType()) != null) {

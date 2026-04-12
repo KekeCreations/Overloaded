@@ -6,9 +6,7 @@ import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.protocol.GameMode;
 import com.hypixel.hytale.server.core.command.system.CommandContext;
 import com.hypixel.hytale.server.core.command.system.basecommands.AbstractTargetPlayerCommand;
-import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
-import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
@@ -31,10 +29,10 @@ public class EndRoundCommand extends AbstractTargetPlayerCommand {
             roundComponent.freezeRoundTimer(true);
             roundComponent.setRoundMenu("item_shop");
 
-            if (roundComponent.getRoundType() == "round_based") {
+            if (roundComponent.getRoundType() == "rounds") {
                 store.forEachEntityParallel(NPCEntity.getComponentType(), (index, archetypeChunk, commandBuffer) -> commandBuffer.removeEntity(archetypeChunk.getReferenceTo(index), RemoveReason.REMOVE));
             }
-            if (roundComponent.getRoundType() == "classic") {
+            if (roundComponent.getRoundType() == "classic" && roundComponent.getRoundType() == "quick") {
                 World.setTimeDilation(0.05F, store);
             }
         }

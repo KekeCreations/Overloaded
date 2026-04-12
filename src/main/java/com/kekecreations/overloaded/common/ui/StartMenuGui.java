@@ -50,6 +50,7 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#SETTINGS", EventData.of("OnButtonClicked", SETTINGS), false);
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#PLAYCLASSIC", EventData.of("OnButtonClicked", PLAY_NORMAL_BUTTON_ID), false);
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#PLAYQUICK", EventData.of("OnButtonClicked", PLAY_QUICK_BUTTON_ID), false);
+        uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#PLAYROUNDS", EventData.of("OnButtonClicked", PLAY_ROUNDS_BUTTON_ID), false);
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#QUIT", EventData.of("OnButtonClicked", QUIT_BUTTON_ID), false);
     }
 
@@ -67,8 +68,19 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
             player.getPageManager().setPage(ref, store, Page.None);
             roundData.setRoundCount(1);
             roundData.freezeRoundTimer(false);
+            store.forEachEntityParallel(NPCEntity.getComponentType(), (index, archetypeChunk, commandBuffer) -> commandBuffer.removeEntity(archetypeChunk.getReferenceTo(index), RemoveReason.REMOVE));
             if (PLAY_NORMAL_BUTTON_ID.equals(data.buttonClicked)) {
                 roundData.setRoundType("classic");
+                roundData.setRoundTimer(45);
+            }
+
+            if (PLAY_QUICK_BUTTON_ID.equals(data.buttonClicked)) {
+                roundData.setRoundType("quick");
+                roundData.setRoundTimer(25);
+            }
+
+            if (PLAY_ROUNDS_BUTTON_ID.equals(data.buttonClicked)) {
+                roundData.setRoundType("rounds");
                 roundData.setRoundTimer(45);
             }
 

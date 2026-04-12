@@ -588,11 +588,16 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
         RoundComponent roundComponent = store.getComponent(ref, RoundComponent.getComponentType());
         if (roundComponent != null) {
             roundComponent.setRoundCount(roundComponent.getRoundCount() + 1);
-            roundComponent.setRoundTimer(45);
             roundComponent.freezeRoundTimer(false);
             roundComponent.setRoundMenu("null");
-            if (roundComponent.getRoundType() == "classic") {
+            if (roundComponent.getRoundType() == "classic" || roundComponent.getRoundType() == "quick") {
                 World.setTimeDilation(1F, store);
+            }
+            if (roundComponent.getRoundType() == "classic" || roundComponent.getRoundType() == "rounds") {
+                roundComponent.setRoundTimer(45);
+            }
+            if (roundComponent.getRoundType() == "quick") {
+                roundComponent.setRoundTimer(25);
             }
         }
     }
