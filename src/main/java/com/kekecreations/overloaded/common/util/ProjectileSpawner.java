@@ -37,6 +37,7 @@ public class ProjectileSpawner {
             }
 
             if (sourceUuidComponent != null) {
+                projectileComponent.getProjectile().getDamage();
                 projectileComponent.shoot(holder, sourceUuidComponent.getUuid(), lookPosition.getX(), lookPosition.getY(), lookPosition.getZ(), lookRotation.getYaw(), lookRotation.getPitch());
                 commandBuffer.addEntity(holder, AddReason.SPAWN);
             }
