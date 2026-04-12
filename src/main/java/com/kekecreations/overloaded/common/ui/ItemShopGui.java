@@ -45,8 +45,12 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
     int itemChance = (int)(Math.random() * 16);
     //Weapons
     int itemChance2 = (int)(Math.random() * 29);
+    //Throwables & Shields
+    int itemChance3 = (int)(Math.random() * 20);
     //Healing & Totems
-    int itemChance3 = (int)(Math.random() * 6);
+    int itemChance4 = (int)(Math.random() * 8);
+    //Pets and Custom Items
+    int itemChance5 = (int)(Math.random() * 6);
 
     @Override
     public void build(@Nonnull Ref<EntityStore> ref, @Nonnull UICommandBuilder uiCommandBuilder, @Nonnull UIEventBuilder uiEventBuilder, @Nonnull Store<EntityStore> store) {
@@ -324,29 +328,117 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 goldComponent.setItemCost2(6);
             }
         }
+        //Shields and throwables
         switch(itemChance3) {
             case 0, 1, 2, 3 -> {
                 uiCommandBuilder.set("#RARITY3.TextSpans",
                         new Message(new FormattedMessage("COMMON", null, null, null, null,
                                 "#FFFFF", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
                                 null, false,  null)));
-                uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("CRUDE BANDAGE"));
-                uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Bandage_Crude.png");
-                goldComponent.setItemCost3(5);
+                uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("COPPER SHIELD"));
+                uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Weapon_Shield_Copper.png");
+                goldComponent.setItemCost3(10);
             }
-            case 4, 5 -> {
+            case 4, 5, 6 -> {
+                uiCommandBuilder.set("#RARITY3.TextSpans",
+                        new Message(new FormattedMessage("UNCOMMON", null, null, null, null,
+                                "#41DE28", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("IRON SHIELD"));
+                uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Weapon_Shield_Iron.png");
+                goldComponent.setItemCost3(15);
+            }
+            case 7, 8 -> {
                 uiCommandBuilder.set("#RARITY3.TextSpans",
                         new Message(new FormattedMessage("RARE", null, null, null, null,
                                 "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
                                 null, false,  null)));
-                uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("SLOWING TOTEM"));
-                uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Furniture_Temple_Emerald_Statue.png");
-                goldComponent.setItemCost3(10);
+                uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("THORIUM SHIELD"));
+                uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Weapon_Shield_Thorium.png");
+                goldComponent.setItemCost3(20);
+            }
+            case 9, 10 -> {
+                uiCommandBuilder.set("#RARITY3.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("COBALT SHIELD"));
+                uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Weapon_Shield_Cobalt.png");
+                goldComponent.setItemCost3(25);
+            }
+            case 11, 12 -> {
+                uiCommandBuilder.set("#RARITY3.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("CRUDE REPAIR KIT"));
+                uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Tool_Repair_Kit_Crude.png");
+                goldComponent.setItemCost3(5);
+            }
+            case 13, 14 -> {
+                uiCommandBuilder.set("#RARITY3.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("IRON REPAIR KIT"));
+                uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Tool_Repair_Kit_Iron.png");
+                goldComponent.setItemCost3(8);
+            }
+            case 15, 16, 17 -> {
+                uiCommandBuilder.set("#RARITY3.TextSpans",
+                        new Message(new FormattedMessage("UNCOMMON", null, null, null, null,
+                                "#41DE28", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("3X BOMBS"));
+                uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Weapon_Bomb.png");
+                goldComponent.setItemCost3(12);
+            }
+            case 18, 19 -> {
+                uiCommandBuilder.set("#RARITY3.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("3X POISON BOMBS"));
+                uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Weapon_Bomb_Potion_Poison.png");
+                goldComponent.setItemCost3(16);
+            }
+        }
+        //Healing and totems
+        switch(itemChance4) {
+            case 0, 1, 2, 3 -> {
+                uiCommandBuilder.set("#RARITY4.TextSpans",
+                        new Message(new FormattedMessage("COMMON", null, null, null, null,
+                                "#FFFFF", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC4.TextSpans", Message.raw("CRUDE BANDAGE"));
+                uiCommandBuilder.set("#IMAGE4.AssetPath", "Icons/ItemsGenerated/Bandage_Crude.png");
+                goldComponent.setItemCost4(5);
+            }
+            case 4, 5 -> {
+                uiCommandBuilder.set("#RARITY4.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC4.TextSpans", Message.raw("SLOWING TOTEM"));
+                uiCommandBuilder.set("#IMAGE4.AssetPath", "Icons/ItemsGenerated/Furniture_Temple_Emerald_Statue.png");
+                goldComponent.setItemCost4(10);
+            }
+            case 6, 7 -> {
+                uiCommandBuilder.set("#RARITY4.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC4.TextSpans", Message.raw("HEALING TOTEM"));
+                uiCommandBuilder.set("#IMAGE4.AssetPath", "Icons/ItemsGenerated/Healing_Totem.png");
+                goldComponent.setItemCost4(15);
             }
         }
         uiCommandBuilder.set("#PRICE1.TextSpans", Message.raw("GOLD: " + goldComponent.getItemCost1()));
         uiCommandBuilder.set("#PRICE2.TextSpans", Message.raw("GOLD: " + goldComponent.getItemCost2()));
         uiCommandBuilder.set("#PRICE3.TextSpans", Message.raw("GOLD: " + goldComponent.getItemCost3()));
+        uiCommandBuilder.set("#PRICE4.TextSpans", Message.raw("GOLD: " + goldComponent.getItemCost4()));
+        uiCommandBuilder.set("#PRICE5.TextSpans", Message.raw("GOLD: " + goldComponent.getItemCost5()));
+        uiCommandBuilder.set("#TOTALCOINS.TextSpans", Message.raw("TOTAL GOLD: " + goldComponent.getGold()));
     }
 
     @Override
@@ -546,9 +638,64 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                         goldComponent.setGold(goldComponent.getGold() - goldComponent.getItemCost3());
                         ItemStack itemStack;
                         switch (goldComponent.getItemCost3()) {
+                            case 10 -> {
+                                itemStack = new ItemStack("Weapon_Shield_Copper", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Copper Shield"));
+                            }
+                            case 15 -> {
+                                itemStack = new ItemStack("Weapon_Shield_Iron", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Iron Shield"));
+                            }
+                            case 20 -> {
+                                itemStack = new ItemStack("Weapon_Shield_Thorium", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Thorium Shield"));
+                            }
+                            case 25 -> {
+                                itemStack = new ItemStack("Weapon_Shield_Cobalt", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Cobalt Shield"));
+                            }
+                            case 5 -> {
+                                itemStack = new ItemStack("Tool_Repair_Kit_Crude", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Crude Repair Kit"));
+                            }
+                            case 12 -> {
+                                itemStack = new ItemStack("Weapon_Bomb", 3);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 3x Bombs"));
+                            }
+                            case 16 -> {
+                                itemStack = new ItemStack("Weapon_Bomb_Potion_Poison", 3);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 3x Poison Bombs"));
+                            }
+                            default -> {
+                                itemStack = new ItemStack("Bandage_Crude", 1);
+                            }
+                        }
+                        ItemStackTransaction itemStackTransaction = player.giveItem(itemStack, ref, store);
+                        ItemStack remainder = itemStackTransaction.getRemainder();
+
+                        if (remainder != null && !remainder.isEmpty()) {
+                            player.sendMessage(Message.raw(player.getDisplayName() + " NO INVENTORY SPACE"));
+                        }
+                    } else {
+                        player.sendMessage(Message.raw(player.getDisplayName() + " NOT ENOUGH GOLD FOR PURCHASE"));
+                    }
+                }
+                if (BUY4.equals(data.buttonClicked)) {
+                    if (goldComponent.getGold() >= goldComponent.getItemCost4()) {
+                        goldComponent.setGold(goldComponent.getGold() - goldComponent.getItemCost4());
+                        ItemStack itemStack;
+                        switch (goldComponent.getItemCost4()) {
                             case 5 -> {
                                 itemStack = new ItemStack("Bandage_Crude", 1);
                                 player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Crude Bandage"));
+                            }
+                            case 10 -> {
+                                itemStack = new ItemStack("Weapon_Deployable_Slowness_Totem", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Slowness Totem"));
+                            }
+                            case 15 -> {
+                                itemStack = new ItemStack("Weapon_Deployable_Healing_Totem", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Healing Totem"));
                             }
                             default -> {
                                 itemStack = new ItemStack("Bandage_Crude", 1);

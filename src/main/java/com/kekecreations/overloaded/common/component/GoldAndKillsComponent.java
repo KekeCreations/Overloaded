@@ -20,21 +20,25 @@ public class GoldAndKillsComponent implements Component<EntityStore> {
     private int itemCost1 = 0;
     private int itemCost2 = 0;
     private int itemCost3 = 0;
+    private int itemCost4 = 0;
+    private int itemCost5 = 0;
 
     public GoldAndKillsComponent() {}
 
     public GoldAndKillsComponent(int kills, int gold, int itemCost1, int itemCost2,
-                                 int itemCost3) {
+                                 int itemCost3, int itemCost4, int itemCost5) {
         this.kills = kills;
         this.gold = gold;
         this.itemCost1 = itemCost1;
         this.itemCost2 = itemCost2;
         this.itemCost3 = itemCost3;
+        this.itemCost4 = itemCost4;
+        this.itemCost5 = itemCost5;
     }
 
     @Override
     public Component<EntityStore> clone() {
-        GoldAndKillsComponent copy = new GoldAndKillsComponent(kills, gold, itemCost1, itemCost2, itemCost3);
+        GoldAndKillsComponent copy = new GoldAndKillsComponent(kills, gold, itemCost1, itemCost2, itemCost3, itemCost4, itemCost5);
         return copy;
     }
 
@@ -59,6 +63,14 @@ public class GoldAndKillsComponent implements Component<EntityStore> {
         return this.itemCost3;
     }
 
+    public int getItemCost4() {
+        return this.itemCost4;
+    }
+
+    public int getItemCost5() {
+        return this.itemCost5;
+    }
+
 
     public void setKills(int value) {
         this.kills = value;
@@ -78,6 +90,14 @@ public class GoldAndKillsComponent implements Component<EntityStore> {
 
     public void setItemCost3(int value) {
         this.itemCost3 = value;
+    }
+
+    public void setItemCost4(int value) {
+        this.itemCost4 = value;
+    }
+
+    public void setItemCost5(int value) {
+        this.itemCost5 = value;
     }
 
 
