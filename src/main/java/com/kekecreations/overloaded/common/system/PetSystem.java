@@ -70,6 +70,16 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                             }
 
                             if (itemStack.equals(new ItemStack("Fireball_Pet")) && fireball.get() == 1) {
+                                AtomicInteger count = new AtomicInteger();
+                                storage.forEach((slot2, itemStack2) -> {
+                                    if (itemStack2.equals(new ItemStack("Meteor_Pet"))) {
+                                        oPlayerRef.sendMessage(Message.raw("PET COUNTED"));
+                                        count.getAndIncrement();
+                                    }
+                                });
+                                for (int j = 0; j < count.get(); j++) {
+                                    ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Fireball_Pet_Projectile", lookPosition, lookRotation.rotateX(360 / count.floatValue()));
+                                }
                                 ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Fireball_Pet_Projectile", lookPosition, lookRotation);
                                 fireball.set((int) (Math.random() * 3));
                             }

@@ -20,5 +20,6 @@
   "TranslationProperties": {
     "Name": "overloaded.Anvil_Pet.name",
     "Description": "overloaded.Anvil_Pet.desc"
-  }
+  },
+  "Quality": "Common"
 }

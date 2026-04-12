@@ -2,7 +2,16 @@ Anvil_Pet.name= Anvil Pet
 Anvil_Pet.desc = Gives a repair kit every round!
 
 Fireball_Pet.name= Fireball Pet
-Fireball_Pet.desc = Shoots a flaming ball every 5 seconds!
+Fireball_Pet.desc = Shoots a flaming ball randomly
 
 Ice_Ball_Pet.name= Ice Ball Pet
-Ice_Ball_Pet.desc = Shoots an ice ball every 5 seconds!
+Ice_Ball_Pet.desc = Shoots an ice ball randomly
+
+Meteor_Pet.name= Meteor Pet
+Meteor_Pet.desc = Adds 1 fireball when in inventory
+
+Crimson_Dice.name= Crimson Dice
+Crimson_Dice.desc = Rolls a random number randomly for random events!
+
+Lucky_Dice.name= Lucky Dice
+Lucky_Dice.desc = Randomly boosts gold received from killing an enemy!

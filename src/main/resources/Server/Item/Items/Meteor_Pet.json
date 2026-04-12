@@ -1,10 +1,10 @@
 {
   "Model": "Items/Pets/Model/cube.blockymodel",
-  "Texture": "Items/Pets/Textures/fireball_pet.png",
+  "Texture": "Items/Pets/Textures/meteor_pet.png",
   "Scale": 1,
   "ItemLevel": 10,
   "MaxStack": 1,
-  "Icon": "Icons/ItemsGenerated/Fireball_Pet.png",
+  "Icon": "Icons/ItemsGenerated/Meteor_Pet.png",
   "IconProperties": {
     "Scale": 1.5,
     "Rotation": [
@@ -18,8 +18,8 @@
     ]
   },
   "TranslationProperties": {
-    "Name": "overloaded.Fireball_Pet.name",
-    "Description": "overloaded.Fireball_Pet.desc"
+    "Name": "overloaded.Meteor_Pet.name",
+    "Description": "overloaded.Meteor_Pet.desc"
   },
-  "Quality": "Epic"
+  "Quality": "Rare"
 }
