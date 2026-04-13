@@ -27,3 +27,5 @@ Broken_Shield.desc = Slowly charges Signature Energy when in inventory
 
 King_Shield.name= Broken Shield
 King_Shield.desc = Charges Signature Energy when in inventory
+
+chest.name = Chest

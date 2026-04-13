@@ -39,29 +39,54 @@ public class NPCDeathSystem extends DeathSystems.OnDeathSystem {
                         if (goldData != null) {
                             goldData.setKills(goldData.getKills() + 1);
 
+                            if (Objects.equals(npc.getNPCTypeId(), "Chest")) {
+                                int chestReward = (int) (Math.random() * 5);
+                                switch (chestReward) {
+                                    case 0 -> {
+                                        goldData.setGold(goldData.getGold() + 8);
+                                        player.sendMessage(Message.raw("8 gold found in the chest!"));
+                                    }
+                                    case 1 -> {
+                                        goldData.setGold(goldData.getGold() + 6);
+                                        player.sendMessage(Message.raw("6 gold found in the chest!"));
+                                    }
+                                    case 2 -> {
+                                        goldData.setGold(goldData.getGold() + 5);
+                                        player.sendMessage(Message.raw("5 gold found in the chest!"));
+                                    }
+                                    case 3 -> {
+                                        goldData.setGold(goldData.getGold() + 7);
+                                        player.sendMessage(Message.raw("7 gold found in the chest!"));
+                                    }
+                                    case 4 -> {
+                                        player.sendMessage(Message.raw("Nothing found in the chest!"));
+                                    }
+                                }
+                            }
+
                             if (Objects.equals(npc.getNPCTypeId(), "Skeleton_Burnt_Archer")) {
                                 goldData.setGold(goldData.getGold() + 5);
-                                player.sendMessage(Message.raw("5 gold coins reward received"));
+                                player.sendMessage(Message.raw("Reward received"));
                             }
                             if (Objects.equals(npc.getNPCTypeId(), "Skeleton_Burnt_Lancer")) {
                                 goldData.setGold(goldData.getGold() + 6);
-                                player.sendMessage(Message.raw("6 gold coins reward received"));
+                                player.sendMessage(Message.raw("Reward received"));
                             }
                             if (Objects.equals(npc.getNPCTypeId(), "Skeleton_Burnt_Knight")) {
                                 goldData.setGold(goldData.getGold() + 8);
-                                player.sendMessage(Message.raw("8 gold coins reward received"));
+                                player.sendMessage(Message.raw("Reward received"));
                             }
                             if (Objects.equals(npc.getNPCTypeId(), "Skeleton_Burnt_Gunner")) {
                                 goldData.setGold(goldData.getGold() + 5);
-                                player.sendMessage(Message.raw("5 gold coins reward received"));
+                                player.sendMessage(Message.raw("Reward received"));
                             }
                             if (Objects.equals(npc.getNPCTypeId(), "Skeleton_Burnt_Alchemist")) {
                                 goldData.setGold(goldData.getGold() + 5);
-                                player.sendMessage(Message.raw("5 gold coins reward received"));
+                                player.sendMessage(Message.raw("Reward received"));
                             }
                             if (Objects.equals(npc.getNPCTypeId(), "Skeleton_Burnt_Praetorian")) {
                                 goldData.setGold(goldData.getGold() + 10);
-                                player.sendMessage(Message.raw("10 gold coins reward received"));
+                                player.sendMessage(Message.raw("Reward received"));
                             }
 
 

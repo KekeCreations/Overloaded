@@ -1,0 +1,43 @@
+{
+  "Model": "NPC/Model/chest.blockymodel",
+  "Texture": "NPC/Texture/chest.png",
+  "AnimationSets": {
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/Animation/animation.death.chest.blockyanim",
+          "Speed": 1,
+          "Looping": false
+        }
+      ]
+    }
+  },
+  "HitBox": {
+    "Min": {
+      "X": -0.6,
+      "Y": 0,
+      "Z": -0.6
+    },
+    "Max": {
+      "X": 0.6,
+      "Y": 2.3,
+      "Z": 0.6
+    }
+  },
+  "EyeHeight": 1.9,
+  "MinScale": 1.45,
+  "MaxScale": 1.45,
+  "Icon": "Icons/ModelsGenerated/Chest.png",
+  "IconProperties": {
+    "Scale": 0.3,
+    "Rotation": [
+      0,
+      -45,
+      0
+    ],
+    "Translation": [
+      -1,
+      -21
+    ]
+  }
+}

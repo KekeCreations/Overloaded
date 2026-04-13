@@ -93,7 +93,7 @@
     "ApplySeparation": {
       "Compute": "ApplySeparation"
     },
-    "IsMemory": true,
+    "IsMemory": false,
     "MemoriesCategory": "Undead",
     "MemoriesNameOverride": "Skeleton_Fighter",
     "BreathesInWater": true,

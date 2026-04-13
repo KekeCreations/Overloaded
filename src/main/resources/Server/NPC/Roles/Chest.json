@@ -1,0 +1,23 @@
+{
+  "Type": "Generic",
+  "KnockbackScale": 0,
+  "MotionControllerList": [
+    {
+      "Type": "Walk"
+    }
+  ],
+  "Appearance": "Chest",
+  "MaxHealth": {
+    "Compute": "MaxHealth"
+  },
+  "Parameters": {
+    "MaxHealth": {
+      "Value": 30,
+      "Description": "Max health for the NPC"
+    }
+  },
+  "Instructions": [
+    {}
+  ],
+  "NameTranslationKey": "overloaded.chest.name"
+}
