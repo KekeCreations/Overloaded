@@ -65,6 +65,24 @@ public class RoundsEnemyTickSystem extends DelayedEntitySystem<EntityStore> {
                                 }
                             }
                         }
+                        if (roundData.getRoundCount() == 5) {
+                            if (roundData.getRoundTimer() == 40) {
+                                CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Skeleton");
+                            } else {
+                                int enemy = (int) (Math.random() * 3);
+                                switch (enemy) {
+                                    case 0 -> {
+                                        CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Archer");
+                                    }
+                                    case 1 -> {
+                                        CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton");
+                                    }
+                                    case 2 -> {
+                                        CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Fighter");
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

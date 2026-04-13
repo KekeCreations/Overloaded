@@ -14,6 +14,7 @@ import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.Universe;
+import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.kekecreations.overloaded.common.component.GoldAndKillsComponent;
 import com.kekecreations.overloaded.common.component.RoundComponent;
@@ -54,6 +55,7 @@ public class EventRegistry {
                         store.removeComponent(playerRef, RoundComponent.getComponentType());
                     }
                 }
+                World.setTimeDilation(1F, store);
                 GoldAndKillsComponent goldComponent = store.ensureAndGetComponent(playerRef, GoldAndKillsComponent.getComponentType());
                 goldComponent.setGold(0);
                 goldComponent.setKills(0);

@@ -32,9 +32,6 @@ public class EndRoundCommand extends AbstractTargetPlayerCommand {
             if (roundComponent.getRoundType() == "rounds") {
                 store.forEachEntityParallel(NPCEntity.getComponentType(), (index, archetypeChunk, commandBuffer) -> commandBuffer.removeEntity(archetypeChunk.getReferenceTo(index), RemoveReason.REMOVE));
             }
-            if (roundComponent.getRoundType() == "classic" && roundComponent.getRoundType() == "quick") {
-                World.setTimeDilation(0.05F, store);
-            }
         }
     }
 }
