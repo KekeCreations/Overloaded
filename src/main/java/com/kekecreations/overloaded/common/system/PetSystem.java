@@ -19,6 +19,7 @@ import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.core.util.TargetUtil;
+import com.kekecreations.overloaded.common.component.GoldAndKillsComponent;
 import com.kekecreations.overloaded.common.component.RoundComponent;
 import com.kekecreations.overloaded.common.util.ProjectileSpawner;
 import org.jspecify.annotations.NonNull;
@@ -42,6 +43,7 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
         AtomicInteger iceball = new AtomicInteger((int) (Math.random() * 2));
         AtomicInteger spear = new AtomicInteger((int) (Math.random() * 4));
         AtomicInteger crimson_dice = new AtomicInteger((int) (Math.random() * 100));
+        AtomicInteger dice = new AtomicInteger((int) (Math.random() * 80));
         if (roundData != null) {
             for (PlayerRef oPlayerRef : Universe.get().getPlayers()) {
                 if (oPlayerRef.getReference() != null) {
@@ -53,6 +55,7 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                     ItemContainer storage = storageComponent.getInventory();
 
                     EntityStatMap statMap = store.getComponent(oPlayerRef.getReference(), EntityStatMap.getComponentType());
+                    GoldAndKillsComponent goldData = store.getComponent(oPlayerRef.getReference(), GoldAndKillsComponent.getComponentType());
 
                     Transform lookVec = TargetUtil.getLook(oPlayerRef.getReference(), commandBuffer);
                     Vector3d lookPosition = lookVec.getPosition();
@@ -94,6 +97,16 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                                 ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Ice_Ball_Pet_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 3F));
                                 ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Ice_Ball_Pet_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 2F));
                                 iceball.set((int) (Math.random() * 3));
+                            }
+
+                            if (statMap != null) {
+                                if (itemStack.equals(new ItemStack("Lucky_Dice"))) {
+                                    if (statMap.get(DefaultEntityStatTypes.getHealth()).get() <= 20F) {
+                                        statMap.resetStatValue(DefaultEntityStatTypes.getHealth());
+                                        hotbar.removeItemStack(new ItemStack("Lucky_Dice"));
+
+                                    }
+                                }
                             }
                         }
                     });
@@ -165,6 +178,39 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                                 }
                                 if (itemStack.equals(new ItemStack("King_Shield"))) {
                                     statMap.addStatValue(DefaultEntityStatTypes.getSignatureEnergy(), 0.35F);
+                                }
+                            }
+
+                            if (statMap != null && goldData != null) {
+                                if (itemStack.equals(new ItemStack("Dice")) && dice.get() == 1) {
+                                    int diceRoll = (int) (Math.random() * 5);
+                                    switch (diceRoll) {
+                                        case 0 -> {
+                                            statMap.resetStatValue(DefaultEntityStatTypes.getSignatureEnergy());
+                                            oPlayerRef.sendMessage(Message.raw("Dice rolled a 1, Weapon ability is now fully charged"));
+                                        }
+                                        case 1 -> {
+                                            statMap.resetStatValue(DefaultEntityStatTypes.getHealth());
+                                            oPlayerRef.sendMessage(Message.raw("Dice rolled a 2, Health is fully restocked!"));
+                                        }
+                                        case 2 -> {
+                                            goldData.setGold(goldData.getGold() + 5);
+                                            oPlayerRef.sendMessage(Message.raw("Dice rolled a 3, Enjoy 5 golden coins!"));
+                                        }
+                                        case 3 -> {
+                                            CommandManager.get().handleCommand(oPlayerRef, "spawn_enemy Skeleton_Burnt_Praetorian");
+                                            CommandManager.get().handleCommand(oPlayerRef, "spawn_enemy Skeleton_Burnt_Praetorian");
+                                            oPlayerRef.sendMessage(Message.raw("Dice rolled a 4, Danger ahead!"));
+                                        }
+                                        case 4 -> {
+                                            statMap.setStatValue(DefaultEntityStatTypes.getHealth(), 50F);
+                                            oPlayerRef.sendMessage(Message.raw("Dice rolled a 5, Health crit!"));
+                                        }
+                                        case 5 -> {
+                                            goldData.setGold(goldData.getGold() + 30);
+                                            oPlayerRef.sendMessage(Message.raw("Dice rolled a 6, Enjoy 30 golden coins!"));
+                                        }
+                                    }
                                 }
                             }
                         }

@@ -14,10 +14,10 @@ Crimson_Dice.name= Crimson Dice
 Crimson_Dice.desc = Spawns random burnt enemies when in inventory, when these enemies are defeated the player is rewarded with extra gold!
 
 Lucky_Dice.name= Lucky Dice
-Lucky_Dice.desc = Randomly boosts gold received from killing an enemy!
+Lucky_Dice.desc = Cheats death when in your hotbar!
 
 Dice.name= Dice
-Dice.desc = Rolls a random number randomly for random events!
+Dice.desc = Rolls a random number for random events!
 
 The_Core.name= The Core
 The_Core.desc = WIP

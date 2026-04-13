@@ -505,7 +505,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                                 null, false,  null)));
                 uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("LUCKY DICE"));
                 uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Lucky_Dice.png");
-                goldComponent.setItemCost5(40);
+                goldComponent.setItemCost5(150);
             }
             case 20 -> {
                 uiCommandBuilder.set("#RARITY5.TextSpans",
@@ -828,7 +828,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                                 itemStack = new ItemStack("Fireball_Pet", 1);
                                 player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Fireball Pet"));
                             }
-                            case 40 -> {
+                            case 150 -> {
                                 itemStack = new ItemStack("Lucky_Dice", 1);
                                 player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Lucky Dice"));
                             }

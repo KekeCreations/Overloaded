@@ -46,31 +46,31 @@ public class SpawnNPCFarCommand extends AbstractTargetPlayerCommand {
                     case 0 -> {
                         vector = new Vector3d(
                                 transformComponent.getPosition().getX() + positiveX,
-                                transformComponent.getPosition().getY() + 1,
+                                transformComponent.getPosition().getY() + 5,
                                 transformComponent.getPosition().getZ() + positiveZ);
                     }
                     case 1 -> {
                         vector = new Vector3d(
                                 transformComponent.getPosition().getX() + negativeX,
-                                transformComponent.getPosition().getY() + 1,
+                                transformComponent.getPosition().getY() + 5,
                                 transformComponent.getPosition().getZ() + negativeZ);
                     }
                     case 2 -> {
                         vector = new Vector3d(
                                 transformComponent.getPosition().getX() + positiveX,
-                                transformComponent.getPosition().getY() + 1,
+                                transformComponent.getPosition().getY() + 5,
                                 transformComponent.getPosition().getZ() + negativeZ);
                     }
                     case 3 -> {
                         vector = new Vector3d(
                                 transformComponent.getPosition().getX() + negativeX,
-                                transformComponent.getPosition().getY() + 1,
+                                transformComponent.getPosition().getY() + 5,
                                 transformComponent.getPosition().getZ() + positiveZ);
                     }
                     default -> {
                         vector = new Vector3d(
                                 transformComponent.getPosition().getX() + positiveX,
-                                transformComponent.getPosition().getY() + 1,
+                                transformComponent.getPosition().getY() + 5,
                                 transformComponent.getPosition().getZ() + positiveZ);
                     }
                 }

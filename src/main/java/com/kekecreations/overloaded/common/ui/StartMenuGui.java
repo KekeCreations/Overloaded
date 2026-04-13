@@ -11,6 +11,9 @@ import com.hypixel.hytale.protocol.packets.interface_.Page;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.entity.entities.player.pages.InteractiveCustomUIPage;
+import com.hypixel.hytale.server.core.inventory.InventoryComponent;
+import com.hypixel.hytale.server.core.inventory.ItemStack;
+import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
 import com.hypixel.hytale.server.core.modules.entitystats.asset.DefaultEntityStatTypes;
 import com.hypixel.hytale.server.core.ui.builder.EventData;
@@ -117,6 +120,35 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
     @Override
     public void onDismiss(@NonNull Ref<EntityStore> ref, @NonNull Store<EntityStore> store) {
         super.onDismiss(ref, store);
+        InventoryComponent hotbarComponent = store.getComponent(ref, InventoryComponent.getComponentTypeById(-1));
+        InventoryComponent armourComponent = store.getComponent(ref, InventoryComponent.getComponentTypeById(-3));
+        InventoryComponent utilityComponent = store.getComponent(ref, InventoryComponent.getComponentTypeById(-5));
+        InventoryComponent backpackComponent = store.getComponent(ref, InventoryComponent.getComponentTypeById(-9));
+        InventoryComponent storageComponent = store.getComponent(ref, InventoryComponent.getComponentTypeById(-2));
+        InventoryComponent toolComponent = store.getComponent(ref, InventoryComponent.getComponentTypeById(-8));
+
+        ItemContainer hotbar = hotbarComponent.getInventory();
+        ItemContainer armour = armourComponent.getInventory();
+        ItemContainer utility = utilityComponent.getInventory();
+        ItemContainer backpack = backpackComponent.getInventory();
+        ItemContainer storage = storageComponent.getInventory();
+        ItemContainer tool = toolComponent.getInventory();
+
+        if (hotbar != null && armour != null && utility != null && backpack != null && storage != null && tool != null) {
+            hotbar.clear();
+            armour.clear();
+            utility.clear();
+            backpack.clear();
+            storage.clear();
+            tool.clear();
+            hotbar.setItemStackForSlot((short) 1, new ItemStack("Weapon_Battleaxe_Copper"));
+            hotbar.setItemStackForSlot((short) 2, new ItemStack("Potion_Health", 3));
+
+            armour.setItemStackForSlot((short) 0, new ItemStack("Armor_Copper_Head"));
+            armour.setItemStackForSlot((short) 1, new ItemStack("Armor_Copper_Chest"));
+            armour.setItemStackForSlot((short) 2, new ItemStack("Armor_Copper_Hands"));
+            armour.setItemStackForSlot((short) 3, new ItemStack("Armor_Copper_Legs"));
+        }
         if (Objects.equals(roundComponent.getRoundType(), "null")) {
             roundComponent.setRoundMenu("start");
         }
