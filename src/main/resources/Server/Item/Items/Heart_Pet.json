@@ -1,0 +1,25 @@
+{
+  "Model": "Items/Pets/Model/heart.blockymodel",
+  "Texture": "Items/Pets/Textures/heart_pet.png",
+  "Scale": 1,
+  "ItemLevel": 10,
+  "MaxStack": 1,
+  "Icon": "Icons/ItemsGenerated/Heart_Pet.png",
+  "IconProperties": {
+    "Scale": 1,
+    "Rotation": [
+      0,
+      34,
+      23
+    ],
+    "Translation": [
+      3,
+      -8
+    ]
+  },
+  "TranslationProperties": {
+    "Name": "overloaded.Heart_Pet.name",
+    "Description": "overloaded.Heart_Pet.desc"
+  },
+  "Quality": "Uncommon"
+}

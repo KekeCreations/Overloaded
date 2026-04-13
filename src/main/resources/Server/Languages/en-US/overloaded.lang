@@ -20,12 +20,15 @@ Dice.name= Dice
 Dice.desc = Rolls a random number for random events!
 
 The_Core.name= The Core
-The_Core.desc = WIP
+The_Core.desc = In Inventory: +0.5 Health  -0.5 Stamina
 
 Broken_Shield.name= Broken Shield
 Broken_Shield.desc = In Inventory: +0.05 Signature Energy Recharge  +0.025 Health Regeneration
 
 King_Shield.name= Broken Shield
 King_Shield.desc = In Inventory: +0.35 Signature Energy Recharge  -0.025 Health
+
+Heart_Pet.name= Broken Shield
+Heart_Pet.desc = In Inventory: +0.05 Health
 
 chest.name = Chest
