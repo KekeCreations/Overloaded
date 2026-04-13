@@ -54,8 +54,22 @@ public class InstantTickSystem extends EntityTickingSystem<EntityStore> {
                     if (goldData1 != null && player1 != null) {
                         player1.getHudManager().setCustomHud(playerRef1, new RoundStatsHud(playerRef1, roundData, goldData1));
                     }
+                    if (roundData.getRoundCount() == 5) {
+                        if (roundData.getRoundTimer() == 40) {
+                            roundData.setRoundTimer(39);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Fighter");
+                        }
+                    }
+                    if (roundData.getRoundCount() == 6) {
+                        if (roundData.getRoundTimer() == 40) {
+                            roundData.setRoundTimer(39);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Burnt");
+                        }
+                    }
                 }
             });
+
+
             if (goldData != null) {
                 if (roundData.getRoundMenu() == "item_shop") {
                     player.getPageManager().openCustomPage(ref, store, new ItemShopGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, goldData));

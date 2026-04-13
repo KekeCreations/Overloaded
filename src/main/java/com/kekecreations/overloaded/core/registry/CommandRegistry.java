@@ -12,6 +12,7 @@ public class CommandRegistry {
         javaPlugin.getCommandRegistry().registerCommand(new ResetPosCommand());
         javaPlugin.getCommandRegistry().registerCommand(new RemoveItemsCommand());
         javaPlugin.getCommandRegistry().registerCommand(new SpawnNPCFarCommand());
+        javaPlugin.getCommandRegistry().registerCommand(new SpawnBossForRoundCommand());
 
     }
 }
