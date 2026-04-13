@@ -5,11 +5,6 @@ Group #TIMERGROUP {
   Group #RIGHTGOLD {
     LayoutMode: Right;
     Anchor: (Right: 70);
-    Label #GOLD {
-      Anchor: (Top: 5);
-      Text: "0";
-      Style: (TextColor: #ffffff, FontSize: 40, RenderBold: true, VerticalAlignment: Center);
-    }
     Group #GOLDGROUP {
       Anchor: (Width: 60, Height: 60);
       Group #GOLDIMGROUP {
@@ -22,15 +17,15 @@ Group #TIMERGROUP {
         }
       }
     }
+    Label #GOLD {
+      Anchor: (Top: 5);
+      Text: "0";
+      Style: (TextColor: #ffffff, FontSize: 40, RenderBold: true, VerticalAlignment: Center);
+    }
   }
   Group #RIGHTKILLS {
     LayoutMode: Right;
     Anchor: (Right: 70, Top: 200);
-    Label #KILLS {
-      Anchor: (Top: 3);
-      Text: "0";
-      Style: (TextColor: #ffffff, FontSize: 40, RenderBold: true, VerticalAlignment: Center);
-    }
     Group #KILLSGROUP {
       Anchor: (Width: 60, Height: 60);
       Group #KILLSIMGROUP {
@@ -42,6 +37,11 @@ Group #TIMERGROUP {
           AssetPath: "UI/Custom/Pages/Memories/categories/UndeadComplete@2x.png";
         }
       }
+    }
+    Label #KILLS {
+      Anchor: (Top: 3);
+      Text: "0";
+      Style: (TextColor: #ffffff, FontSize: 40, RenderBold: true, VerticalAlignment: Center);
     }
   }
   Group #MAIN {
