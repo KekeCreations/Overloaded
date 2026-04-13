@@ -1,0 +1,25 @@
+{
+  "Model": "Items/Weapons/Throwing_Knife/Kunai.blockymodel",
+  "Texture": "Items/Weapons/Throwing_Knife/Kunai_Texture.png",
+  "Scale": 1,
+  "ItemLevel": 10,
+  "MaxStack": 1,
+  "Icon": "Icons/ItemsGenerated/Kunai_Pack.png",
+  "IconProperties": {
+    "Scale": 0.5,
+    "Rotation": [
+      0,
+      226,
+      0
+    ],
+    "Translation": [
+      1,
+      -27
+    ]
+  },
+  "TranslationProperties": {
+    "Name": "overloaded.Kunai_Pack.name",
+    "Description": "overloaded.Kunai_Pack.desc"
+  },
+  "Quality": "Uncommon"
+}

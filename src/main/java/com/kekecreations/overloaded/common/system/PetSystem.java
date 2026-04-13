@@ -41,9 +41,12 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
 
         AtomicInteger fireball = new AtomicInteger((int) (Math.random() * 6));
         AtomicInteger iceball = new AtomicInteger((int) (Math.random() * 2));
+        AtomicInteger kunai = new AtomicInteger((int) (Math.random() * 2));
+        AtomicInteger acid_orb = new AtomicInteger((int) (Math.random() * 3));
         AtomicInteger spear = new AtomicInteger((int) (Math.random() * 4));
         AtomicInteger crimson_dice = new AtomicInteger((int) (Math.random() * 100));
         AtomicInteger dice = new AtomicInteger((int) (Math.random() * 80));
+
         if (roundData != null) {
             for (PlayerRef oPlayerRef : Universe.get().getPlayers()) {
                 if (oPlayerRef.getReference() != null) {
@@ -132,6 +135,23 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                                 ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Ice_Ball_Pet_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 3F));
                                 ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Ice_Ball_Pet_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 2F));
                                 iceball.set((int) (Math.random() * 3));
+                            }
+
+                            if (itemStack.equals(new ItemStack("Kunai_Pack")) && kunai.get() == 1) {
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 3F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 2F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 4F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 5F));
+                                kunai.set((int) (Math.random() * 3));
+                            }
+
+                            if (itemStack.equals(new ItemStack("Acid_Orb_Pet")) && acid_orb.get() == 1) {
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Acid_Orb_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Acid_Orb_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 2F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Acid_Orb_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 4F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Acid_Orb_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 6F));
+                                acid_orb.set((int) (Math.random() * 3));
                             }
 
                             if (itemStack.equals(new ItemStack("Crimson_Dice")) && crimson_dice.get() == 1) {

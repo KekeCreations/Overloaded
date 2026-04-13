@@ -1,8 +1,8 @@
 {
-  "Appearance": "Spear_Copper",
+  "Appearance": "Kunai",
   "SticksVertically": true,
-  "MuzzleVelocity": 50,
-  "TerminalVelocity": 50,
+  "MuzzleVelocity": 40,
+  "TerminalVelocity": 40,
   "Gravity": 20,
   "Bounciness": 0,
   "ImpactSlowdown": 0,
@@ -17,5 +17,5 @@
   },
   "MissSoundEventId": "SFX_Spear_Miss",
   "HitSoundEventId": "SFX_Spear_Projectile_Impact",
-  "Radius": 1
+  "Radius": 0.5
 }

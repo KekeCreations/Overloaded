@@ -31,4 +31,10 @@ King_Shield.desc = In Inventory: +0.35 Signature Energy Recharge  -0.025 Health
 Heart_Pet.name= Broken Shield
 Heart_Pet.desc = In Inventory: +0.05 Health
 
+Kunai_Pack.name= Kunai Pack
+Kunai_Pack.desc = In Inventory: Shoots 5 Kunai randomly
+
+Acid_Orb_Pet.name= Acid Orb Pet
+Acid_Orb_Pet.desc = In Inventory: Shoots 4 acid orbs randomly
+
 chest.name = Chest
