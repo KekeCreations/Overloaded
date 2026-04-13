@@ -23,6 +23,7 @@ import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
+import com.kekecreations.overloaded.common.component.GoldAndKillsComponent;
 import com.kekecreations.overloaded.common.component.RoundComponent;
 import org.jspecify.annotations.NonNull;
 
@@ -120,34 +121,46 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
     @Override
     public void onDismiss(@NonNull Ref<EntityStore> ref, @NonNull Store<EntityStore> store) {
         super.onDismiss(ref, store);
-        InventoryComponent hotbarComponent = store.getComponent(ref, InventoryComponent.getComponentTypeById(-1));
-        InventoryComponent armourComponent = store.getComponent(ref, InventoryComponent.getComponentTypeById(-3));
-        InventoryComponent utilityComponent = store.getComponent(ref, InventoryComponent.getComponentTypeById(-5));
-        InventoryComponent backpackComponent = store.getComponent(ref, InventoryComponent.getComponentTypeById(-9));
-        InventoryComponent storageComponent = store.getComponent(ref, InventoryComponent.getComponentTypeById(-2));
-        InventoryComponent toolComponent = store.getComponent(ref, InventoryComponent.getComponentTypeById(-8));
 
-        ItemContainer hotbar = hotbarComponent.getInventory();
-        ItemContainer armour = armourComponent.getInventory();
-        ItemContainer utility = utilityComponent.getInventory();
-        ItemContainer backpack = backpackComponent.getInventory();
-        ItemContainer storage = storageComponent.getInventory();
-        ItemContainer tool = toolComponent.getInventory();
+        for (PlayerRef oPlayerRef : Universe.get().getPlayers()) {
+            if (oPlayerRef.isValid() && oPlayerRef.getReference() != null) {
+                InventoryComponent hotbarComponent = store.getComponent(oPlayerRef.getReference(), InventoryComponent.getComponentTypeById(-1));
+                InventoryComponent armourComponent = store.getComponent(oPlayerRef.getReference(), InventoryComponent.getComponentTypeById(-3));
+                InventoryComponent utilityComponent = store.getComponent(oPlayerRef.getReference(), InventoryComponent.getComponentTypeById(-5));
+                InventoryComponent backpackComponent = store.getComponent(oPlayerRef.getReference(), InventoryComponent.getComponentTypeById(-9));
+                InventoryComponent storageComponent = store.getComponent(oPlayerRef.getReference(), InventoryComponent.getComponentTypeById(-2));
+                InventoryComponent toolComponent = store.getComponent(oPlayerRef.getReference(), InventoryComponent.getComponentTypeById(-8));
 
-        if (hotbar != null && armour != null && utility != null && backpack != null && storage != null && tool != null) {
-            hotbar.clear();
-            armour.clear();
-            utility.clear();
-            backpack.clear();
-            storage.clear();
-            tool.clear();
-            hotbar.setItemStackForSlot((short) 1, new ItemStack("Weapon_Battleaxe_Copper"));
-            hotbar.setItemStackForSlot((short) 2, new ItemStack("Potion_Health", 3));
+                ItemContainer hotbar = hotbarComponent.getInventory();
+                ItemContainer armour = armourComponent.getInventory();
+                ItemContainer utility = utilityComponent.getInventory();
+                ItemContainer backpack = backpackComponent.getInventory();
+                ItemContainer storage = storageComponent.getInventory();
+                ItemContainer tool = toolComponent.getInventory();
 
-            armour.setItemStackForSlot((short) 0, new ItemStack("Armor_Copper_Head"));
-            armour.setItemStackForSlot((short) 1, new ItemStack("Armor_Copper_Chest"));
-            armour.setItemStackForSlot((short) 2, new ItemStack("Armor_Copper_Hands"));
-            armour.setItemStackForSlot((short) 3, new ItemStack("Armor_Copper_Legs"));
+                GoldAndKillsComponent goldData = store.getComponent(oPlayerRef.getReference(), GoldAndKillsComponent.getComponentType());
+
+                if (goldData != null) {
+                    goldData.setGold(0);
+                    goldData.setKills(0);
+                }
+
+                if (hotbar != null && armour != null && utility != null && backpack != null && storage != null && tool != null) {
+                    hotbar.clear();
+                    armour.clear();
+                    utility.clear();
+                    backpack.clear();
+                    storage.clear();
+                    tool.clear();
+                    hotbar.setItemStackForSlot((short) 1, new ItemStack("Weapon_Battleaxe_Copper"));
+                    hotbar.setItemStackForSlot((short) 2, new ItemStack("Potion_Health", 3));
+
+                    armour.setItemStackForSlot((short) 0, new ItemStack("Armor_Copper_Head"));
+                    armour.setItemStackForSlot((short) 1, new ItemStack("Armor_Copper_Chest"));
+                    armour.setItemStackForSlot((short) 2, new ItemStack("Armor_Copper_Hands"));
+                    armour.setItemStackForSlot((short) 3, new ItemStack("Armor_Copper_Legs"));
+                }
+            }
         }
         if (Objects.equals(roundComponent.getRoundType(), "null")) {
             roundComponent.setRoundMenu("start");

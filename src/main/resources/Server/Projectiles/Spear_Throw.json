@@ -7,7 +7,7 @@
   "Bounciness": 0,
   "ImpactSlowdown": 0,
   "TimeToLive": 15,
-  "Damage": 5,
+  "Damage": 6,
   "DeathEffectsOnHit": true,
   "DeadTime": 0,
   "DepthShot": 1,
