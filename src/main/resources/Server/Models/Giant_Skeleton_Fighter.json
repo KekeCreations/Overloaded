@@ -1,0 +1,29 @@
+{
+  "Parent": "Skeleton",
+  "Texture": "NPC/Undead/Skeleton/Models/Model_Textures/White.png",
+  "EyeHeight": 1.5,
+  "DefaultAttachments": [
+    {
+      "Model": "NPC/Undead/Skeleton/Models/Attachments/Cosmetics/Head/Eyes/Eyes.blockymodel",
+      "Texture": "NPC/Undead/Skeleton/Models/Attachments/Cosmetics/Head/Eyes/Eyes_Red.png"
+    },
+    {
+      "Model": "NPC/Undead/Skeleton/Models/Attachments/Cosmetics/Chest/Tunic_Torn.blockymodel",
+      "Texture": "NPC/Undead/Skeleton/Models/Attachments/Cosmetics/Chest/Tunic_Torn_Textures/Tunic_Torn_Brown.png"
+    },
+    {
+      "Model": "Cosmetics/Shoes/BootsBasic.blockymodel",
+      "Texture": "Cosmetics/Shoes/BootsBasic_Textures/Rotten_Leather.png"
+    },
+    {
+      "Model": "Items/Armors/Necromancer_Set/Hands.blockymodel",
+      "Texture": "Items/Armors/Necromancer_Set/Hands_Texture.png"
+    },
+    {
+      "Model": "Items/Weapons/Mace/Onyxium.blockymodel",
+      "Texture": "Items/Weapons/Mace/Onyxium_Texture.png"
+    }
+  ],
+  "MinScale": 3.0,
+  "MaxScale": 3.0
+}

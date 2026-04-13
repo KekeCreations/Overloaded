@@ -32,7 +32,7 @@
     }
   },
   "Modify": {
-    "MaxHealth": 400,
+    "MaxHealth": 600,
     "MaxSpeed": 3,
     "ChaseRelativeSpeed": 1,
     "HearingRange": 10,
@@ -48,7 +48,7 @@
       24
     ],
     "DropList": "Drop_Skeleton_Fighter",
-    "Appearance": "Giant_Skeleton",
+    "Appearance": "Giant_Skeleton_Burnt",
     "Weapons": [
       "Droplist:Skeleton_Fighter_Random_Weapon"
     ],

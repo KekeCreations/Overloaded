@@ -50,7 +50,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
     //Healing & Totems
     int itemChance4 = (int)(Math.random() * 8);
     //Pets and Custom Items
-    int itemChance5 = (int)(Math.random() * 6);
+    int itemChance5 = (int)(Math.random() * 21);
 
     @Override
     public void build(@Nonnull Ref<EntityStore> ref, @Nonnull UICommandBuilder uiCommandBuilder, @Nonnull UIEventBuilder uiEventBuilder, @Nonnull Store<EntityStore> store) {
@@ -453,7 +453,16 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Broken_Shield.png");
                 goldComponent.setItemCost5(5);
             }
-            case 8, 9, 10 -> {
+            case 8, 9, 10, 11 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("COMMON", null, null, null, null,
+                                "#FFFFF", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("CRIMSON_DICE"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Crimson_Dice.png");
+                goldComponent.setItemCost5(10);
+            }
+            case 12, 13, 14 -> {
                 uiCommandBuilder.set("#RARITY5.TextSpans",
                         new Message(new FormattedMessage("UNCOMMON", null, null, null, null,
                                 "#41DE28", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
@@ -462,7 +471,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/King_Shield.png");
                 goldComponent.setItemCost5(12);
             }
-            case 11, 12, 13 -> {
+            case 15, 16 -> {
                 uiCommandBuilder.set("#RARITY5.TextSpans",
                         new Message(new FormattedMessage("RARE", null, null, null, null,
                                 "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
@@ -471,7 +480,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Meteor_Pet.png");
                 goldComponent.setItemCost5(25);
             }
-            case 14, 15, 16 -> {
+            case 17 -> {
                 uiCommandBuilder.set("#RARITY5.TextSpans",
                         new Message(new FormattedMessage("EPIC", null, null, null, null,
                                 "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
@@ -480,14 +489,32 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Ice_Ball_Pet.png");
                 goldComponent.setItemCost5(20);
             }
-            case 17, 18 -> {
+            case 18 -> {
                 uiCommandBuilder.set("#RARITY5.TextSpans",
                         new Message(new FormattedMessage("EPIC", null, null, null, null,
                                 "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
                                 null, false,  null)));
                 uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("FIREBALL PET"));
                 uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Fireball_Pet.png");
-                goldComponent.setItemCost5(30);
+                goldComponent.setItemCost5(35);
+            }
+            case 19 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("LEGENDARY", null, null, null, null,
+                                "#CFB30E", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("LUCKY DICE"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Lucky_Dice.png");
+                goldComponent.setItemCost5(40);
+            }
+            case 20 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("LEGENDARY", null, null, null, null,
+                                "#CFB30E", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("DICE"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Dice.png");
+                goldComponent.setItemCost5(50);
             }
         }
         uiCommandBuilder.set("#PRICE1.TextSpans", Message.raw("GOLD: " + goldComponent.getItemCost1()));
@@ -753,6 +780,61 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                             case 15 -> {
                                 itemStack = new ItemStack("Weapon_Deployable_Healing_Totem", 1);
                                 player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Healing Totem"));
+                            }
+                            default -> {
+                                itemStack = new ItemStack("Bandage_Crude", 1);
+                            }
+                        }
+                        ItemStackTransaction itemStackTransaction = player.giveItem(itemStack, ref, store);
+                        ItemStack remainder = itemStackTransaction.getRemainder();
+
+                        if (remainder != null && !remainder.isEmpty()) {
+                            player.sendMessage(Message.raw(player.getDisplayName() + " NO INVENTORY SPACE"));
+                        }
+                    } else {
+                        player.sendMessage(Message.raw(player.getDisplayName() + " NOT ENOUGH GOLD FOR PURCHASE"));
+                    }
+                }
+                if (BUY5.equals(data.buttonClicked)) {
+                    if (goldComponent.getGold() >= goldComponent.getItemCost5()) {
+                        goldComponent.setGold(goldComponent.getGold() - goldComponent.getItemCost5());
+                        ItemStack itemStack;
+                        switch (goldComponent.getItemCost5()) {
+                            case 15 -> {
+                                itemStack = new ItemStack("Anvil_Pet", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Anvil Pet"));
+                            }
+                            case 5 -> {
+                                itemStack = new ItemStack("Broken_Shield", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Broken Shield"));
+                            }
+                            case 10 -> {
+                                itemStack = new ItemStack("Crimson_Dice", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Crimson Dice"));
+                            }
+                            case 12 -> {
+                                itemStack = new ItemStack("King_Shield", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x King Shield"));
+                            }
+                            case 25 -> {
+                                itemStack = new ItemStack("Meteor_Pet", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Meteor Pet"));
+                            }
+                            case 20 -> {
+                                itemStack = new ItemStack("Ice_Ball_Pet", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Ice Ball Pet"));
+                            }
+                            case 35 -> {
+                                itemStack = new ItemStack("Fireball_Pet", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Fireball Pet"));
+                            }
+                            case 40 -> {
+                                itemStack = new ItemStack("Lucky_Dice", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Lucky Dice"));
+                            }
+                            case 50 -> {
+                                itemStack = new ItemStack("Dice", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Dice"));
                             }
                             default -> {
                                 itemStack = new ItemStack("Bandage_Crude", 1);
