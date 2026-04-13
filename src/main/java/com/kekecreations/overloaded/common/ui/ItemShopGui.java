@@ -742,6 +742,10 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                                 itemStack = new ItemStack("Tool_Repair_Kit_Crude", 1);
                                 player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Crude Repair Kit"));
                             }
+                            case 8 -> {
+                                itemStack = new ItemStack("Tool_Repair_Kit_Iron", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Iron Repair Kit"));
+                            }
                             case 12 -> {
                                 itemStack = new ItemStack("Weapon_Bomb", 3);
                                 player.sendMessage(Message.raw(player.getDisplayName() + " Bought 3x Bombs"));

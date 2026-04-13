@@ -3,6 +3,7 @@ package com.kekecreations.overloaded.common.system;
 import com.hypixel.hytale.component.*;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.DelayedEntitySystem;
+import com.hypixel.hytale.server.core.modules.entity.damage.DamageCause;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 
@@ -14,7 +15,7 @@ public class ChestDespawnSystem extends DelayedEntitySystem<EntityStore> {
 
 
     public ChestDespawnSystem() {
-        super(8F);
+        super(20F);
     }
 
     @Nonnull

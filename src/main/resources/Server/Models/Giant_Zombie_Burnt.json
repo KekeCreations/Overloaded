@@ -1,0 +1,49 @@
+{
+  "Parent": "Zombie",
+  "Texture": "NPC/Undead/Zombie/Models/Zombie_Burnt.png",
+  "DefaultAttachments": [
+    {
+      "Model": "NPC/Undead/Zombie/Models/Attachments/Head/Eyes.blockymodel",
+      "Texture": "NPC/Undead/Zombie/Models/Attachments/Head/Eyes_Blue.png"
+    },
+    {
+      "Model": "Characters/Body_Attachments/Ears/Ears1.blockymodel",
+      "Texture": "Characters/Body_Attachments/Ears/Ears1_Textures/Zombie_Burnt.png"
+    },
+    {
+      "Model": "Items/Armors/Necromancer_Set/Chest.blockymodel",
+      "Texture": "Items/Armors/Necromancer_Set/Chest_Texture.png"
+    },
+    {
+      "Model": "Items/Armors/Necromancer_Set/Shirt.blockymodel",
+      "Texture": "Items/Armors/Necromancer_Set/Shirt_Texture.png"
+    },
+    {
+      "Model": "Items/Armors/Necromancer_Set/Hands.blockymodel",
+      "Texture": "Items/Armors/Necromancer_Set/Hands_Texture.png"
+    },
+    {
+      "Model": "Items/Armors/Necromancer_Set/Legs.blockymodel",
+      "Texture": "Items/Armors/Necromancer_Set/Legs_Texture.png"
+    },
+    {
+      "Model": "Items/Weapons/Staff/Wizard.blockymodel",
+      "Texture": "Items/Weapons/Staff/Wizard_Texture.png"
+    }
+  ],
+  "MinScale": 2,
+  "MaxScale": 2,
+  "Icon": "Icons/ModelsGenerated/Giant_Zombie_Burnt.png",
+  "IconProperties": {
+    "Scale": 0.25,
+    "Rotation": [
+      0,
+      -45,
+      0
+    ],
+    "Translation": [
+      0,
+      -75
+    ]
+  }
+}

@@ -64,6 +64,16 @@ public class NPCDeathSystem extends DeathSystems.OnDeathSystem {
                                 }
                             }
 
+                            if (Objects.equals(npc.getNPCTypeId(), "Giant_Skeleton_Burnt")) {
+                                goldData.setGold(goldData.getGold() + 20);
+                            }
+                            if (Objects.equals(npc.getNPCTypeId(), "Giant_Skeleton_Fighter")) {
+                                goldData.setGold(goldData.getGold() + 20);
+                            }
+                            if (Objects.equals(npc.getNPCTypeId(), "Giant_Zombie_Burnt")) {
+                                goldData.setGold(goldData.getGold() + 20);
+                            }
+
                             if (Objects.equals(npc.getNPCTypeId(), "Skeleton_Burnt_Archer")) {
                                 goldData.setGold(goldData.getGold() + 5);
                                 player.sendMessage(Message.raw("Reward received"));

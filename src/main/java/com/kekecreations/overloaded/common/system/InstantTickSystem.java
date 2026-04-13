@@ -66,6 +66,26 @@ public class InstantTickSystem extends EntityTickingSystem<EntityStore> {
                             CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Burnt");
                         }
                     }
+                    if (roundData.getRoundCount() == 7) {
+                        if (roundData.getRoundTimer() == 40) {
+                            roundData.setRoundTimer(39);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Zombie_Burnt");
+                        }
+                    }
+                    if (roundData.getRoundCount() == 8) {
+                        if (roundData.getRoundTimer() == 40) {
+                            roundData.setRoundTimer(39);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Burnt");
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Burnt");
+                        }
+                    }
+                    if (roundData.getRoundCount() == 9) {
+                        if (roundData.getRoundTimer() == 40) {
+                            roundData.setRoundTimer(39);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Zombie_Burnt");
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Burnt");
+                        }
+                    }
                 }
             });
 

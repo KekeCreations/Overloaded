@@ -65,11 +65,11 @@ public class ClassicEnemyTickSystem extends DelayedEntitySystem<EntityStore> {
                                 }
                             }
                         }
-                        if (roundData.getRoundCount() == 5) {
-                            int enemy = (int) (Math.random() * 3);
+                        if (roundData.getRoundCount() >= 5) {
+                            int enemy = (int) (Math.random() * 4);
                             switch (enemy) {
                                 case 0 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Burnt");
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Burnt_Knight");
                                 }
                                 case 1 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton");
@@ -77,19 +77,8 @@ public class ClassicEnemyTickSystem extends DelayedEntitySystem<EntityStore> {
                                 case 2 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Fighter");
                                 }
-                            }
-                        }
-                        if (roundData.getRoundCount() == 6) {
-                            int enemy = (int) (Math.random() * 3);
-                            switch (enemy) {
-                                case 0 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Burnt");
-                                }
-                                case 1 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton");
-                                }
-                                case 2 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Fighter");
+                                case 3 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Burnt_Lancer");
                                 }
                             }
                         }
