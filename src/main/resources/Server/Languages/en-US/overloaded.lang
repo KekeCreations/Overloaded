@@ -1,17 +1,29 @@
 Anvil_Pet.name= Anvil Pet
-Anvil_Pet.desc = Gives a repair kit every round!
+Anvil_Pet.desc = Gives a repair kit every round when in hotbar!
 
 Fireball_Pet.name= Fireball Pet
 Fireball_Pet.desc = Shoots a flaming ball randomly
 
 Ice_Ball_Pet.name= Ice Ball Pet
-Ice_Ball_Pet.desc = Shoots an ice ball randomly
+Ice_Ball_Pet.desc = Shoots 3 ice balls randomly
 
 Meteor_Pet.name= Meteor Pet
 Meteor_Pet.desc = Adds 1 fireball when in inventory
 
 Crimson_Dice.name= Crimson Dice
-Crimson_Dice.desc = Rolls a random number randomly for random events!
+Crimson_Dice.desc = Spawns random burnt enemies when in inventory, when these enemies are defeated the player is rewarded with extra gold!
 
 Lucky_Dice.name= Lucky Dice
 Lucky_Dice.desc = Randomly boosts gold received from killing an enemy!
+
+Dice.name= Dice
+Dice.desc = Rolls a random number randomly for random events!
+
+The_Core.name= The Core
+The_Core.desc = WIP
+
+Broken_Shield.name= Broken Shield
+Broken_Shield.desc = Slowly charges Signature Energy when in inventory
+
+King_Shield.name= Broken Shield
+King_Shield.desc = Charges Signature Energy when in inventory

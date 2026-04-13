@@ -1,0 +1,25 @@
+{
+  "Model": "Items/Pets/Model/cube.blockymodel",
+  "Texture": "Items/Pets/Textures/the_core.png",
+  "Scale": 1,
+  "ItemLevel": 10,
+  "MaxStack": 1,
+  "Icon": "Icons/ItemsGenerated/The_Core.png",
+  "IconProperties": {
+    "Scale": 1.5,
+    "Rotation": [
+      0,
+      239,
+      0
+    ],
+    "Translation": [
+      0,
+      -4
+    ]
+  },
+  "TranslationProperties": {
+    "Name": "overloaded.The_Core.name",
+    "Description": "overloaded.The_Core.desc"
+  },
+  "Quality": "Epic"
+}

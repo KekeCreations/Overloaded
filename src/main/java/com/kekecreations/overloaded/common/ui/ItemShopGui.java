@@ -433,6 +433,63 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 goldComponent.setItemCost4(15);
             }
         }
+        //Pets
+        switch(itemChance5) {
+            case 0, 1, 2, 3 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("COMMON", null, null, null, null,
+                                "#FFFFF", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("ANVIL PET"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Anvil_Pet.png");
+                goldComponent.setItemCost5(15);
+            }
+            case 4, 5, 6, 7 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("COMMON", null, null, null, null,
+                                "#FFFFF", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("BROKEN SHIELD"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Broken_Shield.png");
+                goldComponent.setItemCost5(5);
+            }
+            case 8, 9, 10 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("UNCOMMON", null, null, null, null,
+                                "#41DE28", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("KING SHIELD"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/King_Shield.png");
+                goldComponent.setItemCost5(12);
+            }
+            case 11, 12, 13 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("METEOR PET"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Meteor_Pet.png");
+                goldComponent.setItemCost5(25);
+            }
+            case 14, 15, 16 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("EPIC", null, null, null, null,
+                                "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("ICE BALL PET"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Ice_Ball_Pet.png");
+                goldComponent.setItemCost5(20);
+            }
+            case 17, 18 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("EPIC", null, null, null, null,
+                                "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("FIREBALL PET"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Fireball_Pet.png");
+                goldComponent.setItemCost5(30);
+            }
+        }
         uiCommandBuilder.set("#PRICE1.TextSpans", Message.raw("GOLD: " + goldComponent.getItemCost1()));
         uiCommandBuilder.set("#PRICE2.TextSpans", Message.raw("GOLD: " + goldComponent.getItemCost2()));
         uiCommandBuilder.set("#PRICE3.TextSpans", Message.raw("GOLD: " + goldComponent.getItemCost3()));
