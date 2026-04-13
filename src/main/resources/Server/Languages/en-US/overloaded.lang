@@ -1,32 +1,32 @@
 Anvil_Pet.name= Anvil Pet
-Anvil_Pet.desc = Gives a repair kit every round when in hotbar!
+Anvil_Pet.desc = In Hotbar: Gives a repair kit every round when in hotbar!
 
 Fireball_Pet.name= Fireball Pet
-Fireball_Pet.desc = Shoots a flaming ball randomly
+Fireball_Pet.desc = In Hotbar: Shoots a flaming ball randomly
 
 Ice_Ball_Pet.name= Ice Ball Pet
-Ice_Ball_Pet.desc = Shoots 3 ice balls randomly
+Ice_Ball_Pet.desc = In Inventory: Shoots 3 ice balls randomly
 
 Meteor_Pet.name= Meteor Pet
 Meteor_Pet.desc = In Inventory: +1 Fireball
 
 Crimson_Dice.name= Crimson Dice
-Crimson_Dice.desc = Spawns random burnt enemies when in inventory, when these enemies are defeated the player is rewarded with extra gold!
+Crimson_Dice.desc = In Inventory: Spawns random burnt enemies when in inventory, when these enemies are defeated the player is rewarded with extra gold!
 
 Lucky_Dice.name= Lucky Dice
-Lucky_Dice.desc = Cheats death when in your hotbar!
+Lucky_Dice.desc = In Hotbar: Cheats death!
 
 Dice.name= Dice
-Dice.desc = Rolls a random number for random events!
+Dice.desc = In Inventory: Rolls a random number for random events!
 
 The_Core.name= The Core
-The_Core.desc = In Inventory: +0.5 Health  -0.5 Stamina
+The_Core.desc = In Inventory: +0.5 Health  -1 Stamina
 
 Broken_Shield.name= Broken Shield
 Broken_Shield.desc = In Inventory: +0.05 Signature Energy Recharge  +0.025 Health Regeneration
 
-King_Shield.name= Broken Shield
-King_Shield.desc = In Inventory: +0.35 Signature Energy Recharge  -0.025 Health
+King_Shield.name= King Shield
+King_Shield.desc = In Inventory: +0.35 Signature Energy Recharge  -0.05 Health
 
 Heart_Pet.name= Broken Shield
 Heart_Pet.desc = In Inventory: +0.05 Health
@@ -36,5 +36,8 @@ Kunai_Pack.desc = In Inventory: Shoots 5 Kunai randomly
 
 Acid_Orb_Pet.name= Acid Orb Pet
 Acid_Orb_Pet.desc = In Inventory: Shoots 4 acid orbs randomly
+
+Trash_Can.name= Trash Can
+Trash_Can.desc = In Inventory: Toss many trash cans!
 
 chest.name = Chest

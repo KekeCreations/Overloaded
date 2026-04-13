@@ -13,13 +13,13 @@ import com.kekecreations.overloaded.common.component.RoundComponent;
 import javax.annotation.Nonnull;
 import java.util.Objects;
 
-public class RoundsEnemyTickSystem extends DelayedEntitySystem<EntityStore> {
+public class EnemyTickSystem extends DelayedEntitySystem<EntityStore> {
 
     private final ComponentType<EntityStore, RoundComponent> roundStats;
 
 
-    public RoundsEnemyTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
-        super(3.0F);
+    public EnemyTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
+        super(4.0F);
         this.roundStats = roundStats;
     }
 
@@ -39,7 +39,7 @@ public class RoundsEnemyTickSystem extends DelayedEntitySystem<EntityStore> {
         if (store.getComponent(ref, roundStats) != null) {
             RoundComponent roundData = store.getComponent(ref, roundStats);
             //Purely so Intellij doesn't annoy me
-            if (roundData != null && roundData.getRoundType() == "rounds") {
+            if (roundData != null && roundData.getRoundType() == "classic" || roundData.getRoundType() == "quick" || roundData.getRoundType() == "rounds") {
                 if (roundData.getRoundTimer() > 0 && !roundData.isTimerFrozen()) {
                     for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
                         if (roundData.getRoundCount() == 1) {
@@ -65,39 +65,20 @@ public class RoundsEnemyTickSystem extends DelayedEntitySystem<EntityStore> {
                                 }
                             }
                         }
-                        if (roundData.getRoundCount() == 5) {
-                            if (roundData.getRoundTimer() == 40) {
-                                CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Skeleton_Fighter");
-                            } else {
-                                int enemy = (int) (Math.random() * 3);
-                                switch (enemy) {
-                                    case 0 -> {
-                                        CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Archer");
-                                    }
-                                    case 1 -> {
-                                        CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton");
-                                    }
-                                    case 2 -> {
-                                        CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Fighter");
-                                    }
+                        if (roundData.getRoundCount() >= 5 && roundData.getRoundCount() <= 9) {
+                            int enemy = (int) (Math.random() * 4);
+                            switch (enemy) {
+                                case 0 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Burnt_Knight");
                                 }
-                            }
-                        }
-                        if (roundData.getRoundCount() == 6) {
-                            if (roundData.getRoundTimer() == 40) {
-                                CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Skeleton_Burnt");
-                            } else {
-                                int enemy = (int) (Math.random() * 3);
-                                switch (enemy) {
-                                    case 0 -> {
-                                        CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Archer");
-                                    }
-                                    case 1 -> {
-                                        CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton");
-                                    }
-                                    case 2 -> {
-                                        CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Fighter");
-                                    }
+                                case 1 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton");
+                                }
+                                case 2 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Fighter");
+                                }
+                                case 3 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Burnt_Lancer");
                                 }
                             }
                         }

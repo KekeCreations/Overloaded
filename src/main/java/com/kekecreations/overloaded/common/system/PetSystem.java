@@ -43,6 +43,7 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
         AtomicInteger iceball = new AtomicInteger((int) (Math.random() * 2));
         AtomicInteger kunai = new AtomicInteger((int) (Math.random() * 2));
         AtomicInteger acid_orb = new AtomicInteger((int) (Math.random() * 3));
+        AtomicInteger trash_can = new AtomicInteger((int) (Math.random() * 2));
         AtomicInteger spear = new AtomicInteger((int) (Math.random() * 4));
         AtomicInteger crimson_dice = new AtomicInteger((int) (Math.random() * 100));
         AtomicInteger dice = new AtomicInteger((int) (Math.random() * 80));
@@ -95,12 +96,6 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                                 fireball.set((int) (Math.random() * 3));
                             }
 
-                            if (itemStack.equals(new ItemStack("Ice_Ball_Pet")) && iceball.get() == 1) {
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Ice_Ball_Pet_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation);
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Ice_Ball_Pet_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 3F));
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Ice_Ball_Pet_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 2F));
-                                iceball.set((int) (Math.random() * 3));
-                            }
 
                             if (statMap != null) {
                                 if (itemStack.equals(new ItemStack("Lucky_Dice"))) {
@@ -154,6 +149,18 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                                 acid_orb.set((int) (Math.random() * 3));
                             }
 
+                            if (itemStack.equals(new ItemStack("Trash_Can")) && trash_can.get() == 1) {
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation.rotateX(360 / 2F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation.rotateX(360 / 3F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation.rotateX(360 / 4F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation.rotateX(360 / 5F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation.rotateX(360 / 6F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation.rotateX(360 / 7F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation.rotateX(360 / 8F));
+                                trash_can.set((int) (Math.random() * 3));
+                            }
+
                             if (itemStack.equals(new ItemStack("Crimson_Dice")) && crimson_dice.get() == 1) {
                                 int spawn = (int) (Math.random() * 6);
                                 switch (spawn) {
@@ -199,11 +206,11 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                                 }
                                 if (itemStack.equals(new ItemStack("King_Shield"))) {
                                     statMap.addStatValue(DefaultEntityStatTypes.getSignatureEnergy(), 0.35F);
-                                    statMap.subtractStatValue(DefaultEntityStatTypes.getHealth(), 0.025F);
+                                    statMap.subtractStatValue(DefaultEntityStatTypes.getHealth(), 0.05F);
                                 }
                                 if (itemStack.equals(new ItemStack("The_Core"))) {
                                     statMap.addStatValue(DefaultEntityStatTypes.getHealth(), 0.5F);
-                                    statMap.subtractStatValue(DefaultEntityStatTypes.getStamina(), 0.05F);
+                                    statMap.subtractStatValue(DefaultEntityStatTypes.getStamina(), 1F);
                                 }
                                 if (itemStack.equals(new ItemStack("Heart_Pet"))) {
                                     statMap.addStatValue(DefaultEntityStatTypes.getHealth(), 0.05F);
