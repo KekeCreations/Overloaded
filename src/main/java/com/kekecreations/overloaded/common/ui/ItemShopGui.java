@@ -44,13 +44,13 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
     //Armour
     int itemChance = (int)(Math.random() * 16);
     //Weapons
-    int itemChance2 = (int)(Math.random() * 29);
+    int itemChance2 = (int)(Math.random() * 51);
     //Throwables & Shields
-    int itemChance3 = (int)(Math.random() * 20);
+    int itemChance3 = (int)(Math.random() * 26);
     //Healing & Totems
-    int itemChance4 = (int)(Math.random() * 8);
+    int itemChance4 = (int)(Math.random() * 16);
     //Pets and Custom Items
-    int itemChance5 = (int)(Math.random() * 21);
+    int itemChance5 = (int)(Math.random() * 31);
 
     @Override
     public void build(@Nonnull Ref<EntityStore> ref, @Nonnull UICommandBuilder uiCommandBuilder, @Nonnull UIEventBuilder uiEventBuilder, @Nonnull Store<EntityStore> store) {
@@ -402,6 +402,33 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Weapon_Bomb_Potion_Poison.png");
                 goldComponent.setItemCost3(16);
             }
+            case 20, 21, 22 -> {
+                uiCommandBuilder.set("#RARITY3.TextSpans",
+                        new Message(new FormattedMessage("UNCOMMON", null, null, null, null,
+                                "#41DE28", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("IRON SPEAR"));
+                uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Overloaded_Iron_Spear.png");
+                goldComponent.setItemCost3(13);
+            }
+            case 23, 24 -> {
+                uiCommandBuilder.set("#RARITY3.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("COBALT SPEAR"));
+                uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Overloaded_Cobalt_Spear.png");
+                goldComponent.setItemCost3(18);
+            }
+            case 25 -> {
+                uiCommandBuilder.set("#RARITY3.TextSpans",
+                        new Message(new FormattedMessage("EPIC", null, null, null, null,
+                                "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC3.TextSpans", Message.raw("FLAME SPEAR"));
+                uiCommandBuilder.set("#IMAGE3.AssetPath", "Icons/ItemsGenerated/Overloaded_Flame_Spear.png");
+                goldComponent.setItemCost3(35);
+            }
         }
         //Healing and totems
         switch(itemChance4) {
@@ -432,10 +459,46 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 uiCommandBuilder.set("#IMAGE4.AssetPath", "Icons/ItemsGenerated/Healing_Totem.png");
                 goldComponent.setItemCost4(15);
             }
+            case 8, 9 -> {
+                uiCommandBuilder.set("#RARITY4.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC4.TextSpans", Message.raw("SHIMMER VIAL"));
+                uiCommandBuilder.set("#IMAGE4.AssetPath", "Icons/ItemsGenerated/Shimmer_Vial.png");
+                goldComponent.setItemCost4(24);
+            }
+            case 10, 11 -> {
+                uiCommandBuilder.set("#RARITY4.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC4.TextSpans", Message.raw("SLAP VIAL"));
+                uiCommandBuilder.set("#IMAGE4.AssetPath", "Icons/ItemsGenerated/Slap_Vial.png");
+                goldComponent.setItemCost4(20);
+            }
+            case 12, 13 -> {
+                uiCommandBuilder.set("#RARITY4.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC4.TextSpans", Message.raw("HEX VIAL"));
+                uiCommandBuilder.set("#IMAGE4.AssetPath", "Icons/ItemsGenerated/Hex_Vial.png");
+                goldComponent.setItemCost4(22);
+            }
+            case 14, 15 -> {
+                uiCommandBuilder.set("#RARITY4.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC4.TextSpans", Message.raw("HEALTH POTION"));
+                uiCommandBuilder.set("#IMAGE4.AssetPath", "Icons/ItemsGenerated/Potion_Health.png");
+                goldComponent.setItemCost4(8);
+            }
         }
         //Pets
         switch(itemChance5) {
-            case 0, 1, 2, 3 -> {
+            case 0, 1, 2 -> {
                 uiCommandBuilder.set("#RARITY5.TextSpans",
                         new Message(new FormattedMessage("COMMON", null, null, null, null,
                                 "#FFFFF", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
@@ -516,7 +579,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Ice_Ball_Pet.png");
                 goldComponent.setItemCost5(20);
             }
-            case 22 -> {
+            case 22, 3 -> {
                 uiCommandBuilder.set("#RARITY5.TextSpans",
                         new Message(new FormattedMessage("EPIC", null, null, null, null,
                                 "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
@@ -542,6 +605,33 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("DICE"));
                 uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Dice.png");
                 goldComponent.setItemCost5(50);
+            }
+            case 25, 26 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("SPEAR HEAD PET"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Spear_Head_Pet.png");
+                goldComponent.setItemCost5(9);
+            }
+            case 27, 28 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("WAR SPEAR HEAD PET"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/War_Ready_Spear_Head_Pet.png");
+                goldComponent.setItemCost5(21);
+            }
+            case 29, 30 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("GOLD SPEAR HEAD PET"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Gold_Spear_Head_Pet.png");
+                goldComponent.setItemCost5(23);
             }
         }
         uiCommandBuilder.set("#PRICE1.TextSpans", Message.raw("GOLD: " + goldComponent.getItemCost1()));
@@ -781,6 +871,18 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                                 itemStack = new ItemStack("Weapon_Bomb_Potion_Poison", 3);
                                 player.sendMessage(Message.raw(player.getDisplayName() + " Bought 3x Poison Bombs"));
                             }
+                            case 13 -> {
+                                itemStack = new ItemStack("Overloaded_Iron_Spear", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Iron Spear"));
+                            }
+                            case 18 -> {
+                                itemStack = new ItemStack("Overloaded_Cobalt_Spear", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Cobalt Spear"));
+                            }
+                            case 35 -> {
+                                itemStack = new ItemStack("Overloaded_Flame_Spear", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Flame Spear"));
+                            }
                             default -> {
                                 itemStack = new ItemStack("Bandage_Crude", 1);
                             }
@@ -811,6 +913,22 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                             case 15 -> {
                                 itemStack = new ItemStack("Weapon_Deployable_Healing_Totem", 1);
                                 player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Healing Totem"));
+                            }
+                            case 8 -> {
+                                itemStack = new ItemStack("Potion_Health", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Health Potion"));
+                            }
+                            case 22 -> {
+                                itemStack = new ItemStack("Hex_Vial", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Hex Vial"));
+                            }
+                            case 20 -> {
+                                itemStack = new ItemStack("Slap_Vial", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Slap Vial"));
+                            }
+                            case 24 -> {
+                                itemStack = new ItemStack("Shimmer_Vial", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Shimmer Vial"));
                             }
                             default -> {
                                 itemStack = new ItemStack("Bandage_Crude", 1);
@@ -878,6 +996,18 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                             case 50 -> {
                                 itemStack = new ItemStack("Dice", 1);
                                 player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Dice"));
+                            }
+                            case 9 -> {
+                                itemStack = new ItemStack("Spear_Head_Pet", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Spear Head Pet"));
+                            }
+                            case 21 -> {
+                                itemStack = new ItemStack("War_Ready_Spear_Head_Pet", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x War Ready Spear Head Pet"));
+                            }
+                            case 23 -> {
+                                itemStack = new ItemStack("Gold_Spear_Head_Pet", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Gold_Spear_Head_Pet"));
                             }
                             default -> {
                                 itemStack = new ItemStack("Bandage_Crude", 1);
