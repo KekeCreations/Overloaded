@@ -274,6 +274,19 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                                 if (itemStack.equals(new ItemStack("Heart_Pet"))) {
                                     statMap.addStatValue(DefaultEntityStatTypes.getHealth(), 0.05F);
                                 }
+                                if (itemStack.equals(new ItemStack("Slap_Vial"))) {
+                                    statMap.subtractStatValue(DefaultEntityStatTypes.getHealth(), 0.3F);
+                                    statMap.addStatValue(DefaultEntityStatTypes.getStamina(), 1F);
+                                }
+                                if (itemStack.equals(new ItemStack("Hex_Vial"))) {
+                                    statMap.subtractStatValue(DefaultEntityStatTypes.getStamina(), 2F);
+                                    statMap.addStatValue(DefaultEntityStatTypes.getSignatureEnergy(), 0.4F);
+                                }
+                                if (itemStack.equals(new ItemStack("Shimmer_Vial"))) {
+                                    statMap.subtractStatValue(DefaultEntityStatTypes.getHealth(), 0.3F);
+                                    statMap.addStatValue(DefaultEntityStatTypes.getSignatureEnergy(), 0.35F);
+                                    statMap.addStatValue(DefaultEntityStatTypes.getStamina(), 1F);
+                                }
                             }
 
                             if (statMap != null && goldData != null) {
