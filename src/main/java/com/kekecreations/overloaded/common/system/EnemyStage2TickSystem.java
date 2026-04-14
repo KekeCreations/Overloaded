@@ -19,7 +19,7 @@ public class EnemyStage2TickSystem extends DelayedEntitySystem<EntityStore> {
 
 
     public EnemyStage2TickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
-        super(3.0F);
+        super(2.5F);
         this.roundStats = roundStats;
     }
 
@@ -43,7 +43,7 @@ public class EnemyStage2TickSystem extends DelayedEntitySystem<EntityStore> {
                 if (roundData.getRoundTimer() > 0 && !roundData.isTimerFrozen()) {
                     for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
                         if (roundData.getRoundCount() >= 10) {
-                            int enemy = (int) (Math.random() * 4);
+                            int enemy = (int) (Math.random() * 15);
                             switch (enemy) {
                                 case 0, 1 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Zombie");
@@ -79,15 +79,6 @@ public class EnemyStage2TickSystem extends DelayedEntitySystem<EntityStore> {
                                 }
                                 case 13, 14 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Spawn_Void");
-                                }
-                                case 15 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Zombie_Burnt");
-                                }
-                                case 16 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Skeleton_Burnt");
-                                }
-                                case 17 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Skeleton_Fighter");
                                 }
                             }
                         }

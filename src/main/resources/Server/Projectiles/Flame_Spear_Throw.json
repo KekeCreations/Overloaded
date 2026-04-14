@@ -1,13 +1,13 @@
 {
-  "Appearance": "Trash",
+  "Appearance": "Spear_Double_Incandescent",
   "SticksVertically": true,
-  "MuzzleVelocity": 30,
-  "TerminalVelocity": 30,
-  "Gravity": 50,
-  "Bounciness": 1,
+  "MuzzleVelocity": 50,
+  "TerminalVelocity": 50,
+  "Gravity": 20,
+  "Bounciness": 0,
   "ImpactSlowdown": 0,
-  "TimeToLive": 5,
-  "Damage": 4,
+  "TimeToLive": 15,
+  "Damage": 30,
   "DeathEffectsOnHit": true,
   "DeadTime": 0,
   "DepthShot": 1,
@@ -17,5 +17,5 @@
   },
   "MissSoundEventId": "SFX_Spear_Miss",
   "HitSoundEventId": "SFX_Spear_Projectile_Impact",
-  "Radius": 0.5
+  "Radius": 1
 }

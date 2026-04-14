@@ -1,0 +1,25 @@
+{
+  "Model": "Items/Weapons/Spear/Cobalt.blockymodel",
+  "Texture": "Items/Weapons/Spear/Cobalt_Texture.png",
+  "Scale": 1,
+  "ItemLevel": 10,
+  "MaxStack": 1,
+  "Icon": "Icons/ItemsGenerated/Overloaded_Cobalt_Spear.png",
+  "IconProperties": {
+    "Scale": 0.2,
+    "Rotation": [
+      30,
+      48,
+      0
+    ],
+    "Translation": [
+      -34,
+      -73
+    ]
+  },
+  "TranslationProperties": {
+    "Name": "overloaded.Cobalt_Spear.name",
+    "Description": "overloaded.Cobalt_Spear.desc"
+  },
+  "Quality": "Rare"
+}

@@ -44,7 +44,11 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
         AtomicInteger kunai = new AtomicInteger((int) (Math.random() * 2));
         AtomicInteger acid_orb = new AtomicInteger((int) (Math.random() * 3));
         AtomicInteger trash_can = new AtomicInteger((int) (Math.random() * 2));
-        AtomicInteger spear = new AtomicInteger((int) (Math.random() * 4));
+        AtomicInteger spear = new AtomicInteger((int) (Math.random() * 5));
+        AtomicInteger iron_spear = new AtomicInteger((int) (Math.random() * 6));
+        AtomicInteger gold_spear_head = new AtomicInteger((int) (Math.random() * 6));
+        AtomicInteger cobalt_spear = new AtomicInteger((int) (Math.random() * 7));
+        AtomicInteger flame_spear = new AtomicInteger((int) (Math.random() * 8));
         AtomicInteger crimson_dice = new AtomicInteger((int) (Math.random() * 100));
         AtomicInteger dice = new AtomicInteger((int) (Math.random() * 80));
 
@@ -64,10 +68,6 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                     Transform lookVec = TargetUtil.getLook(oPlayerRef.getReference(), commandBuffer);
                     Vector3d lookPosition = lookVec.getPosition();
                     Vector3f lookRotation = lookVec.getRotation();
-
-                    if (spear.get() == 1) {
-                        ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition, lookRotation);
-                    }
 
                     hotbar.forEach((slot, itemStack) -> {
                         if (itemStack.isValid()) {
@@ -111,6 +111,56 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
 
                     storage.forEach((slot, itemStack) -> {
                         if (itemStack.isValid()) {
+                            AtomicInteger spear_head_pet = new AtomicInteger();
+                            if (itemStack.equals(new ItemStack("Spear_Head_Pet"))) {
+                                AtomicInteger count = new AtomicInteger();
+                                storage.forEach((slot2, itemStack2) -> {
+                                    if (itemStack2.equals(new ItemStack("Spear_Head_Pet"))) {
+                                        spear_head_pet.getAndIncrement();
+                                    }
+                                });
+                                if (spear_head_pet.get() > 4) {
+                                    spear_head_pet.set(4);
+                                }
+                                if (spear_head_pet.get() > 0 && spear_head_pet.get() <= 4) {
+                                    int copperSpearChance = 5 - spear_head_pet.get();
+                                    spear.set((int) (Math.random() * copperSpearChance));
+
+                                    int ironSpearChance = 6 - spear_head_pet.get();
+                                    iron_spear.set((int) (Math.random() * ironSpearChance));
+
+                                    int cobaltSpearChance = 7 - spear_head_pet.get();
+                                    cobalt_spear.set((int) (Math.random() * cobaltSpearChance));
+
+                                    int flameSpearChance = 8 - spear_head_pet.get();
+                                    flame_spear.set((int) (Math.random() * flameSpearChance));
+                                }
+                            }
+
+                            if (itemStack.equals(new ItemStack("War_Ready_Spear_Head_Pet")) && spear.get() == 0) {
+
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.add(0, 0, 0), lookRotation);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.add(0, 0.4, 0), lookRotation);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.add(0, 0.6, 0), lookRotation);
+                            }
+                            if (itemStack.equals(new ItemStack("Overloaded_Iron_Spear")) && iron_spear.get() == 1) {
+
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Iron_Spear_Throw", lookPosition.add(0, 0.2, 0), lookRotation);
+                                iron_spear.set((int) (Math.random() * 4));
+                            }
+
+                            if (itemStack.equals(new ItemStack("Overloaded_Cobalt_Spear")) && cobalt_spear.get() == 1) {
+
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Cobalt_Spear_Throw", lookPosition, lookRotation);
+                                cobalt_spear.set((int) (Math.random() * 4));
+                            }
+
+                            if (itemStack.equals(new ItemStack("Overloaded_Flame_Spear")) && flame_spear.get() == 1) {
+
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Flame_Spear_Throw", lookPosition.add(0, 0.1, 0), lookRotation);
+                                flame_spear.set((int) (Math.random() * 6));
+                            }
+
                             if (itemStack.equals(new ItemStack("Fireball_Pet")) && fireball.get() == 1) {
                                 AtomicInteger count = new AtomicInteger();
                                 storage.forEach((slot2, itemStack2) -> {
@@ -138,6 +188,15 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                                 ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 2F));
                                 ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 4F));
                                 ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 5F));
+                                kunai.set((int) (Math.random() * 3));
+                            }
+
+                            if (itemStack.equals(new ItemStack("Gold_Spear_Head_Pet")) && gold_spear_head.get() == 1) {
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 3F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 2F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 4F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 5F));
                                 kunai.set((int) (Math.random() * 3));
                             }
 
@@ -251,6 +310,11 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                             }
                         }
                     });
+
+                    oPlayerRef.sendMessage(Message.raw(spear + "copperthrow chance"));
+                    if (spear.get() == 0) {
+                        ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation);
+                    }
                 }
             }
         }

@@ -1,0 +1,25 @@
+{
+  "Model": "Items/Pets/Model/spear_head.blockymodel",
+  "Texture": "Items/Pets/Textures/spear_head_pet.png",
+  "Scale": 1,
+  "ItemLevel": 10,
+  "MaxStack": 1,
+  "Icon": "Icons/ItemsGenerated/Spear_Head_Pet.png",
+  "IconProperties": {
+    "Scale": 1.1,
+    "Rotation": [
+      0,
+      48,
+      0
+    ],
+    "Translation": [
+      -0.5,
+      -11
+    ]
+  },
+  "TranslationProperties": {
+    "Name": "overloaded.Spear_Head_Pet.name",
+    "Description": "overloaded.Spear_Head_Pet.desc"
+  },
+  "Quality": "Rare"
+}

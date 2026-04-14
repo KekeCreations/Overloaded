@@ -40,4 +40,31 @@ Acid_Orb_Pet.desc = In Inventory: Shoots 4 acid orbs randomly
 Trash_Can.name= Trash Can
 Trash_Can.desc = In Inventory: Toss many trash cans!
 
+Iron_Spear.name= Iron Spear
+Iron_Spear.desc = In Inventory: Shoots an iron spear randomly
+
+Cobalt_Spear.name= Cobalt Spear
+Cobalt_Spear.desc = In Inventory: Shoots an cobalt spear randomly
+
+Flame_Spear.name= Flame Spear
+Flame_Spear.desc = In Inventory: Shoots a flame spear randomly
+
+Shimmer_Vial.name= Shimmer Vial
+Shimmer_Vial.desc = In Inventory:  +0.35 Signature Energy Recharge +1 Stamina -0.3 health
+
+Hex_Vial.name= Hex Vial
+Hex_Vial.desc = In Inventory:  +0.4 Signature Energy Recharge -2 Stamina
+
+Slap_Vial.name= Slap Vial
+Slap_Vial.desc = In Inventory:  +1 Stamina -0.3 health
+
+Spear_Head_Pet.name= Spear Head Pet
+Spear_Head_Pet.desc = In Inventory: Increases spear throw chance for all spears  (Stacks up to 4 times)
+
+War_Ready_Spear_Head_Pet.name= Spear Head Pet
+War_Ready_Spear_Head_Pet.desc = In Inventory: Turns the default spear attack into a burst attack
+
+Gold_Spear_Head_Pet.name= Gold Spear Head Pet
+Gold_Head_Pet.desc = In Inventory: Fires copper spears in random directions! (Throw chance isn't affected by Spear Head Pet)
+
 chest.name = Chest

@@ -1,0 +1,25 @@
+{
+  "Model": "Items/Weapons/Spear/Double_Incandescent.blockymodel",
+  "Texture": "Items/Weapons/Spear/Double_Incandescent_Texture.png",
+  "Scale": 1,
+  "ItemLevel": 10,
+  "MaxStack": 1,
+  "Icon": "Icons/ItemsGenerated/Overloaded_Flame_Spear.png",
+  "IconProperties": {
+    "Scale": 0.2,
+    "Rotation": [
+      43,
+      51,
+      0
+    ],
+    "Translation": [
+      -46,
+      -67
+    ]
+  },
+  "TranslationProperties": {
+    "Name": "overloaded.Flame_Spear.name",
+    "Description": "overloaded.Flame_Spear.desc"
+  },
+  "Quality": "Epic"
+}

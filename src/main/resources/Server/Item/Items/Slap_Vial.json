@@ -1,0 +1,25 @@
+{
+  "Model": "Items/Pets/Model/vial.blockymodel",
+  "Texture": "Items/Pets/Textures/slap_vial.png",
+  "Scale": 1,
+  "ItemLevel": 10,
+  "MaxStack": 1,
+  "Icon": "Icons/ItemsGenerated/Slap_Vial.png",
+  "IconProperties": {
+    "Scale": 2,
+    "Rotation": [
+      0,
+      48,
+      0
+    ],
+    "Translation": [
+      -0.5,
+      -7
+    ]
+  },
+  "TranslationProperties": {
+    "Name": "overloaded.Slap_Vial.name",
+    "Description": "overloaded.Slap_Vial.desc"
+  },
+  "Quality": "Rare"
+}
