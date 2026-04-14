@@ -13,7 +13,7 @@
   "Bounciness": 0,
   "ImpactSlowdown": 0,
   "TimeToLive": 0,
-  "Damage": 30,
+  "Damage": 45,
   "DeadTime": 0,
   "DeadTimeMiss": 0,
   "MissParticles": {
