@@ -26,6 +26,9 @@ public class RoundComponent implements Component<EntityStore> {
                     .append(new KeyedCodec<>("DoubleGoldMode", Codec.BOOLEAN),
                             (c, f) -> c.doubleGoldMode = f, c -> c.doubleGoldMode)
                     .add()
+                    .append(new KeyedCodec<>("Pause", Codec.BOOLEAN),
+                            (c, f) -> c.pause = f, c -> c.pause)
+                    .add()
                     .build();
 
 
@@ -43,10 +46,12 @@ public class RoundComponent implements Component<EntityStore> {
 
     private boolean doubleGoldMode = false;
 
+    private boolean pause = false;
+
     public RoundComponent() {}
 
     public RoundComponent(int roundTimer, int roundCount, String roundType, boolean freezeTimer, String roundMenu,
-                          boolean arachnophobiaMode, boolean doubleGoldMode) {
+                          boolean arachnophobiaMode, boolean doubleGoldMode, boolean pause) {
         this.roundTimer = roundTimer;
         this.roundCount = roundCount;
         this.roundType = roundType;
@@ -54,11 +59,12 @@ public class RoundComponent implements Component<EntityStore> {
         this.roundMenu = roundMenu;
         this.arachnophobiaMode = arachnophobiaMode;
         this.doubleGoldMode = doubleGoldMode;
+        this.pause = pause;
     }
 
     @Override
     public Component<EntityStore> clone() {
-        RoundComponent copy = new RoundComponent(roundTimer, roundCount, roundType, freezeTimer, roundMenu, arachnophobiaMode, doubleGoldMode);
+        RoundComponent copy = new RoundComponent(roundTimer, roundCount, roundType, freezeTimer, roundMenu, arachnophobiaMode, doubleGoldMode, pause);
         copy.roundTimer = this.roundTimer;
         copy.roundCount = this.roundCount;
         copy.roundType = this.roundType;
@@ -92,6 +98,10 @@ public class RoundComponent implements Component<EntityStore> {
         return this.doubleGoldMode;
     }
 
+    public boolean isPaused() {
+        return this.pause;
+    }
+
     public String getRoundMenu() {
         return this.roundMenu;
     }
@@ -123,6 +133,10 @@ public class RoundComponent implements Component<EntityStore> {
 
     public void setDoubleGoldMode(boolean bool) {
         this.doubleGoldMode = bool;
+    }
+
+    public void setPausee(boolean bool) {
+        this.pause = bool;
     }
 
     public void incrementRoundCount(int incrementAmount) {

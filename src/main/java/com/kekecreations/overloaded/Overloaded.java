@@ -6,6 +6,7 @@ import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import com.kekecreations.overloaded.core.registry.CommandRegistry;
 import com.kekecreations.overloaded.core.registry.ComponentAndSystemRegistry;
 import com.kekecreations.overloaded.core.registry.EventRegistry;
+import com.kekecreations.overloaded.core.registry.ItemInteractionRegistry;
 
 public class Overloaded extends JavaPlugin {
     private static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
@@ -21,5 +22,6 @@ public class Overloaded extends JavaPlugin {
         CommandRegistry.registerCommmands(this);
         EventRegistry.registerEvents(this);
         ComponentAndSystemRegistry.registerComponents(this);
+        ItemInteractionRegistry.register(this);
     }
 }

@@ -1,0 +1,33 @@
+{
+  "TranslationProperties": {
+    "Name": "overloaded.Remote.name",
+    "Description": "overloaded.Remote.desc"
+  },
+  "ItemLevel": 10,
+  "MaxStack": 1,
+  "Model": "Items/Pets/Model/remote.blockymodel",
+  "Texture": "Items/Pets/Textures/remote.png",
+  "Interactions": {
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "Pause_Game"
+        }
+      ]
+    }
+  },
+  "Icon": "Icons/ItemsGenerated/Remote.png",
+  "IconProperties": {
+    "Scale": 2,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      -0.5,
+      -1
+    ]
+  },
+  "Quality": "Legendary"
+}

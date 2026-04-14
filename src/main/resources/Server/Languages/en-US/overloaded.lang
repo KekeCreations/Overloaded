@@ -67,4 +67,7 @@ War_Ready_Spear_Head_Pet.desc = In Inventory: Turns the default spear attack int
 Gold_Spear_Head_Pet.name= Gold Spear Head Pet
 Gold_Head_Pet.desc = In Inventory: Fires copper spears in random directions! (Throw chance isn't affected by Spear Head Pet)
 
+Remote.name= Remote
+Remote.desc = Use to slow down time to modify inventory and more! (Only works when your player one)
+
 chest.name = Chest
