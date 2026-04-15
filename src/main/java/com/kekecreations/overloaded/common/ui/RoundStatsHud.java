@@ -40,6 +40,16 @@ public class RoundStatsHud extends CustomUIHud {
             if (roundData.getRoundCount() > 20 && roundData.getRoundCount() <= 30) {
                 uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("AHOY DEADLY"));
             }
+            if (roundData.getRoundCount() > 30 && roundData.getRoundCount() <= 40) {
+                if (roundData.isArachnophobiaMode()) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("WOLF PACK"));
+                } else {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("ARACHNID AWAKENING"));
+                }
+            }
+            if (roundData.getRoundCount() > 40 && roundData.getRoundCount() <= 50) {
+                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("VOID UGLIES"));
+            }
         } else {
             uiCommandBuilder.set("#ROUNDCOUNT.TextSpans", Message.raw(""));
             uiCommandBuilder.set("#ROUNDTIMER.TextSpans", Message.raw(""));

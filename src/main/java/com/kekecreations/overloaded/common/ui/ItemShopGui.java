@@ -48,7 +48,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
     //Throwables & Shields
     int itemChance3 = (int)(Math.random() * 26);
     //Healing & Totems
-    int itemChance4 = (int)(Math.random() * 16);
+    int itemChance4 = (int)(Math.random() * 20);
     //Pets and Custom Items
     int itemChance5 = (int)(Math.random() * 31);
 
@@ -495,6 +495,24 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 uiCommandBuilder.set("#IMAGE4.AssetPath", "Icons/ItemsGenerated/Potion_Health.png");
                 goldComponent.setItemCost4(8);
             }
+            case 16, 17 -> {
+                uiCommandBuilder.set("#RARITY4.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC4.TextSpans", Message.raw("VAMPIRE FANG"));
+                uiCommandBuilder.set("#IMAGE4.AssetPath", "Icons/ItemsGenerated/Vampire_Fang.png");
+                goldComponent.setItemCost4(14);
+            }
+            case 18, 19 -> {
+                uiCommandBuilder.set("#RARITY4.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC4.TextSpans", Message.raw("GOLD VAMPIRE FANG"));
+                uiCommandBuilder.set("#IMAGE4.AssetPath", "Icons/ItemsGenerated/Gold_Vampire_Fang.png");
+                goldComponent.setItemCost4(18);
+            }
         }
         //Pets
         switch(itemChance5) {
@@ -929,6 +947,14 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                             case 24 -> {
                                 itemStack = new ItemStack("Shimmer_Vial", 1);
                                 player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Shimmer Vial"));
+                            }
+                            case 14 -> {
+                                itemStack = new ItemStack("Vampire_Fang", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Vampire Fang"));
+                            }
+                            case 18 -> {
+                                itemStack = new ItemStack("Gold_Vampire_Fang", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Gold_Vampire Fang"));
                             }
                             default -> {
                                 itemStack = new ItemStack("Bandage_Crude", 1);

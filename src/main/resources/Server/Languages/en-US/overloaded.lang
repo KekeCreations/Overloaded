@@ -70,4 +70,10 @@ Gold_Head_Pet.desc = In Inventory: Fires copper spears in random directions! (Th
 Remote.name= Remote
 Remote.desc = Use to slow down time to modify inventory and more! (Only works when your player one)
 
+Vampire_Fang.name= Vampire Fang
+Vampire_Fang.desc = In Inventory:  +1 Life steal on kill  -0.5 Health Regeneration
+
+Gold_Vampire_Fang.name= Gold Vampire Fang
+Gold_Vampire_Fang.desc = In Inventory:  +2 Life steal on kill  -0.3 Health Regeneration
+
 chest.name = Chest

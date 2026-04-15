@@ -4,6 +4,9 @@ import com.hypixel.hytale.component.*;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.entity.entities.Player;
+import com.hypixel.hytale.server.core.inventory.InventoryComponent;
+import com.hypixel.hytale.server.core.inventory.ItemStack;
+import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
 import com.hypixel.hytale.server.core.modules.entity.damage.Damage;
 import com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent;
 import com.hypixel.hytale.server.core.modules.entity.damage.DeathSystems;
@@ -37,6 +40,8 @@ public class NPCDeathSystem extends DeathSystems.OnDeathSystem {
                         RoundComponent roundComponent = store.getComponent(entitySource.getRef(), RoundComponent.getComponentType());
                         Player player = store.getComponent(entitySource.getRef(), Player.getComponentType());
                         EntityStatMap statMap = store.getComponent(entitySource.getRef(), EntityStatMap.getComponentType());
+                        InventoryComponent storageComponent = store.getComponent(entitySource.getRef(), InventoryComponent.getComponentTypeById(-2));
+                        ItemContainer storage = storageComponent.getInventory();
 
                         int goldReward = (int) (Math.random() * 4);
                         if (goldData != null) {
@@ -67,7 +72,16 @@ public class NPCDeathSystem extends DeathSystems.OnDeathSystem {
                                 }
                             } else {
                                 if (statMap != null) {
-                                    statMap.addStatValue(DefaultEntityStatTypes.getHealth(), 0.5F);
+                                    storage.forEach((slot, itemStack) -> {
+                                        if (itemStack.isValid()) {
+                                            if (itemStack.equals(new ItemStack("Vampire_Fang"))) {
+                                                statMap.addStatValue(DefaultEntityStatTypes.getHealth(), 1F);
+                                            }
+                                            if (itemStack.equals(new ItemStack("Gold_Vampire_Fang"))) {
+                                                statMap.addStatValue(DefaultEntityStatTypes.getHealth(), 2F);
+                                            }
+                                        }
+                                    });
                                 }
                             }
 
@@ -83,6 +97,9 @@ public class NPCDeathSystem extends DeathSystems.OnDeathSystem {
 
                             if (roundComponent != null) {
                                 if (roundComponent.isDoubleGoldMode()) {
+                                    goldData.setGold(goldData.getGold() + (goldReward));
+                                }
+                                if (roundComponent.getRoundType() == "quick") {
                                     goldData.setGold(goldData.getGold() + (goldReward));
                                 }
                             }

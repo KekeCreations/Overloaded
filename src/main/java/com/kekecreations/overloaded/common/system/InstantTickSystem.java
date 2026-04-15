@@ -79,6 +79,38 @@ public class InstantTickSystem extends EntityTickingSystem<EntityStore> {
                             CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Burnt");
                         }
                     }
+                    if (roundData.getRoundCount() == 15) {
+                        if (roundData.getRoundTimer() == 40) {
+                            roundData.setRoundTimer(39);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Zombie_Burnt_Variant");
+                        }
+                    }
+                    if (roundData.getRoundCount() == 18) {
+                        if (roundData.getRoundTimer() == 40) {
+                            roundData.setRoundTimer(39);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Knight");
+                        }
+                    }
+                    if (roundData.getRoundCount() == 22) {
+                        if (roundData.getRoundTimer() == 40) {
+                            roundData.setRoundTimer(39);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Pirate");
+                        }
+                    }
+                    if (roundData.getRoundCount() == 24) {
+                        if (roundData.getRoundTimer() == 40) {
+                            roundData.setRoundTimer(39);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Pirate");
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Pirate");
+                        }
+                    }
+                    if (roundData.getRoundCount() == 28) {
+                        if (roundData.getRoundTimer() == 40) {
+                            roundData.setRoundTimer(39);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Pirate");
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Knight");
+                        }
+                    }
                 }
             });
 
