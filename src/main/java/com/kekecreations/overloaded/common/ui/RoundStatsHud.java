@@ -50,6 +50,9 @@ public class RoundStatsHud extends CustomUIHud {
             if (roundData.getRoundCount() > 40 && roundData.getRoundCount() <= 50) {
                 uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("VOID UGLIES"));
             }
+            if (roundData.getRoundCount() > 51 && roundData.getRoundCount() <= 60) {
+                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("BUG SEASON"));
+            }
         } else {
             uiCommandBuilder.set("#ROUNDCOUNT.TextSpans", Message.raw(""));
             uiCommandBuilder.set("#ROUNDTIMER.TextSpans", Message.raw(""));

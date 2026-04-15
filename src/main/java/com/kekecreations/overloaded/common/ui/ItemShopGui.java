@@ -749,7 +749,6 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 if (BUY2.equals(data.buttonClicked)) {
                     if (goldComponent.getGold() >= goldComponent.getItemCost2()) {
                         ItemStack itemStack;
-                        goldComponent.setGold(goldComponent.getGold() - goldComponent.getItemCost2());
 
                         switch (goldComponent.getItemCost2()) {
                             case 50 -> {
@@ -846,6 +845,8 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
 
                         if (remainder != null && !remainder.isEmpty()) {
                             player.sendMessage(Message.raw(player.getDisplayName() + " NO INVENTORY SPACE"));
+                        } else {
+                            goldComponent.setGold(goldComponent.getGold() - goldComponent.getItemCost2());
                         }
 
                     } else {
@@ -854,7 +855,6 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 }
                 if (BUY3.equals(data.buttonClicked)) {
                     if (goldComponent.getGold() >= goldComponent.getItemCost3()) {
-                        goldComponent.setGold(goldComponent.getGold() - goldComponent.getItemCost3());
                         ItemStack itemStack;
                         switch (goldComponent.getItemCost3()) {
                             case 10 -> {
@@ -910,6 +910,8 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
 
                         if (remainder != null && !remainder.isEmpty()) {
                             player.sendMessage(Message.raw(player.getDisplayName() + " NO INVENTORY SPACE"));
+                        } else {
+                            goldComponent.setGold(goldComponent.getGold() - goldComponent.getItemCost3());
                         }
                     } else {
                         player.sendMessage(Message.raw(player.getDisplayName() + " NOT ENOUGH GOLD FOR PURCHASE"));
@@ -917,7 +919,6 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 }
                 if (BUY4.equals(data.buttonClicked)) {
                     if (goldComponent.getGold() >= goldComponent.getItemCost4()) {
-                        goldComponent.setGold(goldComponent.getGold() - goldComponent.getItemCost4());
                         ItemStack itemStack;
                         switch (goldComponent.getItemCost4()) {
                             case 5 -> {
@@ -965,6 +966,8 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
 
                         if (remainder != null && !remainder.isEmpty()) {
                             player.sendMessage(Message.raw(player.getDisplayName() + " NO INVENTORY SPACE"));
+                        } else {
+                            goldComponent.setGold(goldComponent.getGold() - goldComponent.getItemCost4());
                         }
                     } else {
                         player.sendMessage(Message.raw(player.getDisplayName() + " NOT ENOUGH GOLD FOR PURCHASE"));
@@ -972,7 +975,6 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 }
                 if (BUY5.equals(data.buttonClicked)) {
                     if (goldComponent.getGold() >= goldComponent.getItemCost5()) {
-                        goldComponent.setGold(goldComponent.getGold() - goldComponent.getItemCost5());
                         ItemStack itemStack;
                         switch (goldComponent.getItemCost5()) {
                             case 15 -> {
@@ -1044,6 +1046,8 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
 
                         if (remainder != null && !remainder.isEmpty()) {
                             player.sendMessage(Message.raw(player.getDisplayName() + " NO INVENTORY SPACE"));
+                        } else {
+                            goldComponent.setGold(goldComponent.getGold() - goldComponent.getItemCost5());
                         }
                     } else {
                         player.sendMessage(Message.raw(player.getDisplayName() + " NOT ENOUGH GOLD FOR PURCHASE"));
