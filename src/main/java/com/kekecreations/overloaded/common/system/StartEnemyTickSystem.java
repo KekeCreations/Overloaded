@@ -13,13 +13,13 @@ import com.kekecreations.overloaded.common.component.RoundComponent;
 import javax.annotation.Nonnull;
 import java.util.Objects;
 
-public class EnemyTickSystem extends DelayedEntitySystem<EntityStore> {
+public class StartEnemyTickSystem extends DelayedEntitySystem<EntityStore> {
 
     private final ComponentType<EntityStore, RoundComponent> roundStats;
 
 
-    public EnemyTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
-        super(2.0F);
+    public StartEnemyTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
+        super(2.2F);
         this.roundStats = roundStats;
     }
 
@@ -40,45 +40,19 @@ public class EnemyTickSystem extends DelayedEntitySystem<EntityStore> {
             RoundComponent roundData = store.getComponent(ref, roundStats);
             //Purely so Intellij doesn't annoy me
             if (roundData != null && roundData.getRoundType() == "classic" || roundData.getRoundType() == "quick" || roundData.getRoundType() == "rounds") {
-                if (roundData.getRoundTimer() > 0 && !roundData.isTimerFrozen()) {
-                    for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
-                        if (roundData.getRoundCount() == 1) {
-                            CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton");
-                        }
-                        if (roundData.getRoundCount() == 2) {
-                            CommandManager.get().handleCommand(playerRef1, "spawn_enemy Zombie");
-                        }
-                        if (roundData.getRoundCount() == 3) {
-                            CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Fighter");
-                        }
-                        if (roundData.getRoundCount() == 4) {
+                if (roundData.getRoundCount() <= 5) {
+                    if (roundData.getRoundTimer() > 0 && !roundData.isTimerFrozen()) {
+                        for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
                             int enemy = (int) (Math.random() * 3);
                             switch (enemy) {
                                 case 0 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Zombie");
-                                }
-                                case 1 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton");
                                 }
-                                case 2 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Fighter");
-                                }
-                            }
-                        }
-                        if (roundData.getRoundCount() >= 5 && roundData.getRoundCount() <= 9) {
-                            int enemy = (int) (Math.random() * 4);
-                            switch (enemy) {
-                                case 0 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Burnt_Knight");
-                                }
                                 case 1 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton");
-                                }
-                                case 2 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Fighter");
                                 }
-                                case 3 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Burnt_Lancer");
+                                case 2 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Knight");
                                 }
                             }
                         }

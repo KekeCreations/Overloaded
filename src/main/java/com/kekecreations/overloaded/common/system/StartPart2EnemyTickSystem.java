@@ -13,13 +13,13 @@ import com.kekecreations.overloaded.common.component.RoundComponent;
 import javax.annotation.Nonnull;
 import java.util.Objects;
 
-public class EnemyStage2TickSystem extends DelayedEntitySystem<EntityStore> {
+public class StartPart2EnemyTickSystem extends DelayedEntitySystem<EntityStore> {
 
     private final ComponentType<EntityStore, RoundComponent> roundStats;
 
 
-    public EnemyStage2TickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
-        super(2.5F);
+    public StartPart2EnemyTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
+        super(1.8F);
         this.roundStats = roundStats;
     }
 
@@ -40,45 +40,22 @@ public class EnemyStage2TickSystem extends DelayedEntitySystem<EntityStore> {
             RoundComponent roundData = store.getComponent(ref, roundStats);
             //Purely so Intellij doesn't annoy me
             if (roundData != null && roundData.getRoundType() == "classic" || roundData.getRoundType() == "quick" || roundData.getRoundType() == "rounds") {
-                if (roundData.getRoundTimer() > 0 && !roundData.isTimerFrozen()) {
-                    for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
-                        if (roundData.getRoundCount() >= 10) {
-                            int enemy = (int) (Math.random() * 15);
+                if (roundData.getRoundCount() >= 5 && roundData.getRoundCount() <= 10) {
+                    if (roundData.getRoundTimer() > 0 && !roundData.isTimerFrozen()) {
+                        for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
+                            int enemy = (int) (Math.random() * 4);
                             switch (enemy) {
-                                case 0, 1 -> {
+                                case 0 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Zombie");
                                 }
-                                case 2, 3 -> {
+                                case 1 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton");
                                 }
-                                case 4, 5 -> {
+                                case 2 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Fighter");
                                 }
-                                case 6, 7 -> {
-                                    if (roundData.isArachnophobiaMode()) {
-                                        CommandManager.get().handleCommand(playerRef1, "spawn_enemy Zombie");
-                                    } else {
-                                        CommandManager.get().handleCommand(playerRef1, "spawn_enemy Spider_Cave");
-                                    }
-                                }
-                                case 8 -> {
-                                    if (roundData.isArachnophobiaMode()) {
-                                        CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton");
-                                    } else {
-                                        CommandManager.get().handleCommand(playerRef1, "spawn_enemy Spider");
-                                    }
-                                }
-                                case 9 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Goblin_Thief");
-                                }
-                                case 10 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Goblin_Scrapper");
-                                }
-                                case 11, 12 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Crawler_Void");
-                                }
-                                case 13, 14 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Spawn_Void");
+                                case 3 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Zombie_Aberrant_Small");
                                 }
                             }
                         }

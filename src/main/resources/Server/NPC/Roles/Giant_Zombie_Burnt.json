@@ -5,7 +5,7 @@
     "DropList": "Drop_Zombie_Burnt",
     "Appearance": "Giant_Zombie_Burnt",
     "AttackSequence": "Component_Instruction_Attack_Sequence_Zombie_Burnt",
-    "MaxHealth": 600,
+    "MaxHealth": 1250,
     "IsMemory": true,
     "MemoriesCategory": "Undead",
     "_InteractionVars": {

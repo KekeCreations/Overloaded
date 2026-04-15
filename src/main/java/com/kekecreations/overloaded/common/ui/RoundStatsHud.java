@@ -30,9 +30,20 @@ public class RoundStatsHud extends CustomUIHud {
         if (!roundData.isTimerFrozen()) {
             uiCommandBuilder.set("#ROUNDCOUNT.TextSpans", Message.raw("Round " + roundData.getRoundCount()));
             uiCommandBuilder.set("#ROUNDTIMER.TextSpans", Message.raw(String.valueOf(roundData.getRoundTimer())));
+
+            if (roundData.getRoundCount() <= 10) {
+                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE UNDEAD RISES"));
+            }
+            if (roundData.getRoundCount() > 10 && roundData.getRoundCount() <= 20) {
+                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE DEAD ZONE"));
+            }
+            if (roundData.getRoundCount() > 20 && roundData.getRoundCount() <= 30) {
+                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("AHOY DEADLY"));
+            }
         } else {
             uiCommandBuilder.set("#ROUNDCOUNT.TextSpans", Message.raw(""));
             uiCommandBuilder.set("#ROUNDTIMER.TextSpans", Message.raw(""));
+            uiCommandBuilder.set("#TITLE.TextSpans", Message.raw(""));
         }
     }
 }

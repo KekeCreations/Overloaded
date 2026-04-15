@@ -32,7 +32,7 @@
     }
   },
   "Modify": {
-    "MaxHealth": 450,
+    "MaxHealth": 1000,
     "MaxSpeed": 3,
     "ChaseRelativeSpeed": 1,
     "HearingRange": 10,
@@ -65,7 +65,7 @@
       "Compute": "WanderRadius"
     },
     "Attack": "Root_NPC_Skeleton_Fighter_Attack",
-    "AttackDistance": 4.5,
+    "AttackDistance": 6,
     "AttackPauseRange": [
       1,
       2.5

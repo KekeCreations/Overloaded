@@ -32,7 +32,7 @@
     }
   },
   "Modify": {
-    "MaxHealth": 600,
+    "MaxHealth": 1200,
     "MaxSpeed": 3,
     "ChaseRelativeSpeed": 1,
     "HearingRange": 10,

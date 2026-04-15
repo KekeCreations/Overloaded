@@ -46,8 +46,13 @@ Group #TIMERGROUP {
   }
   Group #MAIN {
     LayoutMode: Top;
-    Label #ROUNDCOUNT {
+    Label #TITLE {
       Anchor: (Top: 15);
+      Text: "Text";
+      Style: (TextColor: #ffffff, FontSize: 30, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+    }
+    Label #ROUNDCOUNT {
+      Anchor: (Top: 5);
       Text: "Text";
       Style: (TextColor: #ffffff, FontSize: 30, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
     }

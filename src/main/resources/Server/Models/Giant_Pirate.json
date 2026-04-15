@@ -1,0 +1,52 @@
+{
+  "Parent": "Skeleton",
+  "Texture": "NPC/Undead/Skeleton/Models/Model_Textures/White.png",
+  "EyeHeight": 1.5,
+  "DefaultAttachments": [
+    {
+      "Model": "NPC/Undead/Skeleton/Models/Attachments/Cosmetics/Head/Eyes/Eyes.blockymodel",
+      "Texture": "NPC/Undead/Skeleton/Models/Attachments/Cosmetics/Head/Eyes/Eyes_Red.png"
+    },
+    {
+      "Model": "NPC/Undead/Skeleton/Models/Attachments/Cosmetics/Chest/Tunic_Torn.blockymodel",
+      "Texture": "NPC/Undead/Skeleton/Models/Attachments/Cosmetics/Chest/Tunic_Torn_Textures/Tunic_Torn_Purple.png"
+    },
+    {
+      "Model": "Cosmetics/Shoes/BootsBasic.blockymodel",
+      "Texture": "Cosmetics/Shoes/BootsBasic_Textures/Black.png"
+    },
+    {
+      "Model": "Cosmetics/Head/PirateCaptain.blockymodel",
+      "Texture": "Cosmetics/Head/PirateCaptain_Textures/PirateCaptain_Greyscale_Texture.png",
+      "GradientSet": "Faded_Leather",
+      "GradientId": "Black"
+    },
+    {
+      "Model": "Cosmetics/Gloves/MiningGloves.blockymodel",
+      "Texture": "Cosmetics/Gloves/MiningGloves_Black.png"
+    },
+    {
+      "Model": "NPC/Undead/Skeleton/Models/Attachments/Cosmetics/Head/Beards/Dry_Undead.blockymodel",
+      "Texture": "NPC/Undead/Skeleton/Models/Attachments/Cosmetics/Head/Beards/Dry_Undead_Grey_Blue.png"
+    },
+    {
+      "Model": "Items/Weapons/Sword/Cutlass.blockymodel",
+      "Texture": "Items/Weapons/Sword/Cutlass_Texture.png"
+    }
+  ],
+  "MinScale": 2,
+  "MaxScale": 2,
+  "Icon": "Icons/ModelsGenerated/Giant_Pirate.png",
+  "IconProperties": {
+    "Scale": 0.2,
+    "Rotation": [
+      0,
+      -45,
+      0
+    ],
+    "Translation": [
+      0,
+      -75
+    ]
+  }
+}

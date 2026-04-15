@@ -73,7 +73,7 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                         if (itemStack.isValid()) {
                             if (itemStack.equals(new ItemStack("Anvil_Pet")) && roundData.getRoundTimer() == 1) {
                                 Player oPlayer = store.getComponent(oPlayerRef.getReference(), Player.getComponentType());
-                                oPlayer.sendMessage(Message.raw("anvil pet said Hi"));
+                                oPlayer.sendMessage(Message.raw("Anvil pet said Hi"));
                                 ItemStackTransaction itemStackTransaction = oPlayer.giveItem(new ItemStack("Tool_Repair_Kit_Iron"), oPlayerRef.getReference(), store);
                                 ItemStack remainder = itemStackTransaction.getRemainder();
 
@@ -261,18 +261,18 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                             if (statMap != null) {
                                 if (itemStack.equals(new ItemStack("Broken_Shield"))) {
                                     statMap.addStatValue(DefaultEntityStatTypes.getSignatureEnergy(), 0.05F);
-                                    statMap.addStatValue(DefaultEntityStatTypes.getHealth(), 0.025F);
+                                    statMap.addStatValue(DefaultEntityStatTypes.getHealth(), 0.20F);
                                 }
                                 if (itemStack.equals(new ItemStack("King_Shield"))) {
                                     statMap.addStatValue(DefaultEntityStatTypes.getSignatureEnergy(), 0.35F);
                                     statMap.subtractStatValue(DefaultEntityStatTypes.getHealth(), 0.05F);
                                 }
                                 if (itemStack.equals(new ItemStack("The_Core"))) {
-                                    statMap.addStatValue(DefaultEntityStatTypes.getHealth(), 0.5F);
+                                    statMap.addStatValue(DefaultEntityStatTypes.getHealth(), 0.8F);
                                     statMap.subtractStatValue(DefaultEntityStatTypes.getStamina(), 1F);
                                 }
                                 if (itemStack.equals(new ItemStack("Heart_Pet"))) {
-                                    statMap.addStatValue(DefaultEntityStatTypes.getHealth(), 0.05F);
+                                    statMap.addStatValue(DefaultEntityStatTypes.getHealth(), 1.0F);
                                 }
                                 if (itemStack.equals(new ItemStack("Slap_Vial"))) {
                                     statMap.subtractStatValue(DefaultEntityStatTypes.getHealth(), 0.3F);
@@ -324,7 +324,6 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                         }
                     });
 
-                    oPlayerRef.sendMessage(Message.raw(spear + "copperthrow chance"));
                     if (spear.get() == 0) {
                         ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation);
                     }

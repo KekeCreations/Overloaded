@@ -84,6 +84,7 @@ public class EventRegistry {
                     backpack.clear();
                     storage.clear();
                     tool.clear();
+                    hotbar.setItemStackForSlot((short) 0, new ItemStack("Remote"));
                     hotbar.setItemStackForSlot((short) 1, new ItemStack("Weapon_Battleaxe_Copper"));
                     hotbar.setItemStackForSlot((short) 2, new ItemStack("Potion_Health", 3));
 
