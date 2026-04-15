@@ -39,6 +39,14 @@ public class ComponentAndSystemRegistry {
         registry.registerSystem(new Section3EnemyTickSystem(roundComponent));
         registry.registerSystem(new Section4EnemyTickSystem(roundComponent));
         registry.registerSystem(new Section5EnemyTickSystem(roundComponent));
+        registry.registerSystem(new Section6EnemyTickSystem(roundComponent));
+        registry.registerSystem(new Section7EnemyTickSystem(roundComponent));
+        registry.registerSystem(new Section8EnemyTickSystem(roundComponent));
+        registry.registerSystem(new Section9EnemyTickSystem(roundComponent));
+        registry.registerSystem(new Section10EnemyTickSystem(roundComponent));
+        registry.registerSystem(new Section11EnemyTickSystem(roundComponent));
+        registry.registerSystem(new Section12EnemyTickSystem(roundComponent));
+        registry.registerSystem(new Section13EnemyTickSystem(roundComponent));
         registry.registerSystem(new RoundTickSystem(roundComponent));
         registry.registerSystem(new UiTickSystem(roundComponent));
         registry.registerSystem(new ChestTickSystem(roundComponent));

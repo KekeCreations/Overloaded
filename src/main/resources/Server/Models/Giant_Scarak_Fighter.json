@@ -1,0 +1,24 @@
+{
+  "Parent": "Scarak_Fighter",
+  "DefaultAttachments": [
+    {
+      "Model": "Items/Armors/Bronze_Ornate/Head.blockymodel",
+      "Texture": "Items/Armors/Bronze_Ornate/Head_Texture.png"
+    }
+  ],
+  "MinScale": 2,
+  "MaxScale": 2,
+  "Icon": "Icons/ModelsGenerated/Giant_Scarak_Fighter.png",
+  "IconProperties": {
+    "Scale": 0.1,
+    "Rotation": [
+      0,
+      -45,
+      0
+    ],
+    "Translation": [
+      0,
+      -75
+    ]
+  }
+}

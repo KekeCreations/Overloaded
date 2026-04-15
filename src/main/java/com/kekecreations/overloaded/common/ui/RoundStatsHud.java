@@ -50,8 +50,29 @@ public class RoundStatsHud extends CustomUIHud {
             if (roundData.getRoundCount() > 40 && roundData.getRoundCount() <= 50) {
                 uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("VOID UGLIES"));
             }
-            if (roundData.getRoundCount() > 51 && roundData.getRoundCount() <= 60) {
+            if (roundData.getRoundCount() > 50 && roundData.getRoundCount() <= 60) {
                 uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("BUG SEASON"));
+            }
+            if (roundData.getRoundCount() > 60 && roundData.getRoundCount() <= 70) {
+                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("GOLDEN LURE"));
+            }
+            if (roundData.getRoundCount() > 70 && roundData.getRoundCount() <= 80) {
+                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("EMBER MIGHT"));
+            }
+            if (roundData.getRoundCount() > 80 && roundData.getRoundCount() <= 90) {
+                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("FERAN RAID"));
+            }
+            if (roundData.getRoundCount() > 90 && roundData.getRoundCount() <= 100) {
+                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("SUPERNATURAL FOES"));
+            }
+            if (roundData.getRoundCount() > 100 && roundData.getRoundCount() <= 110) {
+                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("OUTLANDERS"));
+            }
+            if (roundData.getRoundCount() > 110 && roundData.getRoundCount() <= 120) {
+                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("10 ROUNDS TO LIVE"));
+            }
+            if (roundData.getRoundCount() > 120) {
+                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("STRANGE THINGS"));
             }
         } else {
             uiCommandBuilder.set("#ROUNDCOUNT.TextSpans", Message.raw(""));

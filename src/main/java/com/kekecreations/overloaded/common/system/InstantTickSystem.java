@@ -105,9 +105,63 @@ public class InstantTickSystem extends EntityTickingSystem<EntityStore> {
                         }
                     }
                     if (roundData.getRoundCount() == 28) {
+                        if (roundData.getRoundTimer() == 30) {
+                            roundData.setRoundTimer(29);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Pirate");
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Knight");
+                        }
+                    }
+                    if (roundData.getRoundCount() == 55) {
+                        if (roundData.getRoundTimer() == 30) {
+                            roundData.setRoundTimer(29);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Dungeon_Scarak_Broodmother");
+                        }
+                    }
+                    if (roundData.getRoundCount() == 65) {
+                        if (roundData.getRoundTimer() == 35) {
+                            roundData.setRoundTimer(34);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Goblin");
+                        }
+                    }
+                    if (roundData.getRoundCount() == 75) {
+                        if (roundData.getRoundTimer() == 42) {
+                            roundData.setRoundTimer(41);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Emberwulf");
+                        }
+                    }
+                    if (roundData.getRoundCount() == 95) {
+                        if (roundData.getRoundTimer() == 41) {
+                            roundData.setRoundTimer(40);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Hedera");
+                        }
+                    }
+                    if (roundData.getRoundCount() == 98) {
+                        if (roundData.getRoundTimer() == 37) {
+                            roundData.setRoundTimer(36);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Hedera");
+                        }
+                    }
+                    if (roundData.getRoundCount() == 115) {
+                        if (roundData.getRoundTimer() == 41) {
+                            roundData.setRoundTimer(40);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Zombie_Burnt");
+                        }
+                    }
+                    if (roundData.getRoundCount() == 116) {
                         if (roundData.getRoundTimer() == 40) {
                             roundData.setRoundTimer(39);
-                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Pirate");
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Zombie_Burnt_Variant");
+                        }
+                    }
+                    if (roundData.getRoundCount() == 117) {
+                        if (roundData.getRoundTimer() == 41) {
+                            roundData.setRoundTimer(40);
+                            CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Burnt");
+                        }
+                    }
+                    if (roundData.getRoundCount() == 118) {
+                        if (roundData.getRoundTimer() == 38) {
+                            roundData.setRoundTimer(37);
                             CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Knight");
                         }
                     }
