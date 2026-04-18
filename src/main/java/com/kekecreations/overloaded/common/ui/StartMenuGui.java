@@ -38,6 +38,7 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
     private static final String QUIT_BUTTON_ID = "QUIT";
 
     private static final String SETTINGS = "SETTINGS";
+    private static final String HOW_TO_PLAY = "HOWTOPLAY";
 
     RoundComponent roundComponent;
 
@@ -56,6 +57,7 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#PLAYQUICK", EventData.of("OnButtonClicked", PLAY_QUICK_BUTTON_ID), false);
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#PLAYROUNDS", EventData.of("OnButtonClicked", PLAY_ROUNDS_BUTTON_ID), false);
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#QUIT", EventData.of("OnButtonClicked", QUIT_BUTTON_ID), false);
+        uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#HOWTOPLAY", EventData.of("OnButtonClicked", HOW_TO_PLAY), false);
     }
 
     @Override
@@ -104,6 +106,10 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
         else if (SETTINGS.equals(data.buttonClicked)) {
             player.getPageManager().setPage(ref, store, Page.None);
             roundData.setRoundMenu("settings");
+        }
+        else if (HOW_TO_PLAY.equals(data.buttonClicked)) {
+            player.getPageManager().setPage(ref, store, Page.None);
+            roundData.setRoundMenu("how_to_play");
         }
         else if (QUIT_BUTTON_ID.equals(data.buttonClicked)) {
             playerRef.getPacketHandler().writeNoCache(new ServerDisconnect(null, DisconnectType.Disconnect));

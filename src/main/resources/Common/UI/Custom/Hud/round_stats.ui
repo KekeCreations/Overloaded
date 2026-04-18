@@ -47,7 +47,7 @@ Group #TIMERGROUP {
   Group #MAIN {
     LayoutMode: Top;
     Label #TITLE {
-      Anchor: (Top: 15);
+      Anchor: (Top: 30);
       Text: "Text";
       Style: (TextColor: #ffffff, FontSize: 30, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
     }
