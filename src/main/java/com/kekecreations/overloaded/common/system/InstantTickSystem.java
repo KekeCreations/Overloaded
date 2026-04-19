@@ -111,6 +111,15 @@ public class InstantTickSystem extends EntityTickingSystem<EntityStore> {
                             CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Skeleton_Knight");
                         }
                     }
+                    if (roundData.getRoundCount() == 32) {
+                        if (roundData.getRoundTimer() == 30) {
+                            if (!roundData.isArachnophobiaMode()) {
+                                roundData.setRoundTimer(29);
+                                CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Cave_Spider");
+                                CommandManager.get().handleCommand(playerRef1, "spawn_boss Giant_Cave_Spider");
+                            }
+                        }
+                    }
                     if (roundData.getRoundCount() == 55) {
                         if (roundData.getRoundTimer() == 30) {
                             roundData.setRoundTimer(29);
