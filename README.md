@@ -10,6 +10,7 @@
 ## Summoner
 - Buy pets that summon friendly NPCs to help out in battle!
 - Avoid life steal items because it will weaken health regeneration and its harder to get kills with an army surrounding you!
+- Summoner pets give a small amount of gold to all players when they kill an enemy so the summoner build can act as a support class in multiplayer!
 ## Melee
 - This class has many subclasses because of the amount of unique weapons within Hytale
 - Items that boost signature energy regeneration are really useful as it will charge the weapon's special ability faster
@@ -38,9 +39,18 @@ Eventually all will be yours and it will be chaos! can you survive to round 50, 
 2. Double gold mode: When turned on, the player earns double gold for kills, this mode will help less combat skilled players have a fun experience!
 
 
-# Singleplayer & Multi-player Explained
+# Singleplayer & Multiplayer Explained
+- The first player to join a world or server, gets the round data componenet and they become Player One so they can pick the mode and the settings!
+- All players have different gold and kill stats and have different item shop choices per round!
+- The mini-game supports both singleplayer and multiplayer with friends, multiplayer isn't designed for big servers!
 
 
 
 # How To Download & Play
-
+(Note: You can download the Curseforge app to streamline this process)
+- Download the .jar file from the official Curseforge page
+- Move the .jar into the mods directory for Hytale
+- Boot the game and create a new world
+- When creating the new world, modify world settings to add the mod to the world
+- Once the world is created you will see the Overloaded start menu, this menu will help guide you through the game!
+- (Optional) I recommend looking at the How To Play screen and the Options menu before playing!
