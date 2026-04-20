@@ -1,0 +1,29 @@
+{
+  "Parent": "Skeleton",
+  "Texture": "NPC/Undead/Skeleton/Models/Model_Textures/Burnt.png",
+  "Icon": "Icons/ModelsGenerated/Baby_Burnt_Skeleton.png",
+  "IconProperties": {
+    "Scale": 0.25,
+    "Rotation": [
+      0,
+      -45,
+      0
+    ],
+    "Translation": [
+      14,
+      -61
+    ]
+  },
+  "DefaultAttachments": [
+    {
+      "Model": "NPC/Undead/Skeleton/Models/Attachments/Cosmetics/Head/Eyes/Eyes.blockymodel",
+      "Texture": "NPC/Undead/Skeleton/Models/Attachments/Cosmetics/Head/Eyes/Eyes_Blue.png"
+    },
+    {
+      "Model": "Items/Weapons/Sword/Steel_Incandescent.blockymodel",
+      "Texture": "Items/Weapons/Sword/Steel_Incandescent_Texture.png"
+    }
+  ],
+  "MinScale": 0.65,
+  "MaxScale": 0.65
+}

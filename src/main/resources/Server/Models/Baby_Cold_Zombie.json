@@ -1,0 +1,33 @@
+{
+  "Parent": "Zombie",
+  "Texture": "NPC/Undead/Zombie/Models/Zombie_Frost.png",
+  "DefaultAttachments": [
+    {
+      "Model": "NPC/Undead/Zombie/Models/Attachments/Head/Eyes.blockymodel",
+      "Texture": "NPC/Undead/Zombie/Models/Attachments/Head/Eyes_Blue.png"
+    },
+    {
+      "Model": "Characters/Body_Attachments/Ears/Ears1.blockymodel",
+      "Texture": "Characters/Body_Attachments/Ears/Ears1_Textures/Zombie_Frost.png"
+    },
+    {
+      "Model": "Items/Weapons/Sword/Frost.blockymodel",
+      "Texture": "Items/Weapons/Sword/Frost_Texture.png"
+    }
+  ],
+  "Icon": "Icons/ModelsGenerated/Baby_Cold_Zombie.png",
+  "IconProperties": {
+    "Scale": 0.2,
+    "Rotation": [
+      0,
+      -45,
+      0
+    ],
+    "Translation": [
+      14,
+      -59
+    ]
+  },
+  "MinScale": 0.65,
+  "MaxScale": 0.65
+}

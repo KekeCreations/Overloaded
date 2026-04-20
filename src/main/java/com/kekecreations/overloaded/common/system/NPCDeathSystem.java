@@ -39,18 +39,39 @@ public class NPCDeathSystem extends DeathSystems.OnDeathSystem {
                     if (store.getArchetype(entitySource.getRef()).contains(NPCEntity.getComponentType())) {
                         NPCEntity pet = store.getComponent(entitySource.getRef(), NPCEntity.getComponentType());
                         if (pet != null) {
-                            if (Objects.equals(pet.getNPCTypeId(), "Friendly_Baby_Skeleton")) {
-                                int goldReward = (int) (Math.random() * 2);
-                                Universe.get().getPlayers().forEach((playerRef -> {
-                                    if (playerRef.getReference() != null) {
-                                        GoldAndKillsComponent goldAndKillsComponent = store.getComponent(playerRef.getReference(), GoldAndKillsComponent.getComponentType());
-                                        if (goldAndKillsComponent != null) {
-                                            playerRef.sendMessage(Message.raw("GOLD FROM PET"));
+                            Universe.get().getPlayers().forEach((playerRef -> {
+                                if (playerRef.getReference() != null) {
+                                    GoldAndKillsComponent goldAndKillsComponent = store.getComponent(playerRef.getReference(), GoldAndKillsComponent.getComponentType());
+                                    if (goldAndKillsComponent != null) {
+                                        if (Objects.equals(pet.getNPCTypeId(), "Friendly_Baby_Skeleton")) {
+                                            playerRef.sendMessage(Message.raw("gold from pet"));
+                                            int goldReward = (int) (Math.random() * 2);
+                                            goldAndKillsComponent.setGold(goldAndKillsComponent.getGold() + goldReward);
+                                        } else if (Objects.equals(pet.getNPCTypeId(), "Friendly_Baby_Burnt_Skeleton")) {
+                                            playerRef.sendMessage(Message.raw("gold from pet"));
+                                            int goldReward = (int) (Math.random() * 2);
+                                            goldAndKillsComponent.setGold(goldAndKillsComponent.getGold() + goldReward);
+                                        } else if (Objects.equals(pet.getNPCTypeId(), "Friendly_Baby_Spider")) {
+                                            playerRef.sendMessage(Message.raw("gold from pet"));
+                                            int goldReward = (int) (Math.random() * 2);
+                                            goldAndKillsComponent.setGold(goldAndKillsComponent.getGold() + goldReward);
+                                        } else if (Objects.equals(pet.getNPCTypeId(), "Friendly_Baby_Zombie")) {
+                                            playerRef.sendMessage(Message.raw("gold from pet"));
+                                            int goldReward = (int) (Math.random() * 2);
+                                            goldAndKillsComponent.setGold(goldAndKillsComponent.getGold() + goldReward);
+                                        } else if (Objects.equals(pet.getNPCTypeId(), "Friendly_Baby_Cold_Zombie")) {
+                                            playerRef.sendMessage(Message.raw("gold from pet"));
+                                            int goldReward = (int) (Math.random() * 2);
+                                            goldAndKillsComponent.setGold(goldAndKillsComponent.getGold() + goldReward);
+                                        }
+                                        else if (Objects.equals(pet.getNPCTypeId(), "Friendly_Baby_Zombie_Brute")) {
+                                            playerRef.sendMessage(Message.raw("gold from pet brute"));
+                                            int goldReward = (int) (Math.random() * 4);
                                             goldAndKillsComponent.setGold(goldAndKillsComponent.getGold() + goldReward);
                                         }
                                     }
-                                }));
-                            }
+                                }
+                            }));
                         }
 
 

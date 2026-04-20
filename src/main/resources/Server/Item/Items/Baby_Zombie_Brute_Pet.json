@@ -1,0 +1,25 @@
+{
+  "Model": "Items/Pets/Model/brute_zombie_pet.blockymodel",
+  "Texture": "Items/Pets/Textures/baby_zombie_brute_pet.png",
+  "Scale": 1,
+  "ItemLevel": 10,
+  "MaxStack": 1,
+  "Icon": "Icons/ItemsGenerated/Baby_Zombie_Brute_Pet.png",
+  "IconProperties": {
+    "Scale": 1,
+    "Rotation": [
+      0,
+      28,
+      0
+    ],
+    "Translation": [
+      -1,
+      -13
+    ]
+  },
+  "TranslationProperties": {
+    "Name": "overloaded.Baby_Zombie_Brute_Pet.name",
+    "Description": "overloaded.Baby_Zombie_Brute_Pet.desc"
+  },
+  "Quality": "Legendary"
+}

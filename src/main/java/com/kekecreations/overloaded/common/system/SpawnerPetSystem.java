@@ -31,7 +31,7 @@ public class SpawnerPetSystem extends DelayedEntitySystem<EntityStore> {
 
 
     public SpawnerPetSystem() {
-        super(10.0F);
+        super(15.0F);
     }
 
     @Override
@@ -46,9 +46,6 @@ public class SpawnerPetSystem extends DelayedEntitySystem<EntityStore> {
                     InventoryComponent storageComponent = store.getComponent(oPlayerRef.getReference(), InventoryComponent.getComponentTypeById(-2));
                     ItemContainer storage = storageComponent.getInventory();
 
-                    EntityStatMap statMap = store.getComponent(oPlayerRef.getReference(), EntityStatMap.getComponentType());
-                    GoldAndKillsComponent goldData = store.getComponent(oPlayerRef.getReference(), GoldAndKillsComponent.getComponentType());
-
 
 
                     storage.forEach((slot, itemStack) -> {
@@ -58,9 +55,26 @@ public class SpawnerPetSystem extends DelayedEntitySystem<EntityStore> {
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Skeleton");
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Skeleton");
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Skeleton");
-                                CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Skeleton");
-                                CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Skeleton");
-
+                            }
+                            if (itemStack.equals(new ItemStack("Baby_Burnt_Skeleton_Pet"))) {
+                                CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Burnt_Skeleton");
+                                CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Burnt_Skeleton");
+                                CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Burnt_Skeleton");
+                                CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Burnt_Skeleton");
+                            }
+                            if (itemStack.equals(new ItemStack("Baby_Zombie_Pet"))) {
+                                CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Zombie");
+                                CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Zombie");
+                                CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Zombie");
+                            }
+                            if (itemStack.equals(new ItemStack("Baby_Cold_Zombie_Pet"))) {
+                                CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Cold_Zombie");
+                                CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Cold_Zombie");
+                                CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Cold_Zombie");
+                            }
+                            if (itemStack.equals(new ItemStack("Baby_Spider_Pet"))) {
+                                CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Spider");
+                                CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Spider");
                             }
                         }
                     });
