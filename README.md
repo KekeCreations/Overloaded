@@ -61,8 +61,39 @@ Summons 2 Baby Spiders every 15 seconds with 15 health and 5 attack damage
 
 
 ## Melee
+You can also buy melee weapons for this build type!
+### Vampire Fang: 
++1 Life steal on kill  0.5 Health Drain
+### Gold Vampire Fang: 
++2 Life steal on kill  0.3 Health Drain
+### Hex Vial: 
++0.4 Signature Energy Recharge   2 Stamina Drain
+### Shimmer Vial: 
++0.35 Signature Energy Recharge +1 Stamina   0.3 Health Drain
+### Broken Shield:
++0.05 Signature Energy Recharge  +0.20 Health Regeneration
+### King Shield:
+ +0.35 Signature Energy Recharge  0.05 Health Drain
 ## Ranged
+### Iron Spear:
+Shoots an iron spear randomly
+### Cobalt Spear:
+Shoots an cobalt spear randomly
+### Flame Spear:
+Shoots a flame spear randomly
+### Spear Head Pet:
+Increases spear throw chance for all spears  (Stacks up to 4 times)
+### War Ready Spear Head Pet:
+Turns the default spear attack into a burst attack
+### Gold Spear Head Pet:
+Fires copper spears in random directions! (Throw chance isn't affected by the Spear Head Pet)
+### Trash Can: 
+Toss many trash cans that do low damage!
+### Kunai Pack:
+Shoots 5 Kunai randomly
 ## Special Abilities
+## Misc Items
+### Slap Vial: 
 
 
 
