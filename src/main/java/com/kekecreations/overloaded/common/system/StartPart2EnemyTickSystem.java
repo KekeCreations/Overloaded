@@ -4,14 +4,12 @@ import com.hypixel.hytale.component.*;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.DelayedEntitySystem;
 import com.hypixel.hytale.server.core.command.system.CommandManager;
-import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.kekecreations.overloaded.common.component.RoundComponent;
 
 import javax.annotation.Nonnull;
-import java.util.Objects;
 
 public class StartPart2EnemyTickSystem extends DelayedEntitySystem<EntityStore> {
 
@@ -32,8 +30,6 @@ public class StartPart2EnemyTickSystem extends DelayedEntitySystem<EntityStore> 
     @Override
     public void tick(float dt, int index, ArchetypeChunk<EntityStore> chunk, Store<EntityStore> store, CommandBuffer<EntityStore> commandBuffer) {
         Ref<EntityStore> ref = chunk.getReferenceTo(index);
-        Player player = Objects.requireNonNull(store.getComponent(ref, Player.getComponentType()));
-        PlayerRef playerRef = Objects.requireNonNull(store.getComponent(ref, PlayerRef.getComponentType()));
 
 
         if (store.getComponent(ref, roundStats) != null) {
@@ -43,18 +39,18 @@ public class StartPart2EnemyTickSystem extends DelayedEntitySystem<EntityStore> 
                 if (roundData.getRoundCount() >= 5 && roundData.getRoundCount() <= 10) {
                     if (roundData.getRoundTimer() > 0 && !roundData.isTimerFrozen()) {
                         for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
-                            int enemy = (int) (Math.random() * 4);
+                            int enemy = (int) (Math.random() * 8);
                             switch (enemy) {
                                 case 0 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Zombie");
                                 }
-                                case 1 -> {
+                                case 1, 2, 3 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton");
                                 }
-                                case 2 -> {
+                                case 4, 5, 6 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Fighter");
                                 }
-                                case 3 -> {
+                                case 7 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Zombie_Aberrant_Small");
                                 }
                             }
