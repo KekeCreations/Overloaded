@@ -76,4 +76,7 @@ Vampire_Fang.desc = In Inventory:  +1 Life steal on kill  -0.5 Health Regenerati
 Gold_Vampire_Fang.name= Gold Vampire Fang
 Gold_Vampire_Fang.desc = In Inventory:  +2 Life steal on kill  -0.3 Health Regeneration
 
+Baby_Skeleton_Pet.name= Baby Skeleton Pet
+Baby_Skeleton_Pet.desc = In Inventory:  +6 Baby Skeletons every 15 seconds   +0 - 2 Gold for every player on kill  NPC Statistics: Health: 5 Attack damage: 5
+
 chest.name = Chest

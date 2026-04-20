@@ -12,6 +12,7 @@ import com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent;
 import com.hypixel.hytale.server.core.modules.entity.damage.DeathSystems;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
 import com.hypixel.hytale.server.core.modules.entitystats.asset.DefaultEntityStatTypes;
+import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.kekecreations.overloaded.common.component.GoldAndKillsComponent;
@@ -35,6 +36,25 @@ public class NPCDeathSystem extends DeathSystems.OnDeathSystem {
             Damage damage = deathComponent.getDeathInfo();
             if (damage != null) {
                 if (damage.getSource() instanceof Damage.EntitySource entitySource) {
+                    if (store.getArchetype(entitySource.getRef()).contains(NPCEntity.getComponentType())) {
+                        NPCEntity pet = store.getComponent(entitySource.getRef(), NPCEntity.getComponentType());
+                        if (pet != null) {
+                            if (Objects.equals(pet.getNPCTypeId(), "Friendly_Baby_Skeleton")) {
+                                int goldReward = (int) (Math.random() * 2);
+                                Universe.get().getPlayers().forEach((playerRef -> {
+                                    if (playerRef.getReference() != null) {
+                                        GoldAndKillsComponent goldAndKillsComponent = store.getComponent(playerRef.getReference(), GoldAndKillsComponent.getComponentType());
+                                        if (goldAndKillsComponent != null) {
+                                            playerRef.sendMessage(Message.raw("GOLD FROM PET"));
+                                            goldAndKillsComponent.setGold(goldAndKillsComponent.getGold() + goldReward);
+                                        }
+                                    }
+                                }));
+                            }
+                        }
+
+
+                    }
                     if (store.getArchetype(entitySource.getRef()).contains(Player.getComponentType())) {
                         GoldAndKillsComponent goldData = store.getComponent(entitySource.getRef(), GoldAndKillsComponent.getComponentType());
                         RoundComponent roundComponent = store.getComponent(entitySource.getRef(), RoundComponent.getComponentType());

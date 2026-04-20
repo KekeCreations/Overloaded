@@ -52,6 +52,7 @@ public class ComponentAndSystemRegistry {
         registry.registerSystem(new ChestTickSystem(roundComponent));
         registry.registerSystem(new ChestDespawnSystem());
         registry.registerSystem(new PetSystem());
+        registry.registerSystem(new SpawnerPetSystem());
         registry.registerSystem(new NPCDeathSystem());
         registry.registerSystem(new PlayerDeathSystem());
         registry.registerSystem(new OtherPlayerTickSystem());
