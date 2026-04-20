@@ -50,7 +50,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
     //Healing & Totems
     int itemChance4 = (int)(Math.random() * 20);
     //Pets and Custom Items
-    int itemChance5 = (int)(Math.random() * 31);
+    int itemChance5 = (int)(Math.random() * 40);
 
     @Override
     public void build(@Nonnull Ref<EntityStore> ref, @Nonnull UICommandBuilder uiCommandBuilder, @Nonnull UIEventBuilder uiEventBuilder, @Nonnull Store<EntityStore> store) {
@@ -651,6 +651,60 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Gold_Spear_Head_Pet.png");
                 goldComponent.setItemCost5(23);
             }
+            case 31, 32 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("BABY SKELETON"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Baby_Skeleton_Pet.png");
+                goldComponent.setItemCost5(26);
+            }
+            case 33, 34 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("BABY ZOMBIE"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Baby_Zombie_Pet.png");
+                goldComponent.setItemCost5(27);
+            }
+            case 35, 36 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("RARE", null, null, null, null,
+                                "#1E98F7", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("BABY SPIDER"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Baby_Spider_Pet.png");
+                goldComponent.setItemCost5(28);
+            }
+            case 37 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("EPIC", null, null, null, null,
+                                "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("BABY COLD ZOMBIE"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Baby_Cold_Zombie_Pet.png");
+                goldComponent.setItemCost5(32);
+            }
+            case 38 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("EPIC", null, null, null, null,
+                                "#8421FC", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("BABY BURNT SKELETON"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Baby_Burnt_Skeleton_Pet.png");
+                goldComponent.setItemCost5(34);
+            }
+            case 39 -> {
+                uiCommandBuilder.set("#RARITY5.TextSpans",
+                        new Message(new FormattedMessage("LEGENDARY", null, null, null, null,
+                                "#CFB30E", MaybeBool.False, MaybeBool.False, MaybeBool.False, MaybeBool.False,
+                                null, false,  null)));
+                uiCommandBuilder.set("#DESC5.TextSpans", Message.raw("BABY ZOMBIE BRUTE"));
+                uiCommandBuilder.set("#IMAGE5.AssetPath", "Icons/ItemsGenerated/Baby_Zombie_Brute_Pet.png");
+                goldComponent.setItemCost5(42);
+            }
         }
         uiCommandBuilder.set("#PRICE1.TextSpans", Message.raw("GOLD: " + goldComponent.getItemCost1()));
         uiCommandBuilder.set("#PRICE2.TextSpans", Message.raw("GOLD: " + goldComponent.getItemCost2()));
@@ -1035,7 +1089,31 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                             }
                             case 23 -> {
                                 itemStack = new ItemStack("Gold_Spear_Head_Pet", 1);
-                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Gold_Spear_Head_Pet"));
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Gold Spear Head Pet"));
+                            }
+                            case 26 -> {
+                                itemStack = new ItemStack("Baby_Skeleton", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Baby Skeleton"));
+                            }
+                            case 27 -> {
+                                itemStack = new ItemStack("Baby_Zombie", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Baby Zombie"));
+                            }
+                            case 28 -> {
+                                itemStack = new ItemStack("Baby_Spider", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Baby Spider"));
+                            }
+                            case 32 -> {
+                                itemStack = new ItemStack("Baby_Cold_Zombie", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Baby Cold Zombie"));
+                            }
+                            case 34 -> {
+                                itemStack = new ItemStack("Baby_Burnt_Skeleton", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Baby Burnt Skeleton"));
+                            }
+                            case 42 -> {
+                                itemStack = new ItemStack("Baby_Zombie_Brute", 1);
+                                player.sendMessage(Message.raw(player.getDisplayName() + " Bought 1x Baby Zombie Brute"));
                             }
                             default -> {
                                 itemStack = new ItemStack("Bandage_Crude", 1);

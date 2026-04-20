@@ -50,29 +50,29 @@ public class SpawnerPetSystem extends DelayedEntitySystem<EntityStore> {
 
                     storage.forEach((slot, itemStack) -> {
                         if (itemStack.isValid()) {
-                            if (itemStack.equals(new ItemStack("Baby_Skeleton_Pet"))) {
+                            if (itemStack.equals(new ItemStack("Baby_Skeleton"))) {
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Skeleton");
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Skeleton");
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Skeleton");
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Skeleton");
                             }
-                            if (itemStack.equals(new ItemStack("Baby_Burnt_Skeleton_Pet"))) {
+                            if (itemStack.equals(new ItemStack("Baby_Burnt_Skeleton"))) {
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Burnt_Skeleton");
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Burnt_Skeleton");
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Burnt_Skeleton");
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Burnt_Skeleton");
                             }
-                            if (itemStack.equals(new ItemStack("Baby_Zombie_Pet"))) {
+                            if (itemStack.equals(new ItemStack("Baby_Zombie"))) {
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Zombie");
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Zombie");
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Zombie");
                             }
-                            if (itemStack.equals(new ItemStack("Baby_Cold_Zombie_Pet"))) {
+                            if (itemStack.equals(new ItemStack("Baby_Cold_Zombie"))) {
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Cold_Zombie");
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Cold_Zombie");
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Cold_Zombie");
                             }
-                            if (itemStack.equals(new ItemStack("Baby_Spider_Pet"))) {
+                            if (itemStack.equals(new ItemStack("Baby_Spider"))) {
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Spider");
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Spider");
                             }

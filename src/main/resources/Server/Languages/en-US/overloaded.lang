@@ -76,22 +76,22 @@ Vampire_Fang.desc = In Inventory:  +1 Life steal on kill  -0.5 Health Regenerati
 Gold_Vampire_Fang.name= Gold Vampire Fang
 Gold_Vampire_Fang.desc = In Inventory:  +2 Life steal on kill  -0.3 Health Regeneration
 
-Baby_Skeleton_Pet.name= Baby Skeleton Pet
+Baby_Skeleton_Pet.name= Baby Skeleton
 Baby_Skeleton_Pet.desc = In Inventory:  +4 Baby Skeletons every 15 seconds   +0 - 2 Gold for every player on kill  NPC Statistics: Health: 5 Attack damage: 5
 
-Baby_Burnt_Skeleton_Pet.name= Baby Burnt Skeleton Pet
+Baby_Burnt_Skeleton_Pet.name= Baby Burnt Skeleton
 Baby_Burnt_Skeleton_Pet.desc = In Inventory:  +4 Baby Burnt Skeletons every 15 seconds   +0 - 2 Gold for every player on kill  NPC Statistics: Health: 5 Attack damage: 8
 
-Baby_Zombie_Pet.name= Baby Zombie Pet
+Baby_Zombie_Pet.name= Baby Zombie
 Baby_Zombie_Pet.desc = In Inventory:  +3 Baby Zombies every 15 seconds   +0 - 2 Gold for every player on kill  NPC Statistics: Health: 10 Attack damage: 5
 
-Baby_Cold_Zombie_Pet.name= Baby Cold Zombie Pet
+Baby_Cold_Zombie_Pet.name= Baby Cold Zombie
 Baby_Cold_Zombie_Pet.desc = In Inventory:  +3 Baby Cold Zombies every 15 seconds   +0 - 2 Gold for every player on kill  NPC Statistics: Health: 10 Attack damage: 10
 
-Baby_Zombie_Brute_Pet.name= Baby Zombie Brute Pet
+Baby_Zombie_Brute_Pet.name= Baby Zombie Brute
 Baby_Zombie_Brute_Pet.desc = In Inventory:  +2 Baby Zombies every 25 seconds  +1 Baby Zombie Brute every 25 seconds  +0 - 4 Gold for every player on kill  NPC Statistics: Health: 120 Attack damage: 30
 
-Baby_Spider_Pet.name= Baby Spider Pet
+Baby_Spider_Pet.name= Baby Spider
 Baby_Spider_Pet.desc = In Inventory:  +2 Baby Spiders every 15 seconds   +0 - 2 Gold for every player on kill  NPC Statistics: Health: 15 Attack damage: 5
 
 chest.name = Chest

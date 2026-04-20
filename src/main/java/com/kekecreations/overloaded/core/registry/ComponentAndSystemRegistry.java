@@ -54,6 +54,7 @@ public class ComponentAndSystemRegistry {
         registry.registerSystem(new PetSystem());
         registry.registerSystem(new SpawnerPetSystem());
         registry.registerSystem(new SpawnerBrutePetSystem());
+        registry.registerSystem(new PetDespawnSystem());
         registry.registerSystem(new NPCDeathSystem());
         registry.registerSystem(new PlayerDeathSystem());
         registry.registerSystem(new OtherPlayerTickSystem());

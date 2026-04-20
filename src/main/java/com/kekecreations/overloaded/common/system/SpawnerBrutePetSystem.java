@@ -37,7 +37,7 @@ public class SpawnerBrutePetSystem extends DelayedEntitySystem<EntityStore> {
 
                     storage.forEach((slot, itemStack) -> {
                         if (itemStack.isValid()) {
-                            if (itemStack.equals(new ItemStack("Baby_Zombie_Brute_Pet"))) {
+                            if (itemStack.equals(new ItemStack("Baby_Zombie_Brute"))) {
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Zombie_Brute");
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Zombie");
                                 CommandManager.get().handleCommand(oPlayerRef, "spawn_friendly Friendly_Baby_Zombie");
