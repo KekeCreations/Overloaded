@@ -45,6 +45,7 @@ Eventually all will be yours and it will be chaos! can you survive to round 50, 
 - The mini-game supports both singleplayer and multiplayer with friends, multiplayer isn't designed for big servers!
 
 # Custom Pets & Items Explained
+THIS ISN'T A LIST OF WHATS SOLD IN THE ITEM SHOP, ITS A LIST OF ALL CUSTOM STAT ITEMS AND PETS ADDED BY THE MOD!
 ## Summoner
 ### Baby Skeleton:
 Summons 4 Baby Skeletons every 15 seconds with 5 health and 5 attack damage
@@ -74,6 +75,8 @@ You can also buy melee weapons for this build type!
 +0.05 Signature Energy Recharge  +0.20 Health Regeneration
 ### King Shield:
  +0.35 Signature Energy Recharge  0.05 Health Drain
+
+ 
 ## Ranged
 ### Iron Spear:
 Shoots an iron spear randomly
@@ -91,9 +94,33 @@ Fires copper spears in random directions! (Throw chance isn't affected by the Sp
 Toss many trash cans that do low damage!
 ### Kunai Pack:
 Shoots 5 Kunai randomly
+
+
 ## Special Abilities
+### Fireball Pet: 
+Shoots a flaming ball randomly
+### Ice Ball Pet: 
+Shoots 3 ice balls randomly
+### Acid Orb Pet: 
+Shoots 4 acid orbs randomly
+### Dice: 
+Rolls a random number for random events!
+### Crimson Dice: 
+Spawns random burnt enemies when in inventory, when these enemies are defeated the player is rewarded with extra gold!
+### Lucky Dice: 
+Cheats death!
+
 ## Misc Items
 ### Slap Vial: 
++1 Stamina  0.3 Health Drain
+### Anvil Pet:
+Gives a repair kit every round when in hotbar!
+### The Core:
++1.0 Health Regeneration  1 Stamina Drain
+### Heart Pet:
++1.0 Health Regeneration
+### Meteor Pet:
++1 fireball
 
 
 
