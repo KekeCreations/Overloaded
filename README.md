@@ -44,6 +44,26 @@ Eventually all will be yours and it will be chaos! can you survive to round 50, 
 - All players have different gold and kill stats and have different item shop choices per round!
 - The mini-game supports both singleplayer and multiplayer with friends, multiplayer isn't designed for big servers!
 
+# Custom Pets & Items Explained
+## Summoner
+### Baby Skeleton:
+Summons 4 Baby Skeletons every 15 seconds with 5 health and 5 attack damage
+### Baby Zombie:
+Summons 3 Baby Zombies every 15 seconds with 10 health and 5 attack damage
+### Baby Burnt Skeleton:
+Summons 4 Baby Burnt Skeletons every 15 seconds with 5 health and 8 attack damage
+### Baby Cold Zombie:
+Summons 3 Baby Cold Zombies every 15 seconds with 10 health and 10 attack damage
+### Baby Zombie Brute:
+Summons 2 Baby Zombies and 1 Baby Zombie Brute every 25 seconds with 120 health and 30 attack damage
+### Baby Spider:
+Summons 2 Baby Spiders every 15 seconds with 15 health and 5 attack damage
+
+
+## Melee
+## Ranged
+## Special Abilities
+
 
 
 # How To Download & Play
