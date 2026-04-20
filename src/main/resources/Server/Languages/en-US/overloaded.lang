@@ -20,13 +20,13 @@ Dice.name= Dice
 Dice.desc = In Inventory: Rolls a random number for random events!
 
 The_Core.name= The Core
-The_Core.desc = In Inventory: +0.8 Health  -1 Stamina
+The_Core.desc = In Inventory: +1.0 Health Regeneration  1 Stamina Drain
 
 Broken_Shield.name= Broken Shield
 Broken_Shield.desc = In Inventory: +0.05 Signature Energy Recharge  +0.20 Health Regeneration
 
 King_Shield.name= King Shield
-King_Shield.desc = In Inventory: +0.35 Signature Energy Recharge  -0.05 Health Regeneration
+King_Shield.desc = In Inventory: +0.35 Signature Energy Recharge  0.05 Health Drain
 
 Heart_Pet.name= Heart Pet
 Heart_Pet.desc = In Inventory: +1.0 Health Regeneration
@@ -50,13 +50,13 @@ Flame_Spear.name= Flame Spear
 Flame_Spear.desc = In Inventory: Shoots a flame spear randomly
 
 Shimmer_Vial.name= Shimmer Vial
-Shimmer_Vial.desc = In Inventory:  +0.35 Signature Energy Recharge +1 Stamina -0.3 Health Regeneration
+Shimmer_Vial.desc = In Inventory:  +0.35 Signature Energy Recharge +1 Stamina   0.3 Health Drain
 
 Hex_Vial.name= Hex Vial
-Hex_Vial.desc = In Inventory:  +0.4 Signature Energy Recharge -2 Stamina
+Hex_Vial.desc = In Inventory:  +0.4 Signature Energy Recharge   2 Stamina Drain
 
 Slap_Vial.name= Slap Vial
-Slap_Vial.desc = In Inventory:  +1 Stamina -0.3 Health Regeneration
+Slap_Vial.desc = In Inventory:  +1 Stamina  0.3 Health Drain
 
 Spear_Head_Pet.name= Spear Head Pet
 Spear_Head_Pet.desc = In Inventory: Increases spear throw chance for all spears  (Stacks up to 4 times)
@@ -71,10 +71,10 @@ Remote.name= Remote
 Remote.desc = Use to slow down time to modify inventory and more! (Only works when your player one)
 
 Vampire_Fang.name= Vampire Fang
-Vampire_Fang.desc = In Inventory:  +1 Life steal on kill  -0.5 Health Regeneration
+Vampire_Fang.desc = In Inventory:  +1 Life steal on kill  0.5 Health Drain
 
 Gold_Vampire_Fang.name= Gold Vampire Fang
-Gold_Vampire_Fang.desc = In Inventory:  +2 Life steal on kill  -0.3 Health Regeneration
+Gold_Vampire_Fang.desc = In Inventory:  +2 Life steal on kill  0.3 Health Drain
 
 Baby_Skeleton_Pet.name= Baby Skeleton
 Baby_Skeleton_Pet.desc = In Inventory:  +4 Baby Skeletons every 15 seconds   +0 - 2 Gold for every player on kill  NPC Statistics: Health: 5 Attack damage: 5

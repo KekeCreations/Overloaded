@@ -268,7 +268,7 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                                     statMap.subtractStatValue(DefaultEntityStatTypes.getHealth(), 0.05F);
                                 }
                                 if (itemStack.equals(new ItemStack("The_Core"))) {
-                                    statMap.addStatValue(DefaultEntityStatTypes.getHealth(), 0.8F);
+                                    statMap.addStatValue(DefaultEntityStatTypes.getHealth(), 1F);
                                     statMap.subtractStatValue(DefaultEntityStatTypes.getStamina(), 1F);
                                 }
                                 if (itemStack.equals(new ItemStack("Heart_Pet"))) {
