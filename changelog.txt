@@ -10,5 +10,9 @@ This version is designed to work with Update 4 of the game also known as 2026.03
 - Fixed a bug where round data wouldn't be reset on player's death
 - Fixed a bug where the game over screen wouldn't open if you stayed on the death screen until the round was over!
 - Fixed the Feran raid section spawning NPCs that can't be damaged
+- All spear items now deal 20 more damage on hit
+- Basic copper spear attack now deals 20 more damage!
+- Ice ball pet now deals 10 more damage
+- Acid Orb Pet now deals 20 more damage
 
 - Add a new chaos mode for even more combat carnage!

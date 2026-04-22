@@ -9,7 +9,7 @@
   "MuzzleVelocity": 30,
   "TerminalVelocity": 30,
   "Gravity": 0,
-  "Damage": 30,
+  "Damage": 40,
   "DeathEffectsOnHit": true,
   "TimeToLive": 3,
   "DeadTimeMiss": 0,

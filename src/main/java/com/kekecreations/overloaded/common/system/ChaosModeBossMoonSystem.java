@@ -34,16 +34,13 @@ public class ChaosModeBossMoonSystem extends DelayedEntitySystem<EntityStore> {
                 if (Objects.equals(roundData.getRoundType(), "chaos")) {
                     if (roundData.getRoundCount() == 5) {
                         for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
-                            int enemy = (int) (Math.random() * 3);
+                            int enemy = (int) (Math.random() * 10);
                             switch (enemy) {
                                 default -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Scarak_Fighter");
-                                }
-                                case 1 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Scarak_Fighter");
                                 }
-                                case 2 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Scarak_Defender");
+                                case 1 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Scarak_Fighter");
                                 }
                             }
                         }

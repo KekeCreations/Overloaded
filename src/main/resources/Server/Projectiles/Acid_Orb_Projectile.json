@@ -1,6 +1,6 @@
 {
   "Parent": "Staff_Wood_Rotten_Corruption_Orb",
-  "Damage": 40,
+  "Damage": 60,
   "Appearance": "Skeleton_Mage_Corruption_Orb",
   "HitSoundEventId": "SFX_Skeleton_Mage_Spellbook_Impact",
   "MissSoundEventId": "SFX_Skeleton_Mage_Spellbook_Impact",
