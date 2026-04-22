@@ -1,6 +1,6 @@
 # Simple Instructions
 1. Add the mod to a new world
-2. Once you are loaded in, customise your settings and explore the how to play menu
+2. Once you are loaded in, customize your settings and explore the how to play menu
 3. When ready select whatever mode you want to play
 4. FIGHT!
 
@@ -32,6 +32,12 @@ Eventually all will be yours and it will be chaos! can you survive to round 50, 
 - In "Classic" mode, rounds last 45 seconds, bosses spawn and enemies don't get killed inbetween rounds! Time is slowed down when in the item shop!
 - in "Quick" mode, rounds last 25 seconds, there are no bosses and enemies don't get killed inbetween rounds! Time is slowed down when in the item shop!
 - in "Rounds" mode, rounds last 45 seconds, bosses spawn and enemies and friendly NPCs are wiped when a round ends!  You also have unlimited time to check out the item shop!
+### Chaos mode
+- Rounds last 60 seconds and changes section theme after each moon
+- Every 5th round is a new boss moon with a new theme! 
+- This mode has custom exclusive bosses that aren't in the other modes
+- The player also starts off with some gear such as an Acid Orb Pet, Ice Ball Pet, Kunai Pack and Mithril Battleaxe
+- NOT COMPATIBLE WITH ARACHNOPHOBIA MODE
 
 
 # Accessibility Options
@@ -40,7 +46,7 @@ Eventually all will be yours and it will be chaos! can you survive to round 50, 
 
 
 # Singleplayer & Multiplayer Explained
-- The first player to join a world or server, gets the round data componenet and they become Player One so they can pick the mode and the settings!
+- The first player to join a world or server, gets the round data component and they become Player One so they can pick the mode and the settings!
 - All players have different gold and kill stats and have different item shop choices per round!
 - The mini-game supports both singleplayer and multiplayer with friends, multiplayer isn't designed for big servers!
 
