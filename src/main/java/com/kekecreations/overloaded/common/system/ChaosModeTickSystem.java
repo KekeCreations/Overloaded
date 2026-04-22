@@ -36,17 +36,19 @@ public class ChaosModeTickSystem extends DelayedEntitySystem<EntityStore> {
             InventoryComponent hotbarComponent = store.getComponent(ref, InventoryComponent.getComponentTypeById(-1));
             ItemContainer hotbar = hotbarComponent.getInventory();
 
-            if (Objects.equals(roundData.getRoundType(), "chaos")) {
-                EntityStatMap entityStat = store.getComponent(ref, EntityStatMap.getComponentType());
-                if (entityStat != null) {
-                    entityStat.addStatValue(DefaultEntityStatTypes.getHealth(), 15.0F);
+            if (roundData != null) {
+                if (Objects.equals(roundData.getRoundType(), "chaos")) {
+                    EntityStatMap entityStat = store.getComponent(ref, EntityStatMap.getComponentType());
+                    if (entityStat != null) {
+                        entityStat.addStatValue(DefaultEntityStatTypes.getHealth(), 15.0F);
+                    }
                 }
-            }
-            if (roundData.getRoundCount() == 1 && roundData.getRoundTimer() == 58) {
-                hotbar.setItemStackForSlot((short) 1, new ItemStack("Weapon_Custom_Battleaxe_Mithril", 1));
-                hotbar.setItemStackForSlot((short) 3, new ItemStack("Kunai_Pack", 1));
-                hotbar.setItemStackForSlot((short) 4, new ItemStack("Acid_Orb_Pet", 1));
-                hotbar.setItemStackForSlot((short) 5, new ItemStack("Ice_Ball_Pet", 1));
+                if (roundData.getRoundCount() == 1 && roundData.getRoundTimer() == 58) {
+                    hotbar.setItemStackForSlot((short) 1, new ItemStack("Weapon_Custom_Battleaxe_Mithril", 1));
+                    hotbar.setItemStackForSlot((short) 3, new ItemStack("Kunai_Pack", 1));
+                    hotbar.setItemStackForSlot((short) 4, new ItemStack("Acid_Orb_Pet", 1));
+                    hotbar.setItemStackForSlot((short) 5, new ItemStack("Ice_Ball_Pet", 1));
+                }
             }
 
         }

@@ -30,20 +30,22 @@ public class ChaosModeStartEnemySystem extends DelayedEntitySystem<EntityStore> 
             PlayerRef playerRef = Objects.requireNonNull(store.getComponent(ref, PlayerRef.getComponentType()));
             RoundComponent roundData = store.getComponent(ref, roundStats);
 
-            if (roundData.getRoundTimer() > 0 && !roundData.isTimerFrozen()) {
-                if (roundData.getRoundCount() >= 1 && roundData.getRoundCount() <= 4) {
-                    if (Objects.equals(roundData.getRoundType(), "chaos")) {
-                        for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
-                            int enemy = (int) (Math.random() * 3);
-                            switch (enemy) {
-                                default -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton");
-                                }
-                                case 1 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Knight");
-                                }
-                                case 2 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Fighter");
+            if (roundData != null) {
+                if (roundData.getRoundTimer() > 0 && !roundData.isTimerFrozen()) {
+                    if (roundData.getRoundCount() >= 1 && roundData.getRoundCount() <= 4) {
+                        if (Objects.equals(roundData.getRoundType(), "chaos")) {
+                            for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
+                                int enemy = (int) (Math.random() * 3);
+                                switch (enemy) {
+                                    default -> {
+                                        CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton");
+                                    }
+                                    case 1 -> {
+                                        CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Knight");
+                                    }
+                                    case 2 -> {
+                                        CommandManager.get().handleCommand(playerRef1, "spawn_enemy Skeleton_Fighter");
+                                    }
                                 }
                             }
                         }

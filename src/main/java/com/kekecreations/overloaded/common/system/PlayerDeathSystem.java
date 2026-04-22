@@ -35,7 +35,6 @@ public class PlayerDeathSystem extends DeathSystems.OnDeathSystem {
             if (roundData != null) {
                 player.getPageManager().setPage(ref, store, Page.None);
                 roundData.freezeRoundTimer(true);
-                roundData.setRoundCount(0);
                 roundData.setRoundTimer(9999);
                 roundData.setRoundMenu("game_over");
             }
