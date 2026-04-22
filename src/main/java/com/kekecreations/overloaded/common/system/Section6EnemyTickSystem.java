@@ -17,7 +17,7 @@ public class Section6EnemyTickSystem extends DelayedEntitySystem<EntityStore> {
 
 
     public Section6EnemyTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
-        super(1.5F);
+        super(0.9F);
         this.roundStats = roundStats;
     }
 

@@ -14,5 +14,7 @@ This version is designed to work with Update 4 of the game also known as 2026.03
 - Basic copper spear attack now deals 20 more damage!
 - Ice ball pet now deals 10 more damage
 - Acid Orb Pet now deals 20 more damage
+- Fixed all spawning systems
+- Tweaked spawning rates for later sections
 
 - Add a new chaos mode for even more combat carnage!

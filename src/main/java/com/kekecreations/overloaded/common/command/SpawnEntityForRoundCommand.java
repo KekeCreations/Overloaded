@@ -34,7 +34,7 @@ public class SpawnEntityForRoundCommand extends AbstractTargetPlayerCommand {
     @Override
     protected void execute(@NotNull CommandContext commandContext, @Nullable Ref<EntityStore> ref, @NotNull Ref<EntityStore> ref1, @NotNull PlayerRef playerRef, @NotNull World world, @NotNull Store<EntityStore> store) {
         Player player = store.getComponent(ref, Player.getComponentType());
-        int chance = (int) (Math.random() * 3);
+        int chance = (int) (Math.random() * 4);
         double negativeX = -1 * (Math.random() * 10);
         double positiveX =  (Math.random() * 10);
         double negativeZ = -1 * (Math.random() * 10);
@@ -44,12 +44,6 @@ public class SpawnEntityForRoundCommand extends AbstractTargetPlayerCommand {
             if (transformComponent != null) {
                 Vector3d vector;
                 switch (chance) {
-                    case 0 -> {
-                        vector = new Vector3d(
-                                transformComponent.getPosition().getX() + positiveX,
-                                transformComponent.getPosition().getY() + 1,
-                                transformComponent.getPosition().getZ() + positiveZ);
-                    }
                     case 1 -> {
                         vector = new Vector3d(
                                 transformComponent.getPosition().getX() + negativeX,
