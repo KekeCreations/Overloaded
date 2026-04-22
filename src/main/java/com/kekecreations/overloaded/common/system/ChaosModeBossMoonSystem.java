@@ -55,8 +55,128 @@ public class ChaosModeBossMoonSystem extends DelayedEntitySystem<EntityStore> {
                                 case 1 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Crawler");
                                 }
+                            }
+                        }
+                    }
+                    if (roundData.getRoundCount() == 15) {
+                        for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
+                            int enemy = (int) (Math.random() * 5);
+                            switch (enemy) {
+                                default -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Spider_Cave");
+                                }
+                                case 1 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Cave_Spider");
+                                }
+                            }
+                        }
+                    }
+                    if (roundData.getRoundCount() == 20) {
+                        for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
+                            int enemy = (int) (Math.random() * 3);
+                            switch (enemy) {
+                                default -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Goblin");
+                                }
+                                case 1 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Hedera");
+                                }
+                            }
+                        }
+                    }
+                    if (roundData.getRoundCount() == 25) {
+                        for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
+                            int enemy = (int) (Math.random() * 4);
+                            switch (enemy) {
+                                default -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Emberwulf");
+                                }
+                                case 1 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Emberwulf");
+                                }
+                            }
+                        }
+                    }
+                    if (roundData.getRoundCount() == 30) {
+                        for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
+                            int enemy = (int) (Math.random() * 4);
+                            switch (enemy) {
+                                default -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Skeleton_Burnt");
+                                }
+                                case 1 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Skeleton_Knight");
+                                }
+                            }
+                        }
+                    }
+                    if (roundData.getRoundCount() == 35) {
+                        for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
+                            int enemy = (int) (Math.random() * 10);
+                            switch (enemy) {
+                                default -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Skeleton_Burnt");
+                                }
+                                case 1 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Skeleton_Knight");
+                                }
                                 case 2 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Ghoul");
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Skeleton_Fighter");
+                                }
+                                case 3 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Skeleton_Pirate");
+                                }
+                                case 4 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Zombie_Burnt");
+                                }
+                                case 5 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Zombie_Burnt_Variant");
+                                }
+                            }
+                        }
+                    }
+                    if (roundData.getRoundCount() == 40) {
+                        for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
+                            int enemy = (int) (Math.random() * 15);
+                            switch (enemy) {
+                                default -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Skeleton_Burnt");
+                                }
+                                case 1 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Skeleton_Knight");
+                                }
+                                case 2 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Skeleton_Fighter");
+                                }
+                                case 3 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Skeleton_Pirate");
+                                }
+                                case 4 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Zombie_Burnt");
+                                }
+                                case 6 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Zombie_Burnt_Variant");
+                                }
+                                case 7 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Hedera");
+                                }
+                                case 8 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Emberwulf");
+                                }
+                                case 9 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Crawler");
+                                }
+                                case 10 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Cave_Spider");
+                                }
+                                case 11 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Eye");
+                                }
+                                case 12 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Goblin");
+                                }
+                                case 13 -> {
+                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Giant_Scarak_Fighter");
                                 }
                             }
                         }

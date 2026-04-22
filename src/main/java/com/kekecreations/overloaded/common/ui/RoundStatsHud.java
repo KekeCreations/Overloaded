@@ -88,6 +88,45 @@ public class RoundStatsHud extends CustomUIHud {
                 if (roundData.getRoundCount() == 10) {
                     uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("CORRUPTED MOON"));
                 }
+                if (roundData.getRoundCount() > 10 && roundData.getRoundCount() < 15) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE CHAOS CURSE"));
+                }
+                if (roundData.getRoundCount() == 15) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("COBWEB MOON"));
+                }
+                if (roundData.getRoundCount() > 15 && roundData.getRoundCount() < 20) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("CHAOS VENOM"));
+                }
+                if (roundData.getRoundCount() == 20) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("MYTHICAL MOON"));
+                }
+                if (roundData.getRoundCount() > 20 && roundData.getRoundCount() < 25) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("CHAOTIC CREATURES"));
+                }
+                if (roundData.getRoundCount() == 25) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("MAGMA MOON"));
+                }
+                if (roundData.getRoundCount() > 25 && roundData.getRoundCount() < 30) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("MOLTEN CHAOS"));
+                }
+                if (roundData.getRoundCount() == 30) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("BURNT MOON"));
+                }
+                if (roundData.getRoundCount() > 30 && roundData.getRoundCount() < 35) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE BURNT RISING"));
+                }
+                if (roundData.getRoundCount() == 35) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("BURNT MOON V2"));
+                }
+                if (roundData.getRoundCount() > 35 && roundData.getRoundCount() < 40) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("SUPERNATURAL"));
+                }
+                if (roundData.getRoundCount() == 40) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("GIANT MOONS"));
+                }
+                if (roundData.getRoundCount() > 40) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE GLORIOUS CHAOS"));
+                }
             }
         } else {
             uiCommandBuilder.set("#ROUNDCOUNT.TextSpans", Message.raw(""));
