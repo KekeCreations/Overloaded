@@ -1,0 +1,14 @@
+
+
+
+## V1.2-update4
+This version is designed to work with Update 4 of the game also known as 2026.03.26-89796e57b
+
+### Changes
+- Buffed base health regeneration
+- Fixed a bug where the item shop would override death
+- Fixed a bug where round data wouldn't be reset on player's death
+- Fixed a bug where the game over screen wouldn't open if you stayed on the death screen until the round was over!
+- Fixed the Feran raid section spawning NPCs that can't be damaged
+
+- Add a new chaos mode for even more combat carnage!

@@ -183,17 +183,21 @@ public class InstantTickSystem extends EntityTickingSystem<EntityStore> {
                     if (store.isInThread()) {
                         player.getPageManager().openCustomPage(ref, store, new ItemShopGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, goldData));
                         Universe.get().getPlayers().forEach(playerRef1 -> {
-                            if (playerRef1.isValid() && playerRef1.getReference() != null) {
+                            if (playerRef1.getReference() != null ) {
                                 Player player1 = store.getComponent(playerRef1.getReference(), Player.getComponentType());
-                                GoldAndKillsComponent goldData1 = store.getComponent(playerRef1.getReference(), GoldAndKillsComponent.getComponentType());
-                                RoundComponent roundComponent = store.getComponent(playerRef1.getReference(), RoundComponent.getComponentType());
-                                if (roundComponent == null && goldData1 != null && player1 != null) {
-                                    player1.getPageManager().openCustomPage(playerRef1.getReference(), store, new ItemShopGui(playerRef1, CustomPageLifetime.CanDismissOrCloseThroughInteraction, goldData1));
+                                if (player1 != null) {
+                                    if (playerRef1.isValid() && !player1.wasRemoved()) {
+                                        GoldAndKillsComponent goldData1 = store.getComponent(playerRef1.getReference(), GoldAndKillsComponent.getComponentType());
+                                        RoundComponent roundComponent = store.getComponent(playerRef1.getReference(), RoundComponent.getComponentType());
+                                        if (roundComponent == null && goldData1 != null) {
+                                            player1.getPageManager().openCustomPage(playerRef1.getReference(), store, new ItemShopGui(playerRef1, CustomPageLifetime.CanDismissOrCloseThroughInteraction, goldData1));
+                                        }
+                                    }
                                 }
                             }
                         });
                     }
-                    if (roundData.getRoundType() == "classic" || roundData.getRoundType() == "quick") {
+                    if (roundData.getRoundType() == "classic" || roundData.getRoundType() == "quick" || roundData.getRoundType() == "chaos") {
                         World.setTimeDilation(0.02F, store);
                     }
                     roundData.setRoundMenu("null");

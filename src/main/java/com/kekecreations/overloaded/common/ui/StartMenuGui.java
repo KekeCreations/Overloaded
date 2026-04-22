@@ -35,6 +35,7 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
     private static final String PLAY_NORMAL_BUTTON_ID = "PLAYCLASSIC";
     private static final String PLAY_QUICK_BUTTON_ID = "PLAYQUICK";
     private static final String PLAY_ROUNDS_BUTTON_ID = "PLAYROUNDS";
+    private static final String PLAY_CHAOS_BUTTON_ID = "PLAYCHAOS";
     private static final String QUIT_BUTTON_ID = "QUIT";
 
     private static final String SETTINGS = "SETTINGS";
@@ -58,6 +59,7 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#PLAYROUNDS", EventData.of("OnButtonClicked", PLAY_ROUNDS_BUTTON_ID), false);
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#QUIT", EventData.of("OnButtonClicked", QUIT_BUTTON_ID), false);
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#HOWTOPLAY", EventData.of("OnButtonClicked", HOW_TO_PLAY), false);
+        uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#PLAYCHAOS", EventData.of("OnButtonClicked", PLAY_CHAOS_BUTTON_ID), false);
     }
 
     @Override
@@ -70,7 +72,8 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
 
         if (PLAY_NORMAL_BUTTON_ID.equals(data.buttonClicked)
         || PLAY_QUICK_BUTTON_ID.equals(data.buttonClicked)
-        || PLAY_ROUNDS_BUTTON_ID.equals(data.buttonClicked)) {
+        || PLAY_ROUNDS_BUTTON_ID.equals(data.buttonClicked)
+        || PLAY_CHAOS_BUTTON_ID.equals(data.buttonClicked)) {
             player.getPageManager().setPage(ref, store, Page.None);
             roundData.setRoundCount(1);
             roundData.freezeRoundTimer(false);
@@ -88,6 +91,11 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
             if (PLAY_ROUNDS_BUTTON_ID.equals(data.buttonClicked)) {
                 roundData.setRoundType("rounds");
                 roundData.setRoundTimer(45);
+            }
+
+            if (PLAY_CHAOS_BUTTON_ID.equals(data.buttonClicked)) {
+                roundData.setRoundType("chaos");
+                roundData.setRoundTimer(60);
             }
 
             for (PlayerRef oPlayerRef : Universe.get().getPlayers()) {

@@ -40,17 +40,22 @@ Group #MAIN {
       Anchor: (Width: 110, Height: 50, Left: 0, Right: 0, Top: 15);
       Text: "PLAY ROUNDS";
     }
-    $C.@TextButton #SETTINGS {
+    $C.@TextButton #PLAYCHAOS {
       Background: (Color: #ffffff);
       Anchor: (Width: 110, Height: 50, Left: 0, Right: 0, Top: 15);
+      Text: "PLAY CHAOS";
+    }
+    $C.@TextButton #SETTINGS {
+      Background: (Color: #ffffff);
+      Anchor: (Height: 30, Left: 0, Right: 0, Top: 35);
       Text: "SETTINGS";
     }
     $C.@TextButton #HOWTOPLAY {
-      Anchor: (Height: 30, Top: 40);
+      Anchor: (Height: 30, Top: 15);
       Text: "HOW TO PLAY";
     }
     $C.@CancelTextButton #QUIT {
-      Anchor: (Height: 50, Top: 100);
+      Anchor: (Width: 110, Height: 50, Top: 50);
       Text: "QUIT";
     }
   }

@@ -37,7 +37,7 @@ public class RoundTickSystem extends DelayedEntitySystem<EntityStore> {
         //Regen
         EntityStatMap entityStat = store.getComponent(ref, EntityStatMap.getComponentType());
         if (entityStat != null) {
-            entityStat.addStatValue(DefaultEntityStatTypes.getHealth(), 2.0F);
+            entityStat.addStatValue(DefaultEntityStatTypes.getHealth(), 3.0F);
         }
 
         if (store.getComponent(ref, roundStats) != null) {

@@ -31,48 +31,63 @@ public class RoundStatsHud extends CustomUIHud {
             uiCommandBuilder.set("#ROUNDCOUNT.TextSpans", Message.raw("Round " + roundData.getRoundCount()));
             uiCommandBuilder.set("#ROUNDTIMER.TextSpans", Message.raw(String.valueOf(roundData.getRoundTimer())));
 
-            if (roundData.getRoundCount() <= 10) {
-                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE UNDEAD RISES"));
-            }
-            if (roundData.getRoundCount() > 10 && roundData.getRoundCount() <= 20) {
-                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE DEAD ZONE"));
-            }
-            if (roundData.getRoundCount() > 20 && roundData.getRoundCount() <= 30) {
-                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("AHOY DEADLY"));
-            }
-            if (roundData.getRoundCount() > 30 && roundData.getRoundCount() <= 40) {
-                if (roundData.isArachnophobiaMode()) {
-                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("WOLF PACK"));
-                } else {
-                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("ARACHNID AWAKENING"));
+            if (roundData.getRoundType() != "chaos") {
+                if (roundData.getRoundCount() <= 10) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE UNDEAD RISES"));
                 }
-            }
-            if (roundData.getRoundCount() > 40 && roundData.getRoundCount() <= 50) {
-                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("VOID UGLIES"));
-            }
-            if (roundData.getRoundCount() > 50 && roundData.getRoundCount() <= 60) {
-                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("BUG SEASON"));
-            }
-            if (roundData.getRoundCount() > 60 && roundData.getRoundCount() <= 70) {
-                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("GOLDEN LURE"));
-            }
-            if (roundData.getRoundCount() > 70 && roundData.getRoundCount() <= 80) {
-                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("EMBER MIGHT"));
-            }
-            if (roundData.getRoundCount() > 80 && roundData.getRoundCount() <= 90) {
-                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("FERAN RAID"));
-            }
-            if (roundData.getRoundCount() > 90 && roundData.getRoundCount() <= 100) {
-                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("SUPERNATURAL FOES"));
-            }
-            if (roundData.getRoundCount() > 100 && roundData.getRoundCount() <= 110) {
-                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("OUTLANDERS"));
-            }
-            if (roundData.getRoundCount() > 110 && roundData.getRoundCount() <= 120) {
-                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("10 ROUNDS TO LIVE"));
-            }
-            if (roundData.getRoundCount() > 120) {
-                uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("STRANGE THINGS"));
+                if (roundData.getRoundCount() > 10 && roundData.getRoundCount() <= 20) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE DEAD ZONE"));
+                }
+                if (roundData.getRoundCount() > 20 && roundData.getRoundCount() <= 30) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("AHOY DEADLY"));
+                }
+                if (roundData.getRoundCount() > 30 && roundData.getRoundCount() <= 40) {
+                    if (roundData.isArachnophobiaMode()) {
+                        uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("WOLF PACK"));
+                    } else {
+                        uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("ARACHNID AWAKENING"));
+                    }
+                }
+                if (roundData.getRoundCount() > 40 && roundData.getRoundCount() <= 50) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("VOID UGLIES"));
+                }
+                if (roundData.getRoundCount() > 50 && roundData.getRoundCount() <= 60) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("BUG SEASON"));
+                }
+                if (roundData.getRoundCount() > 60 && roundData.getRoundCount() <= 70) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("GOLDEN LURE"));
+                }
+                if (roundData.getRoundCount() > 70 && roundData.getRoundCount() <= 80) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("EMBER MIGHT"));
+                }
+                if (roundData.getRoundCount() > 80 && roundData.getRoundCount() <= 90) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("FERAN RAID"));
+                }
+                if (roundData.getRoundCount() > 90 && roundData.getRoundCount() <= 100) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("SUPERNATURAL FOES"));
+                }
+                if (roundData.getRoundCount() > 100 && roundData.getRoundCount() <= 110) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("OUTLANDERS"));
+                }
+                if (roundData.getRoundCount() > 110 && roundData.getRoundCount() <= 120) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("10 ROUNDS TO LIVE"));
+                }
+                if (roundData.getRoundCount() > 120) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("STRANGE THINGS"));
+                }
+            } else {
+                if (roundData.getRoundCount() <= 4) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("CHAOTIC BONES"));
+                }
+                if (roundData.getRoundCount() == 5) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("INFESTED MOON"));
+                }
+                if (roundData.getRoundCount() > 5 && roundData.getRoundCount() < 10) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("CHAOTIC INFESTATION"));
+                }
+                if (roundData.getRoundCount() == 10) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("CORRUPTED MOON"));
+                }
             }
         } else {
             uiCommandBuilder.set("#ROUNDCOUNT.TextSpans", Message.raw(""));

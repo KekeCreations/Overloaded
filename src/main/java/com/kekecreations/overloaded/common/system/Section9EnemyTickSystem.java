@@ -39,7 +39,7 @@ public class Section9EnemyTickSystem extends DelayedEntitySystem<EntityStore> {
                 if (roundData.getRoundCount() >= 81 && roundData.getRoundCount() <= 90) {
                     if (roundData.getRoundTimer() > 0 && !roundData.isTimerFrozen()) {
                         for (PlayerRef playerRef1 : Universe.get().getPlayers()) {
-                            int enemy = (int) (Math.random() * 6);
+                            int enemy = (int) (Math.random() * 4);
                             switch (enemy) {
                                 case 0 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Feran_Burrower");
@@ -52,12 +52,6 @@ public class Section9EnemyTickSystem extends DelayedEntitySystem<EntityStore> {
                                 }
                                 case 3 -> {
                                     CommandManager.get().handleCommand(playerRef1, "spawn_enemy Feran_Windwalker");
-                                }
-                                case 4 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Temple_Feran");
-                                }
-                                case 5 -> {
-                                    CommandManager.get().handleCommand(playerRef1, "spawn_enemy Temple_Feran_Longtooth");
                                 }
                             }
                         }

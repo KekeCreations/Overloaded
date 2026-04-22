@@ -4,6 +4,7 @@ import com.hypixel.hytale.component.CommandBuffer;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.component.query.Query;
+import com.hypixel.hytale.protocol.packets.interface_.Page;
 import com.hypixel.hytale.server.core.command.system.CommandManager;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent;
@@ -32,7 +33,11 @@ public class PlayerDeathSystem extends DeathSystems.OnDeathSystem {
         if (player != null) {
             RoundComponent roundData = store.getComponent(ref, RoundComponent.getComponentType());
             if (roundData != null) {
+                player.getPageManager().setPage(ref, store, Page.None);
                 roundData.freezeRoundTimer(true);
+                roundData.setRoundCount(0);
+                roundData.setRoundTimer(9999);
+                roundData.setRoundType("null");
                 roundData.setRoundMenu("game_over");
             }
         }

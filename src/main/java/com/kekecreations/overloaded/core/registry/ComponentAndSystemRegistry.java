@@ -58,6 +58,11 @@ public class ComponentAndSystemRegistry {
         registry.registerSystem(new NPCDeathSystem());
         registry.registerSystem(new PlayerDeathSystem());
         registry.registerSystem(new OtherPlayerTickSystem());
+
+        registry.registerSystem(new ChaosModeStartEnemySystem(roundComponent));
+        registry.registerSystem(new ChaosModeTickSystem(roundComponent));
+        registry.registerSystem(new ChaosModeBossMoonSystem(roundComponent));
+        registry.registerSystem(new ChaosModeEnemySystem(roundComponent));
     }
 
 }

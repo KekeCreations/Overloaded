@@ -1136,9 +1136,6 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
                 player.getPageManager().setPage(ref, store, Page.None);
                 RoundComponent roundComponent = store.getComponent(ref, RoundComponent.getComponentType());
                 if (roundComponent != null) {
-                    if (roundComponent.getRoundType() == "classic") {
-                        World.setTimeDilation(1F, store);
-                    }
                     roundComponent.setRoundMenu("null");
                 }
             }
@@ -1157,7 +1154,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
             roundComponent.setRoundCount(roundComponent.getRoundCount() + 1);
             roundComponent.freezeRoundTimer(false);
             roundComponent.setRoundMenu("null");
-            if (roundComponent.getRoundType() == "classic" || roundComponent.getRoundType() == "quick") {
+            if (roundComponent.getRoundType() == "classic" || roundComponent.getRoundType() == "quick" || roundComponent.getRoundType() == "chaos") {
                 World.setTimeDilation(1F, store);
             }
             if (roundComponent.getRoundType() == "classic" || roundComponent.getRoundType() == "rounds") {
@@ -1165,6 +1162,9 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
             }
             if (roundComponent.getRoundType() == "quick") {
                 roundComponent.setRoundTimer(25);
+            }
+            if (roundComponent.getRoundType() == "chaos") {
+                roundComponent.setRoundTimer(60);
             }
         }
     }
