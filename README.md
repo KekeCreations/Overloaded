@@ -44,6 +44,53 @@ Eventually all will be yours and it will be chaos! can you survive to round 50, 
 - All players have different gold and kill stats and have different item shop choices per round!
 - The mini-game supports both singleplayer and multiplayer with friends, multiplayer isn't designed for big servers!
 
+# Bosses Explained
+There are no bosses in Quick mode! Most bosses have different equipment and textures to their normal Hytale counterparts.
+## Giant Cave Spider
+- Health: 870
+- Attack Damage: 23 
+- Gives you poison on attack!
+- Spawns on round 32 (Unless arachnophobia mode is on)
+## Giant Emberwulf
+- Health: 2000
+- Attack Damage: 68
+- Spawns on round 75
+## Giant Goblin
+- Health: 2600
+- Attack Damage: Normal goblin damage
+- Spawns on round 65
+## Giant Hedera
+- Health: 1800
+- Attack Damage: Normal hedera damage
+- Spawns on round 95 and 98
+## Scarak Broodmother
+- Base game mob
+- Spawns on round 55
+## Giant Burnt Skeleton
+- Health: 1200
+- Attack Damage: Normal skeleton fighter damage
+- Spawns on round 6, 10 and 117
+## Giant Skeleton Fighter
+- Health: 1000
+- Attack Damage: Normal skeleton fighter damage
+- Spawns on round 4
+## Giant Skeleton Knight
+- Health: 1300
+- Attack Damage: Normal skeleton knight damage
+- Spawns on round 18, 28 and 118
+## Giant Skeleton Pirate
+- Health: 1400
+- Attack Damage: Normal pirate captain damage
+- Spawns on round 22, 24 and 28
+## Giant Burnt Zombie
+- Health: 1250
+- Attack Damage: 30
+- Spawns on round 8 and 115
+## Giant Burnt Zombie Variant
+- Health: 1250
+- Attack Damage: 35
+- Spawns on round 15 and 116
+
 # Custom Pets & Items Explained
 THIS ISN'T A LIST OF WHATS SOLD IN THE ITEM SHOP, ITS A LIST OF ALL CUSTOM STAT ITEMS AND PETS ADDED BY THE MOD!
 ## Summoner
