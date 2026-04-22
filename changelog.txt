@@ -16,5 +16,10 @@ This version is designed to work with Update 4 of the game also known as 2026.03
 - Acid Orb Pet now deals 20 more damage
 - Fixed all spawning systems
 - Tweaked spawning rates for later sections
+- Fix How To Play Screen Crash
+- Updated How To Play Screen
+- Game Over Screen now displays game-mode played
+- Fixed Game Over Screen resetting data without any button being pressed
 
 - Add a new chaos mode for even more combat carnage!
+- Chaos mode has its own unique sections and bosses!

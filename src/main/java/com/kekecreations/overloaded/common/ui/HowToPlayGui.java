@@ -52,6 +52,7 @@ public class HowToPlayGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
 
         if (BACKBUTTON.equals(data.buttonClicked)) {
             player.getPageManager().setPage(ref, store, Page.None);
+            wipeRound(store);
             roundData.setRoundMenu("start");
         }
     }
@@ -63,7 +64,6 @@ public class HowToPlayGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
     @Override
     public void onDismiss(@NotNull Ref<EntityStore> ref, @NotNull Store<EntityStore> store) {
         super.onDismiss(ref, store);
-        wipeRound(store);
         roundData.setRoundMenu("start");
     }
 }

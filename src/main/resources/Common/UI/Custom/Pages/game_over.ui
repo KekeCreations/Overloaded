@@ -21,27 +21,30 @@ Group #MAIN {
     Background: (Color: #408080);
     Anchor: (Height: 10);
   }
+  Label #ROUNDS {
+    Anchor: (Top: 30);
+    Text: "YOU SURVIVED 0 ROUNDS";
+    Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+  }
+  Label #ROUNDTYPE {
+    Anchor: (Top: 10);
+    Text: "GAMEMODE:";
+    Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+  }
+  Label #KILLS {
+    Anchor: (Top: 5);
+    Text: "ENEMIES KILLED:";
+    Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+  }
+  Label #GOLD {
+    Anchor: (Top: 5);
+    Text: "GOLD COLLECTED:";
+    Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+  }
   Group #BUTTONS {
     LayoutMode: Top;
     Background: (Color: #132533);
-    Anchor: (Width: 250, Height: 530, Left: 280, Top: 40);
-    Label #ROUNDS {
-      Padding: (Full: 0);
-      Text: "YOU SURVIVED 0 ROUNDS";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
-    }
-    Label #KILLS {
-      Anchor: (Top: 5);
-      Padding: (Full: 0);
-      Text: "ENEMIES KILLED:";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
-    }
-    Label #GOLD {
-      Anchor: (Top: 5);
-      Padding: (Full: 0);
-      Text: "GOLD COLLECTED:";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
-    }
+    Anchor: (Width: 250, Height: 330, Left: 280, Top: 40);
     $C.@TextButton #PLAYAGAIN {
       Background: (Color: #ffffff);
       Anchor: (Width: 110, Height: 50, Left: 0, Right: 0, Top: 15);

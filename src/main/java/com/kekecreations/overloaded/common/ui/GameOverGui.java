@@ -41,6 +41,7 @@ public class GameOverGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
         uiCommandBuilder.append("Pages/game_over.ui");
 
         uiCommandBuilder.set("#ROUNDS.TextSpans", Message.raw("ROUNDS SURVIVED: " + roundData.getRoundCount()));
+        uiCommandBuilder.set("#ROUNDTYPE.TextSpans", Message.raw("GAMEMODE: " + roundData.getRoundType().toUpperCase()));
         uiCommandBuilder.set("#KILLS.TextSpans", Message.raw("ENEMIES KILLED: " + goldData.getKills()));
         uiCommandBuilder.set("#GOLD.TextSpans", Message.raw("GOLD COLLECTED: " + goldData.getGold()));
 
@@ -83,7 +84,6 @@ public class GameOverGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
     @Override
     public void onDismiss(@NotNull Ref<EntityStore> ref, @NotNull Store<EntityStore> store) {
         super.onDismiss(ref, store);
-        wipeRound(store);
         roundData.setRoundMenu("game_over");
     }
 }
