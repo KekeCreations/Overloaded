@@ -55,6 +55,10 @@ public class UiTickSystem extends DelayedEntitySystem<EntityStore> {
                     player.getPageManager().openCustomPage(ref, store, new HowToPlayGui(playerRef, roundData, CustomPageLifetime.CanDismissOrCloseThroughInteraction));
                     roundData.setRoundMenu("null");
                 }
+                if (roundData.getRoundMenu() == "sandbox") {
+                    player.getPageManager().openCustomPage(ref, store, new SandboxGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundData));
+                    roundData.setRoundMenu("null");
+                }
             }
             if (goldData != null) {
                 //works within round

@@ -30,13 +30,12 @@ import org.jspecify.annotations.NonNull;
 import javax.annotation.Nonnull;
 import java.util.Objects;
 
-public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
+public class SandboxGui extends InteractiveCustomUIPage<StartMenuGuiData> {
 
     private static final String PLAY_NORMAL_BUTTON_ID = "PLAYCLASSIC";
     private static final String PLAY_QUICK_BUTTON_ID = "PLAYQUICK";
     private static final String PLAY_ROUNDS_BUTTON_ID = "PLAYROUNDS";
     private static final String PLAY_CHAOS_BUTTON_ID = "PLAYCHAOS";
-    private static final String PLAY_SANDBOX_BUTTON_ID = "PLAYSANDBOX";
     private static final String QUIT_BUTTON_ID = "QUIT";
 
     private static final String SETTINGS = "SETTINGS";
@@ -44,7 +43,7 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
 
     RoundComponent roundComponent;
 
-    public StartMenuGui(@Nonnull PlayerRef playerRef, @Nonnull CustomPageLifetime lifetime, RoundComponent roundComponent) {
+    public SandboxGui(@Nonnull PlayerRef playerRef, @Nonnull CustomPageLifetime lifetime, RoundComponent roundComponent) {
         super(playerRef, lifetime, StartMenuGuiData.CODEC);
         this.roundComponent = roundComponent;
     }
@@ -52,16 +51,7 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
 
     @Override
     public void build(@Nonnull Ref<EntityStore> ref, @Nonnull UICommandBuilder uiCommandBuilder, @Nonnull UIEventBuilder uiEventBuilder, @Nonnull Store<EntityStore> store) {
-        uiCommandBuilder.append("Pages/start_menu.ui");
-
-        uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#SETTINGS", EventData.of("OnButtonClicked", SETTINGS), false);
-        uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#PLAYCLASSIC", EventData.of("OnButtonClicked", PLAY_NORMAL_BUTTON_ID), false);
-        uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#PLAYQUICK", EventData.of("OnButtonClicked", PLAY_QUICK_BUTTON_ID), false);
-        uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#PLAYROUNDS", EventData.of("OnButtonClicked", PLAY_ROUNDS_BUTTON_ID), false);
-        uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#QUIT", EventData.of("OnButtonClicked", QUIT_BUTTON_ID), false);
-        uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#HOWTOPLAY", EventData.of("OnButtonClicked", HOW_TO_PLAY), false);
-        uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#PLAYCHAOS", EventData.of("OnButtonClicked", PLAY_CHAOS_BUTTON_ID), false);
-        uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#PLAYSANDBOX", EventData.of("OnButtonClicked", PLAY_SANDBOX_BUTTON_ID), false);
+        uiCommandBuilder.append("Pages/sandbox.ui");
     }
 
     @Override
@@ -71,71 +61,6 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
 
         Player player = Objects.requireNonNull(store.getComponent(ref, Player.getComponentType()));
         RoundComponent roundData = Objects.requireNonNull(store.getComponent(ref, RoundComponent.getComponentType()));
-
-        if (PLAY_CHAOS_BUTTON_ID.equals(data.buttonClicked) && roundData.isArachnophobiaMode()) {
-            player.sendMessage(Message.raw("NOT COMPATIBLE WITH ARACHNOPHOBIA MODE"));
-        }
-        if (PLAY_SANDBOX_BUTTON_ID.equals(data.buttonClicked)) {
-            player.getPageManager().setPage(ref, store, Page.None);
-            roundData.setRoundMenu("sandbox");
-        }
-
-        if (PLAY_NORMAL_BUTTON_ID.equals(data.buttonClicked)
-        || PLAY_QUICK_BUTTON_ID.equals(data.buttonClicked)
-        || PLAY_ROUNDS_BUTTON_ID.equals(data.buttonClicked)
-        || (PLAY_CHAOS_BUTTON_ID.equals(data.buttonClicked) && !roundData.isArachnophobiaMode())) {
-            player.getPageManager().setPage(ref, store, Page.None);
-            roundData.setRoundCount(1);
-            roundData.freezeRoundTimer(false);
-            store.forEachEntityParallel(NPCEntity.getComponentType(), (index, archetypeChunk, commandBuffer) -> commandBuffer.removeEntity(archetypeChunk.getReferenceTo(index), RemoveReason.REMOVE));
-            if (PLAY_NORMAL_BUTTON_ID.equals(data.buttonClicked)) {
-                roundData.setRoundType("classic");
-                roundData.setRoundTimer(45);
-            }
-
-            if (PLAY_QUICK_BUTTON_ID.equals(data.buttonClicked)) {
-                roundData.setRoundType("quick");
-                roundData.setRoundTimer(25);
-            }
-
-            if (PLAY_ROUNDS_BUTTON_ID.equals(data.buttonClicked)) {
-                roundData.setRoundType("rounds");
-                roundData.setRoundTimer(45);
-            }
-
-            if (PLAY_CHAOS_BUTTON_ID.equals(data.buttonClicked)) {
-                roundData.setRoundType("chaos");
-                roundData.setRoundTimer(60);
-            }
-
-            for (PlayerRef oPlayerRef : Universe.get().getPlayers()) {
-                if (oPlayerRef.getReference() != null ) {
-                    EntityStatMap entityStat = store.getComponent(ref, EntityStatMap.getComponentType());
-
-
-                    if (entityStat != null) {
-                        entityStat.resetStatValue(DefaultEntityStatTypes.getHealth());
-                        entityStat.resetStatValue(DefaultEntityStatTypes.getStamina());
-                        entityStat.resetStatValue(DefaultEntityStatTypes.getMana());
-                    }
-                }
-            }
-        }
-        else if (SETTINGS.equals(data.buttonClicked)) {
-            player.getPageManager().setPage(ref, store, Page.None);
-            roundData.setRoundMenu("settings");
-        }
-        else if (HOW_TO_PLAY.equals(data.buttonClicked)) {
-            player.getPageManager().setPage(ref, store, Page.None);
-            roundData.setRoundMenu("how_to_play");
-        }
-        else if (QUIT_BUTTON_ID.equals(data.buttonClicked)) {
-            playerRef.getPacketHandler().writeNoCache(new ServerDisconnect(null, DisconnectType.Disconnect));
-        }
-
-        if (PLAY_NORMAL_BUTTON_ID.equals(data.buttonClicked) || SETTINGS.equals(data.buttonClicked) || PLAY_QUICK_BUTTON_ID.equals(data.buttonClicked)) {
-            store.forEachEntityParallel(NPCEntity.getComponentType(), (index, archetypeChunk, commandBuffer) -> commandBuffer.removeEntity(archetypeChunk.getReferenceTo(index), RemoveReason.REMOVE));
-        }
 
         if (changed) {
             this.playerRef.sendMessage(Message.raw("Changes processed."));
