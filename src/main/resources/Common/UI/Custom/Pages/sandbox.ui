@@ -9,18 +9,18 @@ Group #CLASSES {
     Background: (Color: #1f3b4d);
     Label #TITLE {
       Text: "SANDBOX MODE";
-      Style: (TextColor: #a9a151, FontSize: 40, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+      Style: (TextColor: #51a9a3, FontSize: 40, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
     }
   }
   Group #BORDER {
     LayoutMode: MiddleCenter;
-    Background: (Color: #795625);
+    Background: (Color: #256479);
     Anchor: (Height: 20);
   }
   Group #BORDER2 {
     LayoutMode: Top;
     Background: (Color: #243847);
-    Anchor: (Height: 20);
+    Anchor: (Height: 10);
   }
   Group #BORDERWA {
     LayoutMode: Top;
@@ -41,7 +41,7 @@ Group #CLASSES {
       Group #BORDERGAP {
         LayoutMode: Top;
         Background: (Color: #243847);
-        Anchor: (Width: 100);
+        Anchor: (Width: 60);
       }
       Group #OPTION1 {
         LayoutMode: Middle;
@@ -49,7 +49,7 @@ Group #CLASSES {
         Anchor: (Width: 160, Height: 75, Left: 0, Right: 0, Top: 0, Bottom: 0);
         Label #TITLE {
           Text: "SECTION 1";
-          Style: (TextColor: #a9a151, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          Style: (TextColor: #51a3a9, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
         }
         Label #SECTION1 {
           Text: "THE UNDEAD ZONE";
@@ -63,15 +63,15 @@ Group #CLASSES {
       Group #GAP {
         LayoutMode: Top;
         Background: (Color: #243847);
-        Anchor: (Width: 80);
+        Anchor: (Width: 20);
       }
       Group #OPTION2 {
         LayoutMode: Middle;
         Background: (Color: #1d2d3a);
         Anchor: (Width: 160, Height: 75, Left: 0, Right: 0, Top: 0, Bottom: 0);
         Label #TITLE {
-          Text: "SECTION 1";
-          Style: (TextColor: #a9a151, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          Text: "SECTION 2";
+          Style: (TextColor: #51a3a9, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
         }
         Label #SECTION2 {
           Text: "THE UNDEAD ZONE";
@@ -85,12 +85,73 @@ Group #CLASSES {
       Group #GAP2 {
         LayoutMode: Top;
         Background: (Color: #243847);
-        Anchor: (Width: 80);
+        Anchor: (Width: 20);
+      }
+      Group #OPTION3 {
+        LayoutMode: Middle;
+        Background: (Color: #1d2d3a);
+        Anchor: (Width: 160, Height: 75, Left: 0, Right: 0, Top: 0, Bottom: 0);
+        Label #TITLE {
+          Text: "SECTION 3";
+          Style: (TextColor: #51a3a9, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+        }
+        Label #SECTION3 {
+          Text: "THE UNDEAD ZONE";
+          Style: (HorizontalAlignment: Center, TextColor: #ffffff);
+        }
+        $C.@TextButton #CYCLE3 {
+          Anchor: (Width: 100, Height: 30);
+          Text: "CYCLE";
+        }
+      }
+      Group #GAP3 {
+        LayoutMode: Top;
+        Background: (Color: #243847);
+        Anchor: (Width: 20);
+      }
+      Group #OPTION4 {
+        LayoutMode: Middle;
+        Background: (Color: #1d2d3a);
+        Anchor: (Width: 160, Height: 75, Left: 0, Right: 0, Top: 0, Bottom: 0);
+        Label #TITLE {
+          Text: "SECTION 4";
+          Style: (TextColor: #51a3a9, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+        }
+        Label #SECTION4 {
+          Text: "THE UNDEAD ZONE";
+          Style: (HorizontalAlignment: Center, TextColor: #ffffff);
+        }
+        $C.@TextButton #CYCLE4 {
+          Anchor: (Width: 100, Height: 30);
+          Text: "CYCLE";
+        }
+      }
+      Group #GAP4 {
+        LayoutMode: Top;
+        Background: (Color: #243847);
+        Anchor: (Width: 20);
+      }
+      Group #OPTION5 {
+        LayoutMode: Middle;
+        Background: (Color: #1d2d3a);
+        Anchor: (Width: 160, Height: 75, Left: 0, Right: 0, Top: 0, Bottom: 0);
+        Label #TITLE {
+          Text: "SECTION 5";
+          Style: (TextColor: #51a3a9, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+        }
+        Label #SECTION5 {
+          Text: "THE UNDEAD ZONE";
+          Style: (HorizontalAlignment: Center, TextColor: #ffffff);
+        }
+        $C.@TextButton #CYCLE5 {
+          Anchor: (Width: 100, Height: 30);
+          Text: "CYCLE";
+        }
       }
       Group #BORDERGAP2 {
         LayoutMode: Top;
         Background: (Color: #243847);
-        Anchor: (Width: 100);
+        Anchor: (Width: 60);
       }
     }
     Group #MAINSEP {
@@ -101,15 +162,120 @@ Group #CLASSES {
     Group #ROW2 {
       LayoutMode: Left;
       Background: (Color: #243847);
-      Group #BORDERGAPBIG {
+      Group #BORDERGAP {
         LayoutMode: Top;
         Background: (Color: #243847);
-        Anchor: (Width: 250);
+        Anchor: (Width: 60);
       }
-      Group #CLASSSEP {
+      Group #OPTION6 {
         LayoutMode: Middle;
+        Background: (Color: #1d2d3a);
+        Anchor: (Width: 160, Height: 75, Left: 0, Right: 0, Top: 0, Bottom: 0);
+        Label #TITLE {
+          Text: "SECTION 6";
+          Style: (TextColor: #51a3a9, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+        }
+        Label #SECTION6 {
+          Text: "THE UNDEAD ZONE";
+          Style: (HorizontalAlignment: Center, TextColor: #ffffff);
+        }
+        $C.@TextButton #CYCLE6 {
+          Anchor: (Width: 100, Height: 30);
+          Text: "CYCLE";
+        }
+      }
+      Group #GAP {
+        LayoutMode: Top;
         Background: (Color: #243847);
-        Anchor: (Width: 100, Height: 20);
+        Anchor: (Width: 20);
+      }
+      Group #OPTION7 {
+        LayoutMode: Middle;
+        Background: (Color: #1d2d3a);
+        Anchor: (Width: 160, Height: 75, Left: 0, Right: 0, Top: 0, Bottom: 0);
+        Label #TITLE {
+          Text: "SECTION 7";
+          Style: (TextColor: #51a3a9, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+        }
+        Label #SECTION7 {
+          Text: "THE UNDEAD ZONE";
+          Style: (HorizontalAlignment: Center, TextColor: #ffffff);
+        }
+        $C.@TextButton #CYCLE7 {
+          Anchor: (Width: 100, Height: 30);
+          Text: "CYCLE";
+        }
+      }
+      Group #GAP2 {
+        LayoutMode: Top;
+        Background: (Color: #243847);
+        Anchor: (Width: 20);
+      }
+      Group #OPTION8 {
+        LayoutMode: Middle;
+        Background: (Color: #1d2d3a);
+        Anchor: (Width: 160, Height: 75, Left: 0, Right: 0, Top: 0, Bottom: 0);
+        Label #TITLE {
+          Text: "SECTION 8";
+          Style: (TextColor: #51a3a9, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+        }
+        Label #SECTION3copy {
+          Text: "THE UNDEAD ZONE";
+          Style: (HorizontalAlignment: Center, TextColor: #ffffff);
+        }
+        $C.@TextButton #CYCLE3copy {
+          Anchor: (Width: 100, Height: 30);
+          Text: "CYCLE";
+        }
+      }
+      Group #GAP3 {
+        LayoutMode: Top;
+        Background: (Color: #243847);
+        Anchor: (Width: 20);
+      }
+      Group #OPTION9 {
+        LayoutMode: Middle;
+        Background: (Color: #1d2d3a);
+        Anchor: (Width: 160, Height: 75, Left: 0, Right: 0, Top: 0, Bottom: 0);
+        Label #TITLE {
+          Text: "SECTION 9";
+          Style: (TextColor: #51a3a9, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+        }
+        Label #SECTION9 {
+          Text: "THE UNDEAD ZONE";
+          Style: (HorizontalAlignment: Center, TextColor: #ffffff);
+        }
+        $C.@TextButton #CYCLE9 {
+          Anchor: (Width: 100, Height: 30);
+          Text: "CYCLE";
+        }
+      }
+      Group #GAP4 {
+        LayoutMode: Top;
+        Background: (Color: #243847);
+        Anchor: (Width: 20);
+      }
+      Group #OPTION10 {
+        LayoutMode: Middle;
+        Background: (Color: #1d2d3a);
+        Anchor: (Width: 160, Height: 75, Left: 0, Right: 0, Top: 0, Bottom: 0);
+        Label #TITLE {
+          Text: "SECTION 10";
+          Style: (TextColor: #51a3a9, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+        }
+        Label #SECTION10 {
+          Text: "THE UNDEAD ZONE";
+          Style: (HorizontalAlignment: Center, TextColor: #ffffff);
+        }
+        $C.@TextButton #CYCLE10 {
+          Anchor: (Width: 100, Height: 30);
+          Text: "CYCLE";
+        }
+      }
+      Group #BORDERGAP2 {
+        LayoutMode: Top;
+        Background: (Color: #243847);
+        Anchor: (Width: 60);
       }
     }
     Group #MAINSEP1 {
@@ -117,7 +283,75 @@ Group #CLASSES {
       Background: (Color: #243847);
       Anchor: (Height: 20);
     }
-    Label #CLASSLEVELCHOICE {
+    Label #STARTINGOPTIONS {
+      Text: "STARTING OPTIONS";
+      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, HorizontalAlignment: Center);
+    }
+    Group #ROW4 {
+      LayoutMode: Top;
+      Background: (Color: #243847);
+      Group #GAPcopy {
+        LayoutMode: Top;
+        Background: (Color: #243847);
+        Anchor: (Height: 3);
+      }
+      Group #ITEMTOPTION {
+        LayoutMode: Middle;
+        Background: (Color: #1d2d3a);
+        Anchor: (Width: 190, Height: 125, Left: 0, Right: 0, Top: 0, Bottom: 0);
+        Group #ITEMIMAGEGROUP {
+          LayoutMode: Middle;
+          Anchor: (Width: 64, Height: 64);
+          Padding: (Top: 16, Bottom: 16);
+          AssetImage #STARTINGITEM {
+            Anchor: (Width: 64, Height: 64);
+            AssetPath: "image.png";
+          }
+        }
+        Label #ITEM {
+          Text: "THE UNDEAD ZONE";
+          Style: (HorizontalAlignment: Center, TextColor: #ffffff);
+        }
+        $C.@TextButton #CYCLEITEM {
+          Anchor: (Width: 100, Height: 30);
+          Text: "CYCLE";
+        }
+      }
+      Group #IARMOUROPTION {
+        LayoutMode: Middle;
+        Background: (Color: #1d2d3a);
+        Anchor: (Width: 190, Height: 125, Left: 0, Right: 0, Top: 10, Bottom: 0);
+        Group #ARIMAGEGROUP {
+          LayoutMode: Middle;
+          Anchor: (Width: 64, Height: 64);
+          Padding: (Top: 16, Bottom: 16);
+          AssetImage #STARTINGARMOUR {
+            Anchor: (Width: 64, Height: 64);
+            AssetPath: "image.png";
+          }
+        }
+        Label #ARMOUR {
+          Text: "THE UNDEAD ZONE";
+          Style: (HorizontalAlignment: Center, TextColor: #ffffff);
+        }
+        $C.@TextButton #CYCLEARMOUR {
+          Anchor: (Width: 100, Height: 30);
+          Text: "CYCLE";
+        }
+      }
+      Group #GOLDGROUP {
+        LayoutMode: Top;
+        Background: (Color: #1d2d3a);
+        Anchor: (Width: 600, Height: 70, Top: 10);
+        Label #GOLDTITLE {
+          Text: "STARTING GOLD:";
+          Style: (TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center);
+        }
+        $C.@NumberField #GOLD {}
+      }
+    }
+    Label #MATCHSETTINGS {
+      Anchor: (Top: 10);
       Text: "MATCH SETTINGS";
       Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, HorizontalAlignment: Center);
     }
@@ -129,7 +363,7 @@ Group #CLASSES {
         Background: (Color: #243847);
         Anchor: (Height: 3);
       }
-      Group #KILLSGROUP {
+      Group #LENGTHGROUP {
         LayoutMode: Top;
         Background: (Color: #1d2d3a);
         Anchor: (Width: 600, Height: 70);
@@ -142,7 +376,7 @@ Group #CLASSES {
       Group #GAP2 {
         LayoutMode: Top;
         Background: (Color: #243847);
-        Anchor: (Height: 20);
+        Anchor: (Height: 10);
       }
       Group #CHAOSGROUP {
         LayoutMode: Top;
@@ -161,7 +395,7 @@ Group #CLASSES {
     Group #MAINSEP2 {
       LayoutMode: Middle;
       Background: (Color: #243847);
-      Anchor: (Height: 40);
+      Anchor: (Height: 20);
     }
     $C.@TextButton #PLAYBUTTON {
       Anchor: (Width: 120, Height: 40);
@@ -170,7 +404,7 @@ Group #CLASSES {
     Group #MAINSEP3 {
       LayoutMode: Middle;
       Background: (Color: #243847);
-      Anchor: (Height: 30);
+      Anchor: (Height: 10);
     }
     $C.@TextButton #BACKBUTTON {
       Anchor: (Width: 100, Height: 30);
