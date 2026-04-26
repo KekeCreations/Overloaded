@@ -219,11 +219,11 @@ Group #CLASSES {
           Text: "SECTION 8";
           Style: (TextColor: #51a3a9, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
         }
-        Label #SECTION3copy {
+        Label #SECTION8 {
           Text: "THE UNDEAD ZONE";
           Style: (HorizontalAlignment: Center, TextColor: #ffffff);
         }
-        $C.@TextButton #CYCLE3copy {
+        $C.@TextButton #CYCLE8 {
           Anchor: (Width: 100, Height: 30);
           Text: "CYCLE";
         }
