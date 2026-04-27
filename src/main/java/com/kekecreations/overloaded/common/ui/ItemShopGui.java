@@ -1154,7 +1154,7 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
             roundComponent.setRoundCount(roundComponent.getRoundCount() + 1);
             roundComponent.freezeRoundTimer(false);
             roundComponent.setRoundMenu("null");
-            if (roundComponent.getRoundType() == "classic" || roundComponent.getRoundType() == "quick" || roundComponent.getRoundType() == "chaos") {
+            if (roundComponent.getRoundType() == "classic" || roundComponent.getRoundType() == "quick" || roundComponent.getRoundType() == "chaos" || roundComponent.getRoundType() == "sandbox") {
                 World.setTimeDilation(1F, store);
             }
             if (roundComponent.getRoundType() == "classic" || roundComponent.getRoundType() == "rounds") {
@@ -1165,6 +1165,9 @@ public class ItemShopGui extends InteractiveCustomUIPage<MenuWithButtonsData> {
             }
             if (roundComponent.getRoundType() == "chaos") {
                 roundComponent.setRoundTimer(60);
+            }
+            if (roundComponent.getRoundType() == "sandbox") {
+                roundComponent.setRoundTimer(roundComponent.getSandboxRoundLength());
             }
         }
     }

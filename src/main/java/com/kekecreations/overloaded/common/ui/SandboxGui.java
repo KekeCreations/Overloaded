@@ -459,7 +459,7 @@ public class SandboxGui extends InteractiveCustomUIPage<SandboxGui.Data> {
             } else {
                 roundData.setSandboxStartingPet(roundData.getSandboxStartingPet() + 1);
             }
-            player.getPageManager().setPage(ref, store, Page.None);
+            player.getPageManager().openCustomPage(ref, store, new SandboxGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundData));
         }
 
         if (ARMOUR.equals(data.buttonClicked)) {
@@ -468,7 +468,7 @@ public class SandboxGui extends InteractiveCustomUIPage<SandboxGui.Data> {
             } else {
                 roundData.setSandboxStartingArmour(roundData.getSandboxStartingArmour() + 1);
             }
-            player.getPageManager().setPage(ref, store, Page.None);
+            player.getPageManager().openCustomPage(ref, store, new SandboxGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundData));
         }
 
         if (CYCLE1.equals(data.buttonClicked)) {
@@ -477,7 +477,7 @@ public class SandboxGui extends InteractiveCustomUIPage<SandboxGui.Data> {
             } else {
                 roundData.setSandboxSection1(roundData.getSandboxSection1() + 1);
             }
-            player.getPageManager().setPage(ref, store, Page.None);
+            player.getPageManager().openCustomPage(ref, store, new SandboxGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundData));
         }
         if (CYCLE2.equals(data.buttonClicked)) {
             if (roundData.getSandboxSection2() == 12) {
@@ -485,7 +485,7 @@ public class SandboxGui extends InteractiveCustomUIPage<SandboxGui.Data> {
             } else {
                 roundData.setSandboxSection2(roundData.getSandboxSection2() + 1);
             }
-            player.getPageManager().setPage(ref, store, Page.None);
+            player.getPageManager().openCustomPage(ref, store, new SandboxGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundData));
         }
         if (CYCLE3.equals(data.buttonClicked)) {
             if (roundData.getSandboxSection3() == 12) {
@@ -493,7 +493,7 @@ public class SandboxGui extends InteractiveCustomUIPage<SandboxGui.Data> {
             } else {
                 roundData.setSandboxSection3(roundData.getSandboxSection3() + 1);
             }
-            player.getPageManager().setPage(ref, store, Page.None);
+            player.getPageManager().openCustomPage(ref, store, new SandboxGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundData));
         }
         if (CYCLE4.equals(data.buttonClicked)) {
             if (roundData.getSandboxSection4() == 12) {
@@ -501,7 +501,7 @@ public class SandboxGui extends InteractiveCustomUIPage<SandboxGui.Data> {
             } else {
                 roundData.setSandboxSection4(roundData.getSandboxSection4() + 1);
             }
-            player.getPageManager().setPage(ref, store, Page.None);
+            player.getPageManager().openCustomPage(ref, store, new SandboxGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundData));
         }
         if (CYCLE5.equals(data.buttonClicked)) {
             if (roundData.getSandboxSection5() == 12) {
@@ -509,7 +509,7 @@ public class SandboxGui extends InteractiveCustomUIPage<SandboxGui.Data> {
             } else {
                 roundData.setSandboxSection5(roundData.getSandboxSection5() + 1);
             }
-            player.getPageManager().setPage(ref, store, Page.None);
+            player.getPageManager().openCustomPage(ref, store, new SandboxGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundData));
         }
         if (CYCLE6.equals(data.buttonClicked)) {
             if (roundData.getSandboxSection6() == 12) {
@@ -517,7 +517,7 @@ public class SandboxGui extends InteractiveCustomUIPage<SandboxGui.Data> {
             } else {
                 roundData.setSandboxSection6(roundData.getSandboxSection6() + 1);
             }
-            player.getPageManager().setPage(ref, store, Page.None);
+            player.getPageManager().openCustomPage(ref, store, new SandboxGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundData));
         }
         if (CYCLE7.equals(data.buttonClicked)) {
             if (roundData.getSandboxSection7() == 12) {
@@ -525,7 +525,7 @@ public class SandboxGui extends InteractiveCustomUIPage<SandboxGui.Data> {
             } else {
                 roundData.setSandboxSection7(roundData.getSandboxSection7() + 1);
             }
-            player.getPageManager().setPage(ref, store, Page.None);
+            player.getPageManager().openCustomPage(ref, store, new SandboxGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundData));
         }
         if (CYCLE8.equals(data.buttonClicked)) {
             if (roundData.getSandboxSection8() == 12) {
@@ -533,7 +533,7 @@ public class SandboxGui extends InteractiveCustomUIPage<SandboxGui.Data> {
             } else {
                 roundData.setSandboxSection8(roundData.getSandboxSection8() + 1);
             }
-            player.getPageManager().setPage(ref, store, Page.None);
+            player.getPageManager().openCustomPage(ref, store, new SandboxGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundData));
         }
         if (CYCLE9.equals(data.buttonClicked)) {
             if (roundData.getSandboxSection9() == 12) {
@@ -541,7 +541,7 @@ public class SandboxGui extends InteractiveCustomUIPage<SandboxGui.Data> {
             } else {
                 roundData.setSandboxSection9(roundData.getSandboxSection9() + 1);
             }
-            player.getPageManager().setPage(ref, store, Page.None);
+            player.getPageManager().openCustomPage(ref, store, new SandboxGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundData));
         }
         if (CYCLE10.equals(data.buttonClicked)) {
             if (roundData.getSandboxSection10() == 12) {
@@ -549,7 +549,7 @@ public class SandboxGui extends InteractiveCustomUIPage<SandboxGui.Data> {
             } else {
                 roundData.setSandboxSection10(roundData.getSandboxSection10() + 1);
             }
-            player.getPageManager().setPage(ref, store, Page.None);
+            player.getPageManager().openCustomPage(ref, store, new SandboxGui(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, roundData));
         }
 
         if (BACK.equals(data.buttonClicked)) {

@@ -197,7 +197,7 @@ public class InstantTickSystem extends EntityTickingSystem<EntityStore> {
                             }
                         });
                     }
-                    if (roundData.getRoundType() == "classic" || roundData.getRoundType() == "quick" || roundData.getRoundType() == "chaos") {
+                    if (roundData.getRoundType() == "classic" || roundData.getRoundType() == "quick" || roundData.getRoundType() == "chaos" || roundData.getRoundType() == "sandbox") {
                         World.setTimeDilation(0.02F, store);
                     }
                     roundData.setRoundMenu("null");

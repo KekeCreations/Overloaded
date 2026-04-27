@@ -37,7 +37,7 @@ public class ChaosModeTickSystem extends DelayedEntitySystem<EntityStore> {
             ItemContainer hotbar = hotbarComponent.getInventory();
 
             if (roundData != null) {
-                if (Objects.equals(roundData.getRoundType(), "chaos")) {
+                if (Objects.equals(roundData.getRoundType(), "chaos") || (Objects.equals(roundData.getRoundType(), "sandbox") && roundData.getSandboxChaosMode())) {
                     EntityStatMap entityStat = store.getComponent(ref, EntityStatMap.getComponentType());
                     if (entityStat != null) {
                         entityStat.addStatValue(DefaultEntityStatTypes.getHealth(), 15.0F);

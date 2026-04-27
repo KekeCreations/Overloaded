@@ -75,7 +75,7 @@ public class RoundStatsHud extends CustomUIHud {
                 if (roundData.getRoundCount() > 120) {
                     uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("STRANGE THINGS"));
                 }
-            } else {
+            } else if (roundData.getRoundType() != "sandbox") {
                 if (roundData.getRoundCount() <= 4) {
                     uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("CHAOTIC BONES"));
                 }
@@ -127,6 +127,182 @@ public class RoundStatsHud extends CustomUIHud {
                 if (roundData.getRoundCount() > 40) {
                     uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE GLORIOUS CHAOS"));
                 }
+            }
+            if (roundData.getRoundType() == "sandbox") {
+                if (roundData.getRoundCount() <= 10) {
+                    switch (roundData.getSandboxSection1()) {
+                        case 0 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE UNDEAD RISES"));
+                        case 1 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE DEAD ZONE"));
+                        case 2 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("AHOY DEADLY"));
+                        case 3 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("WOLF PACK"));
+                        case 4 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("ARACHNIDS"));
+                        case 5 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("VOID UGLIES"));
+                        case 6 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("BUG SEASON"));
+                        case 7 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("GOLDEN LURE"));
+                        case 8 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("EMBER MIGHT"));
+                        case 9 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("FERAN RAID"));
+                        case 10 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("SUPERNATURAL"));
+                        case 11 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("OUTLANDERS"));
+                        case 12 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("10 ROUNDS TO LIVE"));
+                    }
+                }
+                if (roundData.getRoundCount() > 10 && roundData.getRoundCount() <= 20) {
+                    switch (roundData.getSandboxSection2()) {
+                        case 0 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE UNDEAD RISES"));
+                        case 1 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE DEAD ZONE"));
+                        case 2 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("AHOY DEADLY"));
+                        case 3 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("WOLF PACK"));
+                        case 4 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("ARACHNIDS"));
+                        case 5 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("VOID UGLIES"));
+                        case 6 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("BUG SEASON"));
+                        case 7 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("GOLDEN LURE"));
+                        case 8 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("EMBER MIGHT"));
+                        case 9 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("FERAN RAID"));
+                        case 10 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("SUPERNATURAL"));
+                        case 11 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("OUTLANDERS"));
+                        case 12 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("10 ROUNDS TO LIVE"));
+                    }
+                }
+                if (roundData.getRoundCount() > 20 && roundData.getRoundCount() <= 30) {
+                    switch (roundData.getSandboxSection3()) {
+                        case 0 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE UNDEAD RISES"));
+                        case 1 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE DEAD ZONE"));
+                        case 2 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("AHOY DEADLY"));
+                        case 3 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("WOLF PACK"));
+                        case 4 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("ARACHNIDS"));
+                        case 5 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("VOID UGLIES"));
+                        case 6 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("BUG SEASON"));
+                        case 7 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("GOLDEN LURE"));
+                        case 8 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("EMBER MIGHT"));
+                        case 9 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("FERAN RAID"));
+                        case 10 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("SUPERNATURAL"));
+                        case 11 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("OUTLANDERS"));
+                        case 12 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("10 ROUNDS TO LIVE"));
+                    }
+                }
+                if (roundData.getRoundCount() > 30 && roundData.getRoundCount() <= 40) {
+                    switch (roundData.getSandboxSection4()) {
+                        case 0 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE UNDEAD RISES"));
+                        case 1 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE DEAD ZONE"));
+                        case 2 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("AHOY DEADLY"));
+                        case 3 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("WOLF PACK"));
+                        case 4 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("ARACHNIDS"));
+                        case 5 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("VOID UGLIES"));
+                        case 6 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("BUG SEASON"));
+                        case 7 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("GOLDEN LURE"));
+                        case 8 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("EMBER MIGHT"));
+                        case 9 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("FERAN RAID"));
+                        case 10 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("SUPERNATURAL"));
+                        case 11 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("OUTLANDERS"));
+                        case 12 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("10 ROUNDS TO LIVE"));
+                    }
+                }
+                if (roundData.getRoundCount() > 40 && roundData.getRoundCount() <= 50) {
+                    switch (roundData.getSandboxSection5()) {
+                        case 0 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE UNDEAD RISES"));
+                        case 1 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE DEAD ZONE"));
+                        case 2 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("AHOY DEADLY"));
+                        case 3 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("WOLF PACK"));
+                        case 4 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("ARACHNIDS"));
+                        case 5 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("VOID UGLIES"));
+                        case 6 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("BUG SEASON"));
+                        case 7 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("GOLDEN LURE"));
+                        case 8 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("EMBER MIGHT"));
+                        case 9 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("FERAN RAID"));
+                        case 10 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("SUPERNATURAL"));
+                        case 11 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("OUTLANDERS"));
+                        case 12 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("10 ROUNDS TO LIVE"));
+                    }
+                }
+                if (roundData.getRoundCount() > 50 && roundData.getRoundCount() <= 60) {
+                    switch (roundData.getSandboxSection6()) {
+                        case 0 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE UNDEAD RISES"));
+                        case 1 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE DEAD ZONE"));
+                        case 2 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("AHOY DEADLY"));
+                        case 3 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("WOLF PACK"));
+                        case 4 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("ARACHNIDS"));
+                        case 5 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("VOID UGLIES"));
+                        case 6 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("BUG SEASON"));
+                        case 7 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("GOLDEN LURE"));
+                        case 8 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("EMBER MIGHT"));
+                        case 9 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("FERAN RAID"));
+                        case 10 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("SUPERNATURAL"));
+                        case 11 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("OUTLANDERS"));
+                        case 12 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("10 ROUNDS TO LIVE"));
+                    }
+                }
+                if (roundData.getRoundCount() > 60 && roundData.getRoundCount() <= 70) {
+                    switch (roundData.getSandboxSection7()) {
+                        case 0 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE UNDEAD RISES"));
+                        case 1 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE DEAD ZONE"));
+                        case 2 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("AHOY DEADLY"));
+                        case 3 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("WOLF PACK"));
+                        case 4 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("ARACHNIDS"));
+                        case 5 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("VOID UGLIES"));
+                        case 6 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("BUG SEASON"));
+                        case 7 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("GOLDEN LURE"));
+                        case 8 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("EMBER MIGHT"));
+                        case 9 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("FERAN RAID"));
+                        case 10 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("SUPERNATURAL"));
+                        case 11 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("OUTLANDERS"));
+                        case 12 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("10 ROUNDS TO LIVE"));
+                    }
+                }
+                if (roundData.getRoundCount() > 70 && roundData.getRoundCount() <= 80) {
+                    switch (roundData.getSandboxSection8()) {
+                        case 0 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE UNDEAD RISES"));
+                        case 1 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE DEAD ZONE"));
+                        case 2 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("AHOY DEADLY"));
+                        case 3 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("WOLF PACK"));
+                        case 4 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("ARACHNIDS"));
+                        case 5 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("VOID UGLIES"));
+                        case 6 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("BUG SEASON"));
+                        case 7 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("GOLDEN LURE"));
+                        case 8 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("EMBER MIGHT"));
+                        case 9 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("FERAN RAID"));
+                        case 10 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("SUPERNATURAL"));
+                        case 11 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("OUTLANDERS"));
+                        case 12 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("10 ROUNDS TO LIVE"));
+                    }
+                }
+                if (roundData.getRoundCount() > 80 && roundData.getRoundCount() <= 90) {
+                    switch (roundData.getSandboxSection9()) {
+                        case 0 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE UNDEAD RISES"));
+                        case 1 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE DEAD ZONE"));
+                        case 2 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("AHOY DEADLY"));
+                        case 3 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("WOLF PACK"));
+                        case 4 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("ARACHNIDS"));
+                        case 5 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("VOID UGLIES"));
+                        case 6 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("BUG SEASON"));
+                        case 7 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("GOLDEN LURE"));
+                        case 8 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("EMBER MIGHT"));
+                        case 9 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("FERAN RAID"));
+                        case 10 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("SUPERNATURAL"));
+                        case 11 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("OUTLANDERS"));
+                        case 12 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("10 ROUNDS TO LIVE"));
+                    }
+                }
+                if (roundData.getRoundCount() > 90 && roundData.getRoundCount() <= 100) {
+                    switch (roundData.getSandboxSection10()) {
+                        case 0 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE UNDEAD RISES"));
+                        case 1 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE DEAD ZONE"));
+                        case 2 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("AHOY DEADLY"));
+                        case 3 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("WOLF PACK"));
+                        case 4 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("ARACHNIDS"));
+                        case 5 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("VOID UGLIES"));
+                        case 6 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("BUG SEASON"));
+                        case 7 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("GOLDEN LURE"));
+                        case 8 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("EMBER MIGHT"));
+                        case 9 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("FERAN RAID"));
+                        case 10 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("SUPERNATURAL"));
+                        case 11 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("OUTLANDERS"));
+                        case 12 -> uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("10 ROUNDS TO LIVE"));
+                    }
+                }
+                if (roundData.getRoundCount() > 100) {
+                    uiCommandBuilder.set("#TITLE.TextSpans", Message.raw("THE GLORIOUS CHAOS"));
+                }
+
             }
         } else {
             uiCommandBuilder.set("#ROUNDCOUNT.TextSpans", Message.raw(""));

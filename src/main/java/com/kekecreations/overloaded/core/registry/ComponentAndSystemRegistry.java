@@ -63,6 +63,9 @@ public class ComponentAndSystemRegistry {
         registry.registerSystem(new ChaosModeTickSystem(roundComponent));
         registry.registerSystem(new ChaosModeBossMoonSystem(roundComponent));
         registry.registerSystem(new ChaosModeEnemySystem(roundComponent));
+
+        registry.registerSystem(new SandboxEnemyTickSystem(roundComponent));
+        registry.registerSystem(new SandboxChaosEnemyTickSystem(roundComponent));
     }
 
 }

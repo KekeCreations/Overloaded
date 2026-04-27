@@ -21,7 +21,7 @@ public class UiTickSystem extends DelayedEntitySystem<EntityStore> {
 
 
     public UiTickSystem(ComponentType<EntityStore, RoundComponent> roundStats) {
-        super(1.0F);
+        super(0.5F);
         this.roundStats = roundStats;
     }
 
