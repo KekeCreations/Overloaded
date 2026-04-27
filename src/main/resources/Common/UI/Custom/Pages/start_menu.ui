@@ -2,66 +2,74 @@
 $C = "../Common.ui";
 Group #MAIN {
   LayoutMode: Top;
-  Background: (Color: #132533);
+  Background: (Color: #998033);
   Anchor: (Width: 800, Height: 700);
-  Group #TEXT {
+  Group #BODY {
     LayoutMode: Top;
-    Background: (Color: #22425b);
-    Label #TITLE {
-      Text: "OVERLOADED";
-      Style: (TextColor: #408080, FontSize: 45, RenderBold: true, HorizontalAlignment: Center);
-    }
-    Label #CREDITS {
-      Text: "MADE BY KEKECREATIONS";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, HorizontalAlignment: Center);
-    }
-  }
-  Group #Sep {
-    LayoutMode: Top;
-    Background: (Color: #408080);
-    Anchor: (Height: 10);
-  }
-  Group #BUTTONS {
-    LayoutMode: Top;
-    Background: (Color: #132533);
-    Anchor: (Width: 150, Height: 530, Left: 325, Top: 40);
-    $C.@TextButton #PLAYCLASSIC {
-      Background: (Color: #ffffff);
-      Anchor: (Width: 110, Height: 50, Left: 0, Right: 0);
-      Text: "PLAY CLASSIC";
-    }
-    $C.@TextButton #PLAYQUICK {
-      Background: (Color: #ffffff);
-      Anchor: (Width: 110, Height: 50, Left: 0, Right: 0, Top: 15);
-      Text: "PLAY QUICK";
-    }
-    $C.@TextButton #PLAYROUNDS {
-      Background: (Color: #ffffff);
-      Anchor: (Width: 110, Height: 50, Left: 0, Right: 0, Top: 15);
-      Text: "PLAY ROUNDS";
-    }
-    $C.@TextButton #PLAYCHAOS {
-      Background: (Color: #ffffff);
-      Anchor: (Width: 110, Height: 50, Left: 0, Right: 0, Top: 15);
-      Text: "PLAY CHAOS";
-    }
-    $C.@TextButton #PLAYSANDBOX {
-      Background: (Color: #ffffff);
-      Anchor: (Width: 110, Height: 50, Left: 0, Right: 0, Top: 15);
-      Text: "PLAY SANDBOX";
-    }
-    $C.@TextButton #SETTINGS {
-      Background: (Color: #ffffff);
-      Anchor: (Height: 30, Left: 0, Right: 0, Top: 35);
-      Text: "SETTINGS";
-    }
-    $C.@TextButton #HOWTOPLAY {
-      Anchor: (Height: 30, Top: 15);
-      Text: "HOW TO PLAY";
-    }
-    $C.@CancelTextButton #QUIT {
-      Anchor: (Width: 110, Height: 50, Top: 50);
-      Text: "QUIT";
+    Background: (Color: #725f25);
+    Anchor: (Width: 780, Height: 680, Left: 10, Top: 10);
+    Group #INSIDEBODY {
+      LayoutMode: Top;
+      Background: (Color: #1e3d53);
+      Anchor: (Width: 760, Height: 660, Left: 10, Top: 10);
+      Group #TEXT {
+        LayoutMode: Top;
+        Background: (Color: #244964);
+        Group #TITLELAYOUT {
+          LayoutMode: Middle;
+          Anchor: (Width: 700, Height: 100, Top: 10);
+          AssetImage #TITLE {
+            Anchor: (Width: 700, Height: 100);
+            AssetPath: "UI/Custom/Pages/Textures/Title.png";
+          }
+        }
+        Group #Sep {
+          LayoutMode: Top;
+          Background: (Color: #998033);
+          Anchor: (Height: 15, Top: 10);
+        }
+      }
+      Group #BUTTONS {
+        LayoutMode: Top;
+        Anchor: (Width: 150, Height: 530, Left: 315, Top: 20);
+        $C.@TextButton #PLAYCLASSIC {
+          Anchor: (Width: 110, Height: 50, Left: 0, Right: 0, Top: 0);
+          Text: "PLAY CLASSIC";
+        }
+        $C.@TextButton #PLAYROUNDS {
+          Background: (Color: #ffffff);
+          Anchor: (Width: 110, Height: 50, Left: 0, Right: 0, Top: 15);
+          Text: "PLAY ROUNDS";
+        }
+        $C.@TextButton #PLAYQUICK {
+          Background: (Color: #ffffff);
+          Anchor: (Width: 110, Height: 50, Left: 0, Right: 0, Top: 15);
+          Text: "PLAY QUICK";
+        }
+        $C.@TextButton #PLAYCHAOS {
+          Background: (Color: #ffffff);
+          Anchor: (Width: 110, Height: 50, Left: 0, Right: 0, Top: 15);
+          Text: "PLAY CHAOS";
+        }
+        $C.@TextButton #PLAYSANDBOX {
+          Background: (Color: #ffffff);
+          Anchor: (Width: 110, Height: 50, Left: 0, Right: 0, Top: 15);
+          Text: "PLAY SANDBOX";
+        }
+        $C.@TextButton #SETTINGS {
+          Background: (Color: #ffffff);
+          Anchor: (Height: 30, Left: 0, Right: 0, Top: 20);
+          Text: "SETTINGS";
+        }
+        $C.@TextButton #HOWTOPLAY {
+          Anchor: (Height: 30, Top: 20);
+          Text: "HOW TO PLAY";
+        }
+        $C.@CancelTextButton #QUIT {
+          Anchor: (Width: 110, Height: 50, Top: 20);
+          Text: "QUIT";
+        }
+      }
     }
   }
 }

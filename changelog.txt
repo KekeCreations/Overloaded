@@ -1,3 +1,10 @@
+##V3.0-update4
+This version is designed to work with Update 4 of the game also known as 2026.03.26-89796e57b
+
+## Changes
+- Overhauled Start Menu UI
+
+
 ## V2.5-update4
 This version is designed to work with Update 4 of the game also known as 2026.03.26-89796e57b
 
