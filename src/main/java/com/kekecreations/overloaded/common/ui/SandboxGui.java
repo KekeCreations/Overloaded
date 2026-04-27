@@ -703,7 +703,7 @@ public class SandboxGui extends InteractiveCustomUIPage<SandboxGui.Data> {
     @Override
     public void onDismiss(@NonNull Ref<EntityStore> ref, @NonNull Store<EntityStore> store) {
         super.onDismiss(ref, store);
-        if (Objects.equals(roundComponent.getRoundType(), "null")) {
+        if (Objects.equals(roundComponent.getRoundType(), "null") && !Objects.equals(roundComponent.getRoundMenu(), "start")) {
             roundComponent.setRoundMenu("sandbox");
         }
     }

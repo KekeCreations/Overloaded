@@ -38,6 +38,12 @@ Eventually all will be yours and it will be chaos! can you survive to round 50, 
 - This mode has custom exclusive bosses that aren't in the other modes
 - The player also starts off with some gear such as an Acid Orb Pet, Ice Ball Pet, Kunai Pack and Mithril Battleaxe
 - NOT COMPATIBLE WITH ARACHNOPHOBIA MODE
+### Sandbox mode
+- Choose your own round length!
+- Choose your own starting gold, equipment and pets!
+- Play any sections you want and choose the order they are in!
+- Toggle chaos mode on and off!
+- No bosses!
 
 
 # Accessibility Options

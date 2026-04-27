@@ -1,4 +1,11 @@
+## V2.5-update4
+This version is designed to work with Update 4 of the game also known as 2026.03.26-89796e57b
 
+### Changes
+- Added a new sandbox mode!
+You can set custom round length, change starting equipment and play any of your favourite sections! To sweeten the deal it even has a chaos mode toggle!
+- Ui now updates faster!
+- Updated README to include information about the new sandbox mode!
 
 
 ## V2.0-update4

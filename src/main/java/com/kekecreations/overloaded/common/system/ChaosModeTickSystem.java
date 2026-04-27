@@ -43,7 +43,7 @@ public class ChaosModeTickSystem extends DelayedEntitySystem<EntityStore> {
                         entityStat.addStatValue(DefaultEntityStatTypes.getHealth(), 15.0F);
                     }
                 }
-                if (roundData.getRoundCount() == 1 && roundData.getRoundTimer() == 58) {
+                if (roundData.getRoundCount() == 1 && roundData.getRoundTimer() == 58 && roundData.getRoundType() == "chaos") {
                     hotbar.setItemStackForSlot((short) 1, new ItemStack("Weapon_Custom_Battleaxe_Mithril", 1));
                     hotbar.setItemStackForSlot((short) 3, new ItemStack("Kunai_Pack", 1));
                     hotbar.setItemStackForSlot((short) 4, new ItemStack("Acid_Orb_Pet", 1));
