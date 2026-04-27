@@ -2,40 +2,43 @@
 $C = "../Common.ui";
 Group #MAIN {
   LayoutMode: Top;
-  Background: (Color: #132533);
+  Background: (Color: #998033);
   Anchor: (Width: 800, Height: 700);
-  Group #TEXT {
+  Group #BODY {
     LayoutMode: Top;
-    Background: (Color: #22425b);
-    Label #TITLE {
-      Text: "GAME OVER";
-      Style: (TextColor: #408080, FontSize: 45, RenderBold: true, HorizontalAlignment: Center);
-    }
-    Label #CREDITS {
-      Text: "LOOK HOW WELL YOU DID!";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, HorizontalAlignment: Center);
-    }
-  }
-  Group #Sep {
-    LayoutMode: Top;
-    Background: (Color: #408080);
-    Anchor: (Height: 10);
-  }
-  Group #BUTTONS {
-    LayoutMode: Top;
-    Background: (Color: #132533);
-    Anchor: (Width: 250, Height: 530, Left: 280, Top: 40);
-    Label #KILLS {
-      Anchor: (Top: 5);
-      Padding: (Full: 0);
-      Text: "ENEMIES KILLED:";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
-    }
-    Label #GOLD {
-      Anchor: (Top: 5);
-      Padding: (Full: 0);
-      Text: "GOLD COLLECTED:";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+    Background: (Color: #725f25);
+    Anchor: (Width: 780, Height: 680, Left: 10, Top: 10);
+    Group #INNERBODY {
+      LayoutMode: Top;
+      Background: (Color: #1e3d53);
+      Anchor: (Width: 760, Height: 660, Left: 10, Top: 10);
+      Group #TEXT {
+        LayoutMode: Top;
+        Background: (Color: #244964);
+        Group #TITLELAYOUT {
+          LayoutMode: Middle;
+          Anchor: (Width: 700, Height: 100, Top: 10);
+          AssetImage #TITLE {
+            Anchor: (Width: 700, Height: 100);
+            AssetPath: "UI/Custom/Pages/Textures/Gameover.png";
+          }
+        }
+        Group #Sep {
+          LayoutMode: Top;
+          Background: (Color: #998033);
+          Anchor: (Height: 10, Top: 10);
+        }
+      }
+      Label #KILLS {
+        Anchor: (Top: 5);
+        Text: "ENEMIES KILLED:";
+        Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+      }
+      Label #GOLD {
+        Anchor: (Top: 5);
+        Text: "GOLD COLLECTED:";
+        Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+      }
     }
   }
 }

@@ -2,56 +2,65 @@
 $C = "../Common.ui";
 Group #MAIN {
   LayoutMode: Top;
-  Background: (Color: #132533);
+  Background: (Color: #998033);
   Anchor: (Width: 800, Height: 500);
-  Group #TEXT {
+  Group #BODY {
     LayoutMode: Top;
-    Background: (Color: #1d3a50);
-    Label #TITLE {
-      Text: "SETTINGS";
-      Style: (TextColor: #408080, FontSize: 45, RenderBold: true, HorizontalAlignment: Center);
-    }
-    Label #CREDITS {
-      Text: "Made by KekeCreations";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, HorizontalAlignment: Center);
-    }
-  }
-  Group #SEP {
-    LayoutMode: Top;
-    Background: (Color: #408080);
-    Anchor: (Height: 10);
-  }
-  Group #BUTTONS {
-    LayoutMode: Top;
-    Background: (Color: #132533);
-    Anchor: (Width: 505, Height: 330, Top: 40);
-    Label #SPIDERDESC {
-      Text: "When turned on spiders can't be spawned by this mod!";
-      Style: (TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center);
-    }
-    $C.@TextButton #SPIDERMODE {
-      Background: (Color: #ffffff);
-      Anchor: (Width: 200, Height: 50, Left: 0, Right: 0);
-      Text: "ARACHNOPHOBIA MODE: OFF";
-    }
-    Label #GOLDDESC {
-      Anchor: (Top: 15);
-      Text: "Double your earnings!";
-      Style: (TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center);
-    }
-    Label #GOLDDESC2 {
-      Anchor: (Top: 1);
-      Text: "Ideal for beginners.";
-      Style: (TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center);
-    }
-    $C.@TextButton #DOUBLEGOLDMODE {
-      Background: (Color: #ffffff);
-      Anchor: (Width: 200, Height: 50, Left: 0, Right: 0, Top: 0);
-      Text: "DOUBLE GOLD MODE: OFF";
-    }
-    $C.@TextButton #BACK {
-      Anchor: (Width: 115, Height: 50, Top: 80);
-      Text: "BACK";
+    Background: (Color: #725f25);
+    Anchor: (Width: 780, Height: 480, Left: 10, Top: 10);
+    Group #INNERBODY {
+      LayoutMode: Top;
+      Background: (Color: #1e3d53);
+      Anchor: (Width: 760, Height: 460, Left: 10, Top: 10);
+      Group #TEXT {
+        LayoutMode: Top;
+        Background: (Color: #244964);
+        Group #TITLELAYOUT {
+          LayoutMode: Middle;
+          Anchor: (Width: 700, Height: 100, Top: 10);
+          AssetImage #TITLEIM {
+            Anchor: (Width: 700, Height: 100);
+            AssetPath: "UI/Custom/Pages/Textures/Settings.png";
+          }
+        }
+        Group #SEP {
+          LayoutMode: Top;
+          Background: (Color: #998033);
+          Anchor: (Height: 10, Top: 10);
+        }
+      }
+      Group #BUTTONS {
+        LayoutMode: Top;
+        Anchor: (Width: 505, Height: 330, Top: 40);
+        Label #SPIDERDESC {
+          Text: "When turned on spiders can't be spawned by this mod!";
+          Style: (TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center);
+        }
+        $C.@TextButton #SPIDERMODE {
+          Background: (Color: #ffffff);
+          Anchor: (Width: 200, Height: 50, Left: 0, Right: 0);
+          Text: "ARACHNOPHOBIA MODE: OFF";
+        }
+        Label #GOLDDESC {
+          Anchor: (Top: 15);
+          Text: "Double your earnings!";
+          Style: (TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center);
+        }
+        Label #GOLDDESC2 {
+          Anchor: (Top: 1);
+          Text: "Ideal for beginners.";
+          Style: (TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center);
+        }
+        $C.@TextButton #DOUBLEGOLDMODE {
+          Background: (Color: #ffffff);
+          Anchor: (Width: 200, Height: 50, Left: 0, Right: 0, Top: 0);
+          Text: "DOUBLE GOLD MODE: OFF";
+        }
+        $C.@TextButton #BACK {
+          Anchor: (Width: 115, Height: 50, Top: 40);
+          Text: "BACK";
+        }
+      }
     }
   }
 }

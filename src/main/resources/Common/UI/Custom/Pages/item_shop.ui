@@ -2,221 +2,224 @@
 $C = "../Common.ui";
 Group #ITEMSHOP {
   LayoutMode: Top;
-  Background: (Color: #243847);
+  Background: (Color: #998033);
   Anchor: (Width: 1500, Height: 500);
-  Group #TEXT {
+  Group #BODY {
     LayoutMode: Top;
-    Background: (Color: #1f3b4d);
-    Label #TITLE {
-      Text: "ITEM SHOP";
-      Style: (TextColor: #408080, FontSize: 40, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
-    }
-    Label #DESC {
-      Text: "USE COINS TO BUY ITEMS";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
-    }
-  }
-  Group #BORDER {
-    LayoutMode: MiddleCenter;
-    Background: (Color: #408080);
-    Anchor: (Height: 10);
-  }
-  Group #BORDER2 {
-    LayoutMode: Top;
-    Background: (Color: #243847);
-    Anchor: (Height: 20);
-  }
-  Label #TOTALCOINS {
-    Text: "COINS:";
-    Style: (TextColor: #a9a151, FontSize: 20, RenderBold: true, HorizontalAlignment: Center);
-  }
-  Group #BORDERWA {
-    LayoutMode: Top;
-    Background: (Color: #243847);
-    Anchor: (Height: 5);
-  }
-  Group #SHOP {
-    LayoutMode: Left;
-    Background: (Color: #243847);
-    Anchor: (Width: 1050);
-    Group #ITEM1 {
-      LayoutMode: Middle;
-      Background: (Color: #1d2d3a);
-      Anchor: (Width: 200, Height: 250);
-      Group #IMGROUP1 {
-        Background: (Color: #192834);
-        Anchor: (Width: 100, Height: 100);
-        Padding: (Top: 16, Bottom: 16);
-        AssetImage #IMAGE1 {
-          Anchor: (Width: 100, Height: 100);
-          AssetPath: "Icons/ItemsGenerated/Plant_Vine.png";
+    Background: (Color: #725f25);
+    Anchor: (Width: 1480, Height: 480, Left: 10, Top: 10);
+    Group #INNERBODY {
+      LayoutMode: Top;
+      Background: (Color: #1e3d53);
+      Anchor: (Width: 1460, Height: 460, Left: 10, Top: 10);
+      Group #TEXT {
+        LayoutMode: Top;
+        Background: (Color: #244964);
+        Group #IMLAYOUT {
+          LayoutMode: Middle;
+          Anchor: (Width: 600, Height: 80, Top: 10);
+          AssetImage #TITLE {
+            Anchor: (Width: 600, Height: 80);
+            AssetPath: "UI/Custom/Pages/Textures/Itemshop.png";
+          }
+        }
+        Group #BORDER {
+          LayoutMode: MiddleCenter;
+          Background: (Color: #998033);
+          Anchor: (Height: 10, Top: 10);
         }
       }
-      Label #DESC1 {
-        Text: "DESC:";
-        Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+      Group #BORDER2 {
+        LayoutMode: Top;
+        Anchor: (Height: 10);
       }
-      Label #RARITY1 {
-        Text: "RARITY:";
-        Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+      Label #TOTALCOINS {
+        Text: "COINS:";
+        Style: (TextColor: #a9a151, FontSize: 20, RenderBold: true, HorizontalAlignment: Center);
       }
-      Label #PRICE1 {
-        Text: "GOLD:";
-        Style: (TextColor: #a9a151, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
-      }
-      $C.@TextButton #BUY1 {
-        Anchor: (Width: 140, Height: 30);
-        Text: "BUY";
-      }
-    }
-    Group #BORDER3 {
-      LayoutMode: Middle;
-      Background: (Color: #243847);
-      Anchor: (Width: 20, Height: 20);
-    }
-    Group #ITEM2 {
-      LayoutMode: Middle;
-      Background: (Color: #1d2d3a);
-      Anchor: (Width: 200, Height: 250);
-      Group #IMGROUP2 {
-        Background: (Color: #192834);
-        Anchor: (Width: 100, Height: 100);
-        Padding: (Top: 16, Bottom: 16);
-        AssetImage #IMAGE2 {
-          Anchor: (Width: 100, Height: 100);
-          AssetPath: "Icons/ItemsGenerated/Plant_Vine.png";
+      Group #SHOP {
+        LayoutMode: Left;
+        Background: (Color: #243847);
+        Anchor: (Width: 1050);
+        Group #ITEM1 {
+          LayoutMode: Middle;
+          Background: (Color: #1d2d3a);
+          Anchor: (Width: 200, Height: 250);
+          Group #IMGROUP1 {
+            Background: (Color: #192834);
+            Anchor: (Width: 100, Height: 100);
+            Padding: (Top: 16, Bottom: 16);
+            AssetImage #IMAGE1 {
+              Anchor: (Width: 100, Height: 100);
+              AssetPath: "Icons/ItemsGenerated/Plant_Vine.png";
+            }
+          }
+          Label #DESC1 {
+            Text: "DESC:";
+            Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          }
+          Label #RARITY1 {
+            Text: "RARITY:";
+            Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          }
+          Label #PRICE1 {
+            Text: "GOLD:";
+            Style: (TextColor: #a9a151, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          }
+          $C.@TextButton #BUY1 {
+            Anchor: (Width: 140, Height: 30);
+            Text: "BUY";
+          }
+        }
+        Group #BORDER3 {
+          LayoutMode: Middle;
+          Background: (Color: #243847);
+          Anchor: (Width: 20, Height: 20);
+        }
+        Group #ITEM2 {
+          LayoutMode: Middle;
+          Background: (Color: #1d2d3a);
+          Anchor: (Width: 200, Height: 250);
+          Group #IMGROUP2 {
+            Background: (Color: #192834);
+            Anchor: (Width: 100, Height: 100);
+            Padding: (Top: 16, Bottom: 16);
+            AssetImage #IMAGE2 {
+              Anchor: (Width: 100, Height: 100);
+              AssetPath: "Icons/ItemsGenerated/Plant_Vine.png";
+            }
+          }
+          Label #DESC2 {
+            Text: "DESC:";
+            Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          }
+          Label #RARITY2 {
+            Text: "RARITY:";
+            Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          }
+          Label #PRICE2 {
+            Text: "GOLD:";
+            Style: (TextColor: #a9a151, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          }
+          $C.@TextButton #BUY2 {
+            Anchor: (Width: 140, Height: 30);
+            Text: "BUY";
+          }
+        }
+        Group #BORDER4 {
+          LayoutMode: Middle;
+          Background: (Color: #243847);
+          Anchor: (Width: 20, Height: 20);
+        }
+        Group #ITEM3 {
+          LayoutMode: Middle;
+          Background: (Color: #1d2d3a);
+          Anchor: (Width: 200, Height: 250);
+          Group #IMGROUP3 {
+            Background: (Color: #192834);
+            Anchor: (Width: 100, Height: 100);
+            Padding: (Top: 16, Bottom: 16);
+            AssetImage #IMAGE3 {
+              Anchor: (Width: 100, Height: 100);
+              AssetPath: "Icons/ItemsGenerated/Plant_Vine.png";
+            }
+          }
+          Label #DESC3 {
+            Text: "DESC:";
+            Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          }
+          Label #RARITY3 {
+            Text: "RARITY:";
+            Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          }
+          Label #PRICE3 {
+            Text: "GOLD:";
+            Style: (TextColor: #a9a151, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          }
+          $C.@TextButton #BUY3 {
+            Anchor: (Width: 140, Height: 30);
+            Text: "BUY";
+          }
+        }
+        Group #BORDER5 {
+          LayoutMode: Middle;
+          Background: (Color: #243847);
+          Anchor: (Width: 20, Height: 20);
+        }
+        Group #ITEM4 {
+          LayoutMode: Middle;
+          Background: (Color: #1d2d3a);
+          Anchor: (Width: 200, Height: 250);
+          Group #IMGROUP4 {
+            Background: (Color: #192834);
+            Anchor: (Width: 100, Height: 100);
+            Padding: (Top: 16, Bottom: 16);
+            AssetImage #IMAGE4 {
+              Anchor: (Width: 100, Height: 100);
+              AssetPath: "Icons/ItemsGenerated/Plant_Vine.png";
+            }
+          }
+          Label #DESC4 {
+            Text: "DESC:";
+            Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          }
+          Label #RARITY4 {
+            Text: "RARITY:";
+            Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          }
+          Label #PRICE4 {
+            Text: "GOLD:";
+            Style: (TextColor: #a9a151, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          }
+          $C.@TextButton #BUY4 {
+            Anchor: (Width: 140, Height: 30);
+            Text: "BUY";
+          }
+        }
+        Group #BORDER6 {
+          LayoutMode: Middle;
+          Background: (Color: #243847);
+          Anchor: (Width: 20, Height: 20);
+        }
+        Group #ITEM5 {
+          LayoutMode: Middle;
+          Background: (Color: #1d2d3a);
+          Anchor: (Width: 200, Height: 250);
+          Group #IMGROUP5 {
+            Background: (Color: #192834);
+            Anchor: (Width: 100, Height: 100);
+            Padding: (Top: 16, Bottom: 16);
+            AssetImage #IMAGE5 {
+              Anchor: (Width: 100, Height: 100);
+              AssetPath: "Icons/ItemsGenerated/Plant_Vine.png";
+            }
+          }
+          Label #DESC5 {
+            Text: "DESC:";
+            Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          }
+          Label #RARITY5 {
+            Text: "RARITY:";
+            Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          }
+          Label #PRICE5 {
+            Text: "GOLD:";
+            Style: (TextColor: #a9a151, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+          }
+          $C.@TextButton #BUY5 {
+            Anchor: (Width: 140, Height: 30);
+            Text: "BUY";
+          }
         }
       }
-      Label #DESC2 {
-        Text: "DESC:";
-        Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
+      Group #BORDER5 {
+        LayoutMode: Top;
+        Anchor: (Height: 10);
       }
-      Label #RARITY2 {
-        Text: "RARITY:";
-        Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
-      }
-      Label #PRICE2 {
-        Text: "GOLD:";
-        Style: (TextColor: #a9a151, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
-      }
-      $C.@TextButton #BUY2 {
-        Anchor: (Width: 140, Height: 30);
-        Text: "BUY";
+      $C.@TextButton #CONTINUE {
+        Anchor: (Width: 220, Height: 40);
+        Text: "CONTINUE";
       }
     }
-    Group #BORDER4 {
-      LayoutMode: Middle;
-      Background: (Color: #243847);
-      Anchor: (Width: 20, Height: 20);
-    }
-    Group #ITEM3 {
-      LayoutMode: Middle;
-      Background: (Color: #1d2d3a);
-      Anchor: (Width: 200, Height: 250);
-      Group #IMGROUP3 {
-        Background: (Color: #192834);
-        Anchor: (Width: 100, Height: 100);
-        Padding: (Top: 16, Bottom: 16);
-        AssetImage #IMAGE3 {
-          Anchor: (Width: 100, Height: 100);
-          AssetPath: "Icons/ItemsGenerated/Plant_Vine.png";
-        }
-      }
-      Label #DESC3 {
-        Text: "DESC:";
-        Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
-      }
-      Label #RARITY3 {
-        Text: "RARITY:";
-        Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
-      }
-      Label #PRICE3 {
-        Text: "GOLD:";
-        Style: (TextColor: #a9a151, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
-      }
-      $C.@TextButton #BUY3 {
-        Anchor: (Width: 140, Height: 30);
-        Text: "BUY";
-      }
-    }
-    Group #BORDER5 {
-      LayoutMode: Middle;
-      Background: (Color: #243847);
-      Anchor: (Width: 20, Height: 20);
-    }
-    Group #ITEM4 {
-      LayoutMode: Middle;
-      Background: (Color: #1d2d3a);
-      Anchor: (Width: 200, Height: 250);
-      Group #IMGROUP4 {
-        Background: (Color: #192834);
-        Anchor: (Width: 100, Height: 100);
-        Padding: (Top: 16, Bottom: 16);
-        AssetImage #IMAGE4 {
-          Anchor: (Width: 100, Height: 100);
-          AssetPath: "Icons/ItemsGenerated/Plant_Vine.png";
-        }
-      }
-      Label #DESC4 {
-        Text: "DESC:";
-        Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
-      }
-      Label #RARITY4 {
-        Text: "RARITY:";
-        Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
-      }
-      Label #PRICE4 {
-        Text: "GOLD:";
-        Style: (TextColor: #a9a151, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
-      }
-      $C.@TextButton #BUY4 {
-        Anchor: (Width: 140, Height: 30);
-        Text: "BUY";
-      }
-    }
-    Group #BORDER6 {
-      LayoutMode: Middle;
-      Background: (Color: #243847);
-      Anchor: (Width: 20, Height: 20);
-    }
-    Group #ITEM5 {
-      LayoutMode: Middle;
-      Background: (Color: #1d2d3a);
-      Anchor: (Width: 200, Height: 250);
-      Group #IMGROUP5 {
-        Background: (Color: #192834);
-        Anchor: (Width: 100, Height: 100);
-        Padding: (Top: 16, Bottom: 16);
-        AssetImage #IMAGE5 {
-          Anchor: (Width: 100, Height: 100);
-          AssetPath: "Icons/ItemsGenerated/Plant_Vine.png";
-        }
-      }
-      Label #DESC5 {
-        Text: "DESC:";
-        Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
-      }
-      Label #RARITY5 {
-        Text: "RARITY:";
-        Style: (TextColor: #ffffff, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
-      }
-      Label #PRICE5 {
-        Text: "GOLD:";
-        Style: (TextColor: #a9a151, FontSize: 15, RenderBold: true, HorizontalAlignment: Center);
-      }
-      $C.@TextButton #BUY5 {
-        Anchor: (Width: 140, Height: 30);
-        Text: "BUY";
-      }
-    }
-  }
-  Group #BORDER5 {
-    LayoutMode: Top;
-    Background: (Color: #243847);
-    Anchor: (Height: 20);
-  }
-  $C.@TextButton #CONTINUE {
-    Anchor: (Width: 220, Height: 50);
-    Text: "CONTINUE";
   }
 }

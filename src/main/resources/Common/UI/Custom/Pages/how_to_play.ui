@@ -2,187 +2,194 @@
 $C = "../Common.ui";
 Group #MAIN {
   LayoutMode: Top;
-  Background: (Color: #132533);
+  Background: (Color: #998033);
   Anchor: (Width: 1300, Height: 1000);
-  Group #TEXT {
+  Group #BODY {
     LayoutMode: Top;
-    Background: (Color: #22425b);
-    Label #TITLE {
-      Text: "HOW TO PLAY!";
-      Style: (TextColor: #408080, FontSize: 45, RenderBold: true, HorizontalAlignment: Center);
+    Background: (Color: #725f25);
+    Anchor: (Width: 1280, Height: 980, Left: 10, Top: 10);
+    Group #INSIDEBODY {
+      LayoutMode: Top;
+      Background: (Color: #1e3d53);
+      Anchor: (Width: 1260, Height: 960, Left: 10, Top: 10);
+      Group #TEXT {
+        LayoutMode: Top;
+        Background: (Color: #244964);
+        Group #TITLELAYOUT {
+          LayoutMode: Middle;
+          Anchor: (Width: 700, Height: 100, Top: 10);
+          AssetImage #TITLE {
+            Anchor: (Width: 700, Height: 100);
+            AssetPath: "UI/Custom/Pages/Textures/Howtoplay.png";
+          }
+        }
+        Group #Sep {
+          LayoutMode: Top;
+          Background: (Color: #998033);
+          Anchor: (Height: 10, Top: 10);
+        }
+      }
+      Group #Sepcopy {
+        LayoutMode: Top;
+        Anchor: (Height: 30);
+      }
+      Group #CLASSICGROUP {
+        LayoutMode: Top;
+        Label #TITLE {
+          Text: "CLASSIC";
+          Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+        }
+        Label #STAT1 {
+          Anchor: (Top: 5);
+          Text: "Rounds last: 45 seconds";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+        Label #STAT2 {
+          Text: "Bosses spawn: true";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+        Label #STAT3 {
+          Text: "Enemies are killed when round ends: false";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+      }
+      Group #QUICKGROUP {
+        LayoutMode: Top;
+        Anchor: (Top: 10);
+        Label #TITLE {
+          Text: "QUICK";
+          Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+        }
+        Label #STAT1 {
+          Anchor: (Top: 5);
+          Text: "Rounds last: 25 seconds";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+        Label #STAT2 {
+          Text: "Bosses spawn: false";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+        Label #STAT3 {
+          Text: "Enemies are killed when round ends: false";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+        Label #STAT4 {
+          Text: "This mode has boosted gold earnings";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+      }
+      Group #ROUNDSGROUP {
+        LayoutMode: Top;
+        Anchor: (Top: 10);
+        Label #TITLE {
+          Text: "ROUNDS";
+          Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+        }
+        Label #STAT1 {
+          Text: "Rounds last: 45 seconds";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+        Label #STAT2 {
+          Text: "Bosses spawn: true";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+        Label #STAT3 {
+          Text: "Enemies are killed when round ends: true";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+      }
+      Group #CHAOSGROUP {
+        LayoutMode: Top;
+        Anchor: (Top: 10);
+        Label #TITLE {
+          Text: "CHAOS";
+          Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+        }
+        Label #STAT1copy {
+          Anchor: (Top: 5);
+          Text: "Rounds last: 60 seconds";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+        Label #STAT2copy {
+          Text: "Hss unique sections and bosses!";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+        Label #STAT3copy {
+          Text: "Players start off with better gear!";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+      }
+      Group #GAMEINFOGROUP {
+        LayoutMode: Top;
+        Anchor: (Top: 10);
+        Label #TITLEcopy {
+          Text: "GAME INFORMATION";
+          Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+        }
+        Label #STAT1copy {
+          Anchor: (Top: 5);
+          Text: "You collect gold by killing enemies, bosses, searching chests and through various items";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+        Label #STAT2copy {
+          Text: "After each round you can buy items to survive longer!";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+        Label #STAT3copy {
+          Text: "By default you shoot a copper spear randomly, this can be upgraded through items!";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+        Label #STAT3copycopy {
+          Text: "You are given a remote to slow down time so you can read item descriptions but be careful!";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+      }
+      Group #ROUNDINFO {
+        LayoutMode: Top;
+        Anchor: (Top: 10);
+        Label #TITLE {
+          Text: "ROUND SECTIONS";
+          Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+        }
+        Label #STAT1 {
+          Anchor: (Top: 5);
+          Text: "There are multiple sections to play through each with their own unique themes!";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+        Label #STAT2 {
+          Text: "Every 10 waves the theme switches, you start off in a zombie invasion!";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+        Label #STAT3 {
+          Text: "Some featured themes: The Undead Zone, Outlanders, Bug Season, Void Uglies and more!";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+      }
+      Group #ITEMINFO {
+        LayoutMode: Top;
+        Anchor: (Top: 10);
+        Label #TITLE {
+          Text: "ITEMS";
+          Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
+        }
+        Label #STAT1 {
+          Anchor: (Top: 5);
+          Text: "Each item has an item description that explains their special ability";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+        Label #STAT2 {
+          Text: "Each item has their own rarity to showcase how rare they are to get!";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+        Label #STAT3 {
+          Text: "Some items only work in the hotbar and some only work in the inventory";
+          Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
+        }
+      }
+      $C.@TextButton #BACKBUTTON {
+        Anchor: (Width: 280, Height: 50, Top: 15);
+        Text: "BACK";
+      }
     }
-    Label #CREDITS {
-      Text: "THANK YOU FOR PLAYING :)";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, HorizontalAlignment: Center);
-    }
-  }
-  Group #Sep {
-    LayoutMode: Top;
-    Background: (Color: #408080);
-    Anchor: (Height: 10);
-  }
-  Group #Sepcopy {
-    LayoutMode: Top;
-    Anchor: (Height: 30);
-  }
-  Label #SUBTITLE1 {
-    Text: "ROUNDS";
-    Style: (TextColor: #408080, FontSize: 45, RenderBold: true, HorizontalAlignment: Center);
-  }
-  Group #CLASSICGROUP {
-    LayoutMode: Top;
-    Label #TITLE {
-      Text: "CLASSIC";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
-    }
-    Label #STAT1 {
-      Text: "Rounds last: 45 seconds";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-    Label #STAT2 {
-      Text: "Bosses spawn: true";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-    Label #STAT3 {
-      Text: "Enemies are killed when round ends: false";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-  }
-  Group #QUICKGROUP {
-    LayoutMode: Top;
-    Anchor: (Top: 10);
-    Label #TITLE {
-      Text: "QUICK";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
-    }
-    Label #STAT1 {
-      Text: "Rounds last: 25 seconds";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-    Label #STAT2 {
-      Text: "Bosses spawn: false";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-    Label #STAT3 {
-      Text: "Enemies are killed when round ends: false";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-    Label #STAT4 {
-      Text: "This mode has boosted gold earnings";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-  }
-  Group #ROUNDSGROUP {
-    LayoutMode: Top;
-    Anchor: (Top: 10);
-    Label #TITLE {
-      Text: "ROUNDS";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
-    }
-    Label #STAT1 {
-      Text: "Rounds last: 45 seconds";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-    Label #STAT2 {
-      Text: "Bosses spawn: true";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-    Label #STAT3 {
-      Text: "Enemies are killed when round ends: true";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-  }
-  Group #CHAOSGROUP {
-    LayoutMode: Top;
-    Anchor: (Top: 10);
-    Label #TITLE {
-      Text: "CHAOS";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
-    }
-    Label #STAT1copy {
-      Text: "Rounds last: 60 seconds";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-    Label #STAT2copy {
-      Text: "Hss unique sections and bosses!";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-    Label #STAT3copy {
-      Text: "Players start off with better gear!";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-  }
-  Label #SUBTITLE2 {
-    Anchor: (Top: 10);
-    Text: "HOW TO PLAY";
-    Style: (TextColor: #408080, FontSize: 45, RenderBold: true, HorizontalAlignment: Center);
-  }
-  Group #GAMEINFOGROUP {
-    LayoutMode: Top;
-    Anchor: (Top: 10);
-    Label #TITLEcopy {
-      Text: "GAME INFORMATION";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
-    }
-    Label #STAT1copy {
-      Text: "You collect gold by killing enemies, bosses, searching chests and through various items";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-    Label #STAT2copy {
-      Text: "After each round you can buy items to survive longer!";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-    Label #STAT3copy {
-      Text: "By default you shoot a copper spear randomly, this can be upgraded through items!";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-    Label #STAT3copycopy {
-      Text: "You are given a remote to slow down time so you can read item descriptions but be careful!";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-  }
-  Group #ROUNDINFO {
-    LayoutMode: Top;
-    Anchor: (Top: 10);
-    Label #TITLE {
-      Text: "ROUND SECTIONS";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
-    }
-    Label #STAT1 {
-      Text: "There are multiple sections to play through each with their own unique themes!";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-    Label #STAT2 {
-      Text: "Every 10 waves the theme switches, you start off in a zombie invasion!";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-    Label #STAT3 {
-      Text: "Some featured themes: The Undead Zone, Outlanders, Bug Season, Void Uglies and more!";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-  }
-  Group #ITEMINFO {
-    LayoutMode: Top;
-    Anchor: (Top: 10);
-    Label #TITLE {
-      Text: "ITEMS";
-      Style: (TextColor: #ffffff, FontSize: 20, RenderBold: true, RenderUppercase: true, HorizontalAlignment: Center);
-    }
-    Label #STAT1 {
-      Text: "Each item has an item description that explains their special ability";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-    Label #STAT2 {
-      Text: "Each item has their own rarity to showcase how rare they are to get!";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-    Label #STAT3 {
-      Text: "Some items only work in the hotbar and some only work in the inventory";
-      Style: (TextColor: #ffffff, FontSize: 10, HorizontalAlignment: Center);
-    }
-  }
-  $C.@TextButton #BACKBUTTON {
-    Anchor: (Height: 50, Top: 15);
-    Text: "BACK";
   }
 }

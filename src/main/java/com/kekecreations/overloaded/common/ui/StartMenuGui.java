@@ -78,6 +78,7 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
         if (PLAY_SANDBOX_BUTTON_ID.equals(data.buttonClicked)) {
             player.getPageManager().setPage(ref, store, Page.None);
             roundData.setRoundMenu("sandbox");
+            store.forEachEntityParallel(NPCEntity.getComponentType(), (index, archetypeChunk, commandBuffer) -> commandBuffer.removeEntity(archetypeChunk.getReferenceTo(index), RemoveReason.REMOVE));
         }
 
         if (PLAY_NORMAL_BUTTON_ID.equals(data.buttonClicked)

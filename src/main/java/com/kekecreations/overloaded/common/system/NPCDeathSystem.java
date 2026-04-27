@@ -130,16 +130,18 @@ public class NPCDeathSystem extends DeathSystems.OnDeathSystem {
                                 goldData.setGold(goldData.getGold() + 5);
                             }
 
-                            if (roundComponent != null) {
-                                if (roundComponent.isDoubleGoldMode()) {
-                                    goldData.setGold(goldData.getGold() + (goldReward));
+                            if (!Objects.equals(npc.getNPCTypeId(), "Chest")) {
+                                if (roundComponent != null) {
+                                    if (roundComponent.isDoubleGoldMode()) {
+                                        goldData.setGold(goldData.getGold() + (goldReward));
+                                    }
+                                    if (roundComponent.getRoundType() == "quick") {
+                                        goldData.setGold(goldData.getGold() + (goldReward));
+                                    }
                                 }
-                                if (roundComponent.getRoundType() == "quick") {
-                                    goldData.setGold(goldData.getGold() + (goldReward));
-                                }
+                                goldData.setGold(goldData.getGold() + goldReward);
+                                npc.remove();
                             }
-                            goldData.setGold(goldData.getGold() + goldReward);
-                            npc.remove();
                         }
                     }
                 }

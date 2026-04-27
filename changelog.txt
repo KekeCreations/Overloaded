@@ -3,6 +3,12 @@ This version is designed to work with Update 4 of the game also known as 2026.03
 
 ## Changes
 - Overhauled Start Menu UI
+- Overhauled How To Play UI
+- Overhauled Game Over UI
+- Overhauled Multiplayer Game Over UI
+- Choosing Sandbox Mode now clears enemies
+- Overhauled Branding
+- Fixed Chests giving gold on death
 
 
 ## V2.5-update4
