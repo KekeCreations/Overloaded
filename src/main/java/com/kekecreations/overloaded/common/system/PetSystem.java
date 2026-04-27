@@ -39,16 +39,16 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
         Ref<EntityStore> ref = chunk.getReferenceTo(i);
         RoundComponent roundData = store.getComponent(ref, RoundComponent.getComponentType());
 
-        AtomicInteger fireball = new AtomicInteger((int) (Math.random() * 6));
+        AtomicInteger fireball = new AtomicInteger((int) (Math.random() * 5));
         AtomicInteger iceball = new AtomicInteger((int) (Math.random() * 2));
         AtomicInteger kunai = new AtomicInteger((int) (Math.random() * 2));
         AtomicInteger acid_orb = new AtomicInteger((int) (Math.random() * 3));
         AtomicInteger trash_can = new AtomicInteger((int) (Math.random() * 2));
-        AtomicInteger spear = new AtomicInteger((int) (Math.random() * 5));
-        AtomicInteger iron_spear = new AtomicInteger((int) (Math.random() * 6));
-        AtomicInteger gold_spear_head = new AtomicInteger((int) (Math.random() * 6));
-        AtomicInteger cobalt_spear = new AtomicInteger((int) (Math.random() * 7));
-        AtomicInteger flame_spear = new AtomicInteger((int) (Math.random() * 8));
+        AtomicInteger spear = new AtomicInteger((int) (Math.random() * 4));
+        AtomicInteger iron_spear = new AtomicInteger((int) (Math.random() * 5));
+        AtomicInteger gold_spear_head = new AtomicInteger((int) (Math.random() * 3));
+        AtomicInteger cobalt_spear = new AtomicInteger((int) (Math.random() * 6));
+        AtomicInteger flame_spear = new AtomicInteger((int) (Math.random() * 7));
         AtomicInteger crimson_dice = new AtomicInteger((int) (Math.random() * 100));
         AtomicInteger dice = new AtomicInteger((int) (Math.random() * 80));
 

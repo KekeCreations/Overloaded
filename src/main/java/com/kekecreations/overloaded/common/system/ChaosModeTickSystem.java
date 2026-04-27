@@ -40,7 +40,7 @@ public class ChaosModeTickSystem extends DelayedEntitySystem<EntityStore> {
                 if (Objects.equals(roundData.getRoundType(), "chaos") || (Objects.equals(roundData.getRoundType(), "sandbox") && roundData.getSandboxChaosMode())) {
                     EntityStatMap entityStat = store.getComponent(ref, EntityStatMap.getComponentType());
                     if (entityStat != null) {
-                        entityStat.addStatValue(DefaultEntityStatTypes.getHealth(), 15.0F);
+                        entityStat.addStatValue(DefaultEntityStatTypes.getHealth(), 10.0F);
                     }
                 }
                 if (roundData.getRoundCount() == 1 && roundData.getRoundTimer() == 58 && roundData.getRoundType() == "chaos") {

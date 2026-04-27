@@ -9,6 +9,14 @@ This version is designed to work with Update 4 of the game also known as 2026.03
 - Choosing Sandbox Mode now clears enemies
 - Overhauled Branding
 - Fixed Chests giving gold on death
+- Increased Base Spear Throw Damage from 40 to 60
+- Increased Iron Spear Throw Damage from 60 to 80
+- Increased Cobalt Spear Throw Damage from 80 to 100
+- Increased Flame Spear Throw Damage from 100 to 120
+- Increased Spear Throw Chance for all Spear Items
+- Increased Gold Spear Head Ability Chance
+- Increased Fireball Pet Ability Chance
+- Decreased Chaos Mode Regeneration Rate from 15 to 10
 
 
 ## V2.5-update4
