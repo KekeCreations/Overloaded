@@ -1,5 +1,5 @@
 ##V3.0.0-update5
-This version is designed to work with Update 5 of the game also known as 2026.04.17-c2d518cc9
+This version is designed to work with Update 5 of the game also known as 2026.04.23-3f4475f43
 
 I recommend playing V3.0.0-update4 as Update 5 can be a little more laggy!
 
