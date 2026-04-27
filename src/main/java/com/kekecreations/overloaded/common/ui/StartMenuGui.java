@@ -73,7 +73,7 @@ public class StartMenuGui extends InteractiveCustomUIPage<StartMenuGuiData> {
         RoundComponent roundData = Objects.requireNonNull(store.getComponent(ref, RoundComponent.getComponentType()));
 
         if (PLAY_CHAOS_BUTTON_ID.equals(data.buttonClicked) && roundData.isArachnophobiaMode()) {
-            player.sendMessage(Message.raw("NOT COMPATIBLE WITH ARACHNOPHOBIA MODE"));
+            playerRef.sendMessage(Message.raw("NOT COMPATIBLE WITH ARACHNOPHOBIA MODE"));
         }
         if (PLAY_SANDBOX_BUTTON_ID.equals(data.buttonClicked)) {
             player.getPageManager().setPage(ref, store, Page.None);

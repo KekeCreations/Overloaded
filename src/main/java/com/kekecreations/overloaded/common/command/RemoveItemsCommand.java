@@ -18,7 +18,7 @@ public class RemoveItemsCommand extends AbstractTargetPlayerCommand {
 
     public RemoveItemsCommand() {
         super("remove_items", "Goodbye Items!");
-        this.setPermissionGroup(GameMode.Adventure);
+        this.setPermissionGroups("hytale:Adventurer");
     }
 
     @Override

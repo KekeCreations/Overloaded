@@ -3,9 +3,8 @@ package com.kekecreations.overloaded.common.system;
 import com.hypixel.hytale.component.*;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.DelayedEntitySystem;
+import com.hypixel.hytale.math.vector.Rotation3f;
 import com.hypixel.hytale.math.vector.Transform;
-import com.hypixel.hytale.math.vector.Vector3d;
-import com.hypixel.hytale.math.vector.Vector3f;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.command.system.CommandManager;
 import com.hypixel.hytale.server.core.entity.entities.Player;
@@ -22,6 +21,7 @@ import com.hypixel.hytale.server.core.util.TargetUtil;
 import com.kekecreations.overloaded.common.component.GoldAndKillsComponent;
 import com.kekecreations.overloaded.common.component.RoundComponent;
 import com.kekecreations.overloaded.common.util.ProjectileSpawner;
+import org.joml.Vector3d;
 import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 
@@ -67,13 +67,13 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
 
                     Transform lookVec = TargetUtil.getLook(oPlayerRef.getReference(), commandBuffer);
                     Vector3d lookPosition = lookVec.getPosition();
-                    Vector3f lookRotation = lookVec.getRotation();
+                    Rotation3f lookRotation = lookVec.getRotation();
 
                     hotbar.forEach((slot, itemStack) -> {
                         if (itemStack.isValid()) {
                             if (itemStack.equals(new ItemStack("Anvil_Pet")) && roundData.getRoundTimer() == 1) {
                                 Player oPlayer = store.getComponent(oPlayerRef.getReference(), Player.getComponentType());
-                                oPlayer.sendMessage(Message.raw("Anvil pet said Hi"));
+                                oPlayerRef.sendMessage(Message.raw("Anvil pet said Hi"));
                                 ItemStackTransaction itemStackTransaction = oPlayer.giveItem(new ItemStack("Tool_Repair_Kit_Iron"), oPlayerRef.getReference(), store);
                                 ItemStack remainder = itemStackTransaction.getRemainder();
 
@@ -90,7 +90,8 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                                     }
                                 });
                                 for (int j = 0; j < count.get(); j++) {
-                                    ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Fireball_Pet_Projectile", lookPosition, lookRotation.rotateX(360 / count.floatValue()));
+                                    lookRotation.addYaw(360 / count.floatValue());
+                                    ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Fireball_Pet_Projectile", lookPosition, lookRotation);
                                 }
                                 ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Fireball_Pet_Projectile", lookPosition, lookRotation);
                                 fireball.set((int) (Math.random() * 3));
@@ -161,62 +162,68 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                                 flame_spear.set((int) (Math.random() * 6));
                             }
 
-                            if (itemStack.equals(new ItemStack("Fireball_Pet")) && fireball.get() == 1) {
-                                AtomicInteger count = new AtomicInteger();
-                                storage.forEach((slot2, itemStack2) -> {
-                                    if (itemStack2.equals(new ItemStack("Meteor_Pet"))) {
-                                        count.getAndIncrement();
-                                    }
-                                });
-                                for (int j = 0; j < count.get(); j++) {
-                                    ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Fireball_Pet_Projectile", lookPosition, lookRotation.rotateX(360 / count.floatValue()));
-                                }
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Fireball_Pet_Projectile", lookPosition, lookRotation);
-                                fireball.set((int) (Math.random() * 3));
-                            }
-
                             if (itemStack.equals(new ItemStack("Ice_Ball_Pet")) && iceball.get() == 1) {
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Ice_Ball_Pet_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation);
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Ice_Ball_Pet_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 3F));
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Ice_Ball_Pet_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 2F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Ice_Ball_Pet_Projectile", lookPosition.sub(0, 0.5, 0), lookRotation);
+                                lookRotation.setYaw(360 / 3F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Ice_Ball_Pet_Projectile", lookPosition.sub(0, 0.5, 0), lookRotation);
+                                lookRotation.setYaw(360 / 2F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Ice_Ball_Pet_Projectile", lookPosition.sub(0, 0.5, 0), lookRotation);
                                 iceball.set((int) (Math.random() * 3));
                             }
 
                             if (itemStack.equals(new ItemStack("Kunai_Pack")) && kunai.get() == 1) {
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation);
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 3F));
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 2F));
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 4F));
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 5F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.sub(0, 0.5, 0), lookRotation);
+                                lookRotation.setYaw(360 / 2F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.sub(0, 0.5, 0), lookRotation);
+                                lookRotation.setYaw(360 / 3F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.sub(0, 0.5, 0), lookRotation);
+                                lookRotation.setYaw(360 / 4F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.sub(0, 0.5, 0), lookRotation);
+                                lookRotation.setYaw(360 / 5F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Kunai_Throw", lookPosition.sub(0, 0.5, 0), lookRotation);
                                 kunai.set((int) (Math.random() * 3));
                             }
 
                             if (itemStack.equals(new ItemStack("Gold_Spear_Head_Pet")) && gold_spear_head.get() == 1) {
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation);
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 3F));
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 2F));
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 4F));
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 5F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.sub(0, 0.5, 0), lookRotation);
+                                lookRotation.setYaw(360 / 2F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.sub(0, 0.5, 0), lookRotation);
+                                lookRotation.setYaw(360 / 3F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.sub(0, 0.5, 0), lookRotation);
+                                lookRotation.setYaw(360 / 4F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.sub(0, 0.5, 0), lookRotation);
+                                lookRotation.setYaw(360 / 5F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.sub(0, 0.5, 0), lookRotation);
                                 kunai.set((int) (Math.random() * 3));
                             }
 
                             if (itemStack.equals(new ItemStack("Acid_Orb_Pet")) && acid_orb.get() == 1) {
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Acid_Orb_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation);
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Acid_Orb_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 2F));
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Acid_Orb_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 4F));
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Acid_Orb_Projectile", lookPosition.subtract(0, 0.5, 0), lookRotation.rotateX(360 / 6F));
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Acid_Orb_Projectile", lookPosition.sub(0, 0.5, 0), lookRotation);
+                                lookRotation.setYaw(360 / 2F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Acid_Orb_Projectile", lookPosition.sub(0, 0.5, 0), lookRotation);
+                                lookRotation.setYaw(360 / 4F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Acid_Orb_Projectile", lookPosition.sub(0, 0.5, 0), lookRotation);
+                                lookRotation.setYaw(360 / 6F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Acid_Orb_Projectile", lookPosition.sub(0, 0.5, 0), lookRotation);
                                 acid_orb.set((int) (Math.random() * 3));
                             }
 
                             if (itemStack.equals(new ItemStack("Trash_Can")) && trash_can.get() == 1) {
                                 ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation);
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation.rotateX(360 / 2F));
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation.rotateX(360 / 3F));
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation.rotateX(360 / 4F));
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation.rotateX(360 / 5F));
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation.rotateX(360 / 6F));
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation.rotateX(360 / 7F));
-                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation.rotateX(360 / 8F));
+                                lookRotation.setYaw(360 / 2F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation);
+                                lookRotation.setYaw(360 / 3F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition, lookRotation);
+                                lookRotation.setYaw(360 / 4F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition,  lookRotation);
+                                lookRotation.setYaw(360 / 5F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition,  lookRotation);
+                                lookRotation.setYaw(360 / 6F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition,  lookRotation);
+                                lookRotation.setYaw(360 / 7F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition,  lookRotation);
+                                lookRotation.setYaw(360 / 8F);
+                                ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Can_Toss", lookPosition,  lookRotation);
                                 trash_can.set((int) (Math.random() * 3));
                             }
 
@@ -331,7 +338,7 @@ public class PetSystem extends DelayedEntitySystem<EntityStore> {
                     });
 
                     if (spear.get() == 0) {
-                        ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.subtract(0, 0.5, 0), lookRotation);
+                        ProjectileSpawner.spawnProjectile(commandBuffer, ref, "Spear_Throw", lookPosition.sub(0, 0.5, 0), lookRotation);
                     }
                 }
             }

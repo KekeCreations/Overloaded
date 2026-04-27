@@ -2,9 +2,7 @@ package com.kekecreations.overloaded.common.command;
 
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
-import com.hypixel.hytale.math.vector.Vector3d;
-import com.hypixel.hytale.math.vector.Vector3f;
-import com.hypixel.hytale.protocol.GameMode;
+import com.hypixel.hytale.math.vector.Rotation3f;
 import com.hypixel.hytale.server.core.command.system.CommandContext;
 import com.hypixel.hytale.server.core.command.system.arguments.system.RequiredArg;
 import com.hypixel.hytale.server.core.command.system.arguments.types.ArgTypes;
@@ -17,6 +15,7 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.NPCPlugin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.joml.Vector3d;
 
 public class SpawnFriendlyNPCCommand extends AbstractTargetPlayerCommand {
 
@@ -27,7 +26,7 @@ public class SpawnFriendlyNPCCommand extends AbstractTargetPlayerCommand {
     public SpawnFriendlyNPCCommand() {
         super("spawn_friendly", "Spawning NPC Command for Overloaded!");
         this.npcId = this.withRequiredArg("npcId", "Entity ID", ArgTypes.STRING);
-        this.setPermissionGroup(GameMode.Adventure);
+        this.setPermissionGroups("hytale:Adventurer");
     }
 
     @Override
@@ -45,32 +44,32 @@ public class SpawnFriendlyNPCCommand extends AbstractTargetPlayerCommand {
                 switch (chance) {
                     case 1 -> {
                         vector = new Vector3d(
-                                transformComponent.getPosition().getX() + negativeX,
-                                transformComponent.getPosition().getY() + 1,
-                                transformComponent.getPosition().getZ() + negativeZ);
+                                transformComponent.getPosition().x() + negativeX,
+                                transformComponent.getPosition().y() + 1,
+                                transformComponent.getPosition().z() + negativeZ);
                     }
                     case 2 -> {
                         vector = new Vector3d(
-                                transformComponent.getPosition().getX() + positiveX,
-                                transformComponent.getPosition().getY() + 1,
-                                transformComponent.getPosition().getZ() + negativeZ);
+                                transformComponent.getPosition().x() + positiveX,
+                                transformComponent.getPosition().y() + 1,
+                                transformComponent.getPosition().z() + negativeZ);
                     }
                     case 3 -> {
                         vector = new Vector3d(
-                                transformComponent.getPosition().getX() + negativeX,
-                                transformComponent.getPosition().getY() + 1,
-                                transformComponent.getPosition().getZ() + positiveZ);
+                                transformComponent.getPosition().x() + negativeX,
+                                transformComponent.getPosition().y() + 1,
+                                transformComponent.getPosition().z() + positiveZ);
                     }
                     default -> {
                         vector = new Vector3d(
-                                transformComponent.getPosition().getX() + positiveX,
-                                transformComponent.getPosition().getY() + 1,
-                                transformComponent.getPosition().getZ() + positiveZ);
+                                transformComponent.getPosition().x() + positiveX,
+                                transformComponent.getPosition().y() + 1,
+                                transformComponent.getPosition().z() + positiveZ);
                     }
                 }
                 NPCPlugin.get().spawnNPC(store, this.npcId.get(commandContext), null,
                         vector,
-                        new Vector3f()
+                        new Rotation3f()
                 );
             }
         }

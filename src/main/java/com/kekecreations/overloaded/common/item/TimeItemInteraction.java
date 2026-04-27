@@ -10,6 +10,7 @@ import com.hypixel.hytale.server.core.entity.InteractionContext;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
+import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.kekecreations.overloaded.common.component.RoundComponent;
@@ -33,6 +34,7 @@ public class TimeItemInteraction extends SimpleInstantInteraction {
         Store<EntityStore> store = commandBuffer.getExternalData().getStore();
         Ref<EntityStore> ref = interactionContext.getEntity();
         Player player = commandBuffer.getComponent(ref, Player.getComponentType());
+        PlayerRef playerRef = commandBuffer.getComponent(ref, PlayerRef.getComponentType());
         RoundComponent roundComponent = commandBuffer.getComponent(ref, RoundComponent.getComponentType());
 
         if (player != null) {
@@ -45,7 +47,9 @@ public class TimeItemInteraction extends SimpleInstantInteraction {
                     World.setTimeDilation(0.2F, store);
                 }
             } else {
-                player.sendMessage(Message.raw("MUST BE PLAYER ONE TO USE"));
+                if (playerRef != null) {
+                    playerRef.sendMessage(Message.raw("MUST BE PLAYER ONE TO USE"));
+                }
             }
         }
     }

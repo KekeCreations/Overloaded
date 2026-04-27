@@ -12,6 +12,7 @@ import com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent;
 import com.hypixel.hytale.server.core.modules.entity.damage.DeathSystems;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
 import com.hypixel.hytale.server.core.modules.entitystats.asset.DefaultEntityStatTypes;
+import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
@@ -74,6 +75,7 @@ public class NPCDeathSystem extends DeathSystems.OnDeathSystem {
                         GoldAndKillsComponent goldData = store.getComponent(entitySource.getRef(), GoldAndKillsComponent.getComponentType());
                         RoundComponent roundComponent = store.getComponent(entitySource.getRef(), RoundComponent.getComponentType());
                         Player player = store.getComponent(entitySource.getRef(), Player.getComponentType());
+                        PlayerRef playerRef = store.getComponent(entitySource.getRef(), PlayerRef.getComponentType());
                         EntityStatMap statMap = store.getComponent(entitySource.getRef(), EntityStatMap.getComponentType());
                         InventoryComponent storageComponent = store.getComponent(entitySource.getRef(), InventoryComponent.getComponentTypeById(-2));
                         ItemContainer storage = storageComponent.getInventory();
@@ -87,22 +89,22 @@ public class NPCDeathSystem extends DeathSystems.OnDeathSystem {
                                 switch (chestReward) {
                                     case 0 -> {
                                         goldData.setGold(goldData.getGold() + 8);
-                                        player.sendMessage(Message.raw("8 gold found in the chest!"));
+                                        playerRef.sendMessage(Message.raw("8 gold found in the chest!"));
                                     }
                                     case 1 -> {
                                         goldData.setGold(goldData.getGold() + 6);
-                                        player.sendMessage(Message.raw("6 gold found in the chest!"));
+                                        playerRef.sendMessage(Message.raw("6 gold found in the chest!"));
                                     }
                                     case 2 -> {
                                         goldData.setGold(goldData.getGold() + 5);
-                                        player.sendMessage(Message.raw("5 gold found in the chest!"));
+                                        playerRef.sendMessage(Message.raw("5 gold found in the chest!"));
                                     }
                                     case 3 -> {
                                         goldData.setGold(goldData.getGold() + 7);
-                                        player.sendMessage(Message.raw("7 gold found in the chest!"));
+                                        playerRef.sendMessage(Message.raw("7 gold found in the chest!"));
                                     }
                                     case 4 -> {
-                                        player.sendMessage(Message.raw("Nothing found in the chest!"));
+                                        playerRef.sendMessage(Message.raw("Nothing found in the chest!"));
                                     }
                                 }
                             } else {

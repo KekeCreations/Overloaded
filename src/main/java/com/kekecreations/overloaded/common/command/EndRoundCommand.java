@@ -19,7 +19,7 @@ public class EndRoundCommand extends AbstractTargetPlayerCommand {
 
     public EndRoundCommand() {
         super("end_round", "Goodbye NPCs!");
-        this.setPermissionGroup(GameMode.Adventure);
+        this.setPermissionGroups("hytale:Adventurer");
     }
 
     @Override
